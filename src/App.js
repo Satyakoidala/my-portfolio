@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles/app.scss";
+import timeline from "./assets/timeline.png";
+import workExperience from "./assets/workExperience.webp";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<>
+			<h1 className="header">
+				Welcome to React App thats build using Webpack and Babel
+				separately
+			</h1>
+
+			<img width="40" height="40" src={timeline} alt="timeline" />
+			<img width={50} height={50} src={workExperience} alt="work exp" />
+			<div> Testing </div>
+		</>
+	);
+};
 
 export default App;

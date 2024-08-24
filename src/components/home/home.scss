@@ -1,0 +1,197 @@
+@use "../../styles/constants" as constants;
+
+/* The typing effect */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: constants.$primary-txt;
+	}
+}
+
+/* Fade in transistion */
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.home {
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	.intro-information {
+		height: 90%;
+		width: 100%;
+		font-weight: bolder;
+
+		.side-left {
+			width: 75%;
+		}
+
+		.line-1 {
+			font-size: 48px;
+		}
+
+		.line-2 {
+			font-size: 40px;
+		}
+	}
+
+	.resume-box {
+		width: 150px;
+		height: 40px;
+		text-align: center;
+
+		button {
+			width: 100%;
+			height: 100%;
+			background-color: constants.$transparent-grey;
+			border-radius: 6px;
+			outline: none;
+			border: none;
+			color: constants.$primary-txt;
+			font-size: 18px;
+			vertical-align: middle;
+			text-align: center;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+			}
+
+			span {
+				padding-inline-start: 10px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.intro-text {
+		span {
+			display: block;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 0;
+			border-right: 2px solid transparent;
+			animation-name: typing, blink-caret;
+			animation-fill-mode: forwards;
+		}
+
+		.line-1 {
+			word-spacing: -4px;
+			animation-duration: 6s, 0.25s;
+			animation-delay: 2s, 0;
+			animation-timing-function: steps(40, end), step-end;
+			animation-iteration-count: 1, 4;
+		}
+
+		.line-2 {
+			letter-spacing: 0.65px;
+			animation-duration: 3s, 0.25s;
+			animation-delay: 3.25s, 2.25s;
+			animation-timing-function: steps(30, end), step-end;
+			animation-iteration-count: 1, 14;
+		}
+
+		.line-3 {
+			animation-duration: 3s, 0.25s;
+			animation-delay: 6s, 6s;
+			animation-timing-function: steps(30, end), step-end;
+			animation-iteration-count: 1, 6;
+		}
+
+		+ .resume-box {
+			margin-top: 30px;
+			opacity: 0;
+			animation-name: fade-in;
+			animation-delay: 8s;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	.intro-image {
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		.image-profession {
+			width: 100%;
+			height: 90%;
+			margin-inline: auto;
+		}
+	}
+
+	.intro-information,
+	.social-accounts {
+		width: 100%;
+	}
+
+	.social-accounts {
+		justify-content: flex-start;
+	}
+
+	.social-media {
+		margin: 0;
+		display: flex;
+		font-size: 20px;
+		font-weight: 600;
+		background-color: constants.$transparent-grey;
+		padding: 10px;
+		border-radius: 6px;
+		align-items: end;
+
+		.media {
+			padding-inline: 10px;
+
+			a {
+				text-align: center;
+			}
+
+			.media-name {
+				color: constants.$primary-txt;
+				padding-inline-start: 5px;
+				vertical-align: middle;
+				display: inline-block;
+				width: 0;
+				overflow: hidden;
+				transition: width 5ms cubic-bezier(0, -0.53, 0.66, 0.48);
+
+				&:hover {
+					width: auto;
+				}
+			}
+
+			img {
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+
+				&:hover + .media-name {
+					width: auto;
+				}
+			}
+		}
+	}
+}

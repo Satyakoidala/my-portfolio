@@ -60,9 +60,10 @@ module.exports = {
 	},
 	plugins: [
 		new HTMLWebpackPlugin({
-			title: "Splitwise - React App",
+			title: "Satya Koidala",
 			filename: "index.html",
 			template: "src/pages/homepage.html",
+			favicon: "",
 		}),
 	],
 };

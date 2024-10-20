@@ -1,0 +1,128 @@
+@use "../../styles/constants" as constants;
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+
+	&.round {
+		border-radius: 8px;
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+
+	> .side-left,
+	> .side-right {
+		height: 100%;
+	}
+}
+
+.side-left,
+.side-right {
+	width: 50%;
+}
+
+.section {
+	min-width: 980px;
+	width: 90%;
+	height: 100%;
+}
+
+.card {
+	background-color: constants.$sec-bg;
+	color: constants.$sec-txt;
+	font-size: 0.6em;
+}
+
+.section-tile {
+	flex-grow: 1;
+	padding: 16px 20px;
+	text-align: start;
+
+	.section-header {
+		width: 100%;
+	}
+
+	h3 {
+		margin-block: 15px;
+		margin-inline-start: 10px;
+		align-content: flex-end;
+	}
+
+	.card {
+		ul {
+			width: 100%;
+
+			legend {
+				padding-bottom: 6px;
+				margin-bottom: 8px;
+				font-weight: 800;
+				text-align: center;
+				border-bottom: 1px solid constants.$transparent-grey;
+			}
+		}
+
+		li {
+			padding-inline-start: 15px;
+
+			span {
+				margin-inline-start: 8px;
+			}
+
+			img {
+				margin-bottom: -1px;
+			}
+		}
+	}
+}
+
+.timeline {
+	align-items: stretch;
+	gap: 2.5%;
+
+	.timeline-thread {
+		width: 15%;
+		border-inline-end: 4px solid constants.$sec-bg;
+	}
+
+	.timeline-cards-wrapper {
+		flex-grow: 1;
+		max-width: 80%;
+
+		> .card {
+			position: relative;
+			margin-top: 25px;
+			padding: 10px 20px;
+
+			> div {
+				width: 100%;
+			}
+		}
+	}
+
+	.timeline-cards-wrapper > .card::before,
+	.timestamp {
+		position: absolute;
+		inset-inline-start: -22.5%;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 0.6em;
+		color: constants.$sec-bg;
+	}
+
+	.timeline-cards-wrapper > .card::before {
+		content: "\002D\002D\002D";
+		font-size: 43px;
+		inset-inline-start: -8.3%;
+		margin-top: -2px;
+	}
+}
+
+.section-header {
+	display: flex;
+}

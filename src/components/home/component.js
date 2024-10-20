@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, SideLeft, SideRight } from "../container";
+import { Container, SideLeft, SideRight } from "../modules/container";
 import {
 	webDev,
 	instagram,
@@ -9,7 +9,7 @@ import {
 	download,
 } from "../../assets/index";
 
-import "./home.scss";
+import "./style.scss";
 
 const Home = () => {
 	const socialAccounts = [
@@ -44,7 +44,7 @@ const Home = () => {
 			<Container classes="intro-information">
 				<SideLeft>
 					<div className="intro-text">
-						<span className="line-1">Hi &#128075;</span>
+						<span className="line-1">Hi&#128075;</span>
 						<span className="line-2">
 							I&apos;m a Frontend Developer,
 						</span>
@@ -77,7 +77,7 @@ const Home = () => {
 				<ul className="social-media">
 					{socialAccounts.map((item) => {
 						return (
-							<li className="media">
+							<li className="media" key={item.key}>
 								<a className={item.key} href={item.href}>
 									<img src={item.src} alt={item.name} />
 									<span className="media-name">

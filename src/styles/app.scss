@@ -10,17 +10,34 @@ body {
 }
 
 #root {
-	width: 100%;
+	width: 980px;
 	height: 100%;
 	color: constants.$primary-txt;
-	font-family: "Outfit", sans-serif;
+	font-family: "Source Sans 3", "Source Code Pro", "Source Serif 4", "Outfit",
+		sans-serif;
 	font-size: 32px;
+	letter-spacing: 0.1px;
+	margin: 0 auto;
 }
 
 ul,
 ol {
+	padding-inline-start: 0;
+	margin-block: 10px;
+
 	li {
 		list-style: none;
 		list-style-type: none;
 	}
+}
+
+*::-webkit-scrollbar {
+	width: 0px;
+	background: transparent; /* make scrollbar transparent */
+}
+
+h3 {
+	margin-block: 0 15px;
+	font-size: 24px;
+	font-weight: 600;
 }

@@ -1,0 +1,43 @@
+@use "../../styles/constants" as constants;
+
+.profile-summary {
+	width: 100%;
+	border-radius: inherit;
+	font-size: 0.6em;
+	padding: 15px;
+
+	@include constants.glass;
+
+	legend {
+		letter-spacing: 0.1px;
+		font-weight: 300;
+	}
+
+	.tag {
+		font-weight: 600;
+		font-size: 20px;
+		letter-spacing: 0.2px;
+	}
+
+	.tag,
+	.value {
+		margin-inline-start: 5px;
+	}
+
+	li {
+		padding-top: 8px;
+
+		img {
+			margin-bottom: -1px;
+		}
+	}
+
+	.value {
+		letter-spacing: 0.1px;
+		font-weight: 300;
+	}
+
+	.details {
+		flex-grow: 1;
+	}
+}

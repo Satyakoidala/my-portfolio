@@ -1,9 +1,16 @@
 // color constants
 
-$transparent-grey: rgb(51, 57, 52, 50%);
+$transparent-grey: rgb(51, 57, 52, 30%);
 
-$main-bg: rgb(3, 16, 18);
+$main-bg: #000;
 $sec-bg: rgb(247, 247, 255, 100%);
 
 $primary-txt: rgb(247, 247, 255);
 $sec-txt: rgb(3, 16, 18);
+
+@mixin glass {
+	// background-color: $transparent-grey;
+	background-color: rgba(50, 50, 50, 0.2);
+	backdrop-filter: blur(18px);
+	border: 1px solid rgba(51, 57, 52, 0.53);
+}

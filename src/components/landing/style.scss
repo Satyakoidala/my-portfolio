@@ -1,0 +1,87 @@
+@use "../../styles/constants" as constants;
+
+.nav-bar {
+	justify-content: space-between;
+	margin-top: 10px;
+	padding: 10px;
+
+	@include constants.glass;
+
+	.nav-left,
+	.nav-right {
+		width: fit-content;
+	}
+
+	.nav-left {
+		padding-inline-start: 5px;
+		font-weight: 600;
+
+		img {
+			border-radius: 50%;
+			margin-bottom: -5px;
+			margin-inline-end: 10px;
+		}
+	}
+
+	.nav-right {
+		padding-inline-end: 5px;
+	}
+}
+
+.app-header {
+	display: flex;
+	margin: 0;
+	align-items: stretch;
+
+	.menu-item {
+		list-style: none;
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		padding: 3px 10px 3px 0;
+		color: constants.$primary-txt;
+		border: 2px solid transparent;
+		transition: border-color 5ms;
+
+		&:hover {
+			border-bottom-width: 0;
+
+			button {
+				border-bottom: solid 2px #fff;
+			}
+		}
+
+		button {
+			color: constants.$primary-txt;
+			appearance: none;
+			background-color: transparent;
+			border: 0;
+			padding: 0;
+			font-size: 20px;
+			font-weight: 300;
+			letter-spacing: 0.5px;
+		}
+
+		&.active {
+			background-color: constants.$sec-bg;
+			border-radius: 6px;
+			padding-inline-start: 10px;
+			margin-inline-end: 10px;
+
+			&:hover {
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+			}
+
+			button {
+				color: constants.$sec-txt;
+			}
+		}
+	}
+}
+
+.root-reveal {
+	height: calc(90% - 15px);
+	overflow: scroll;
+	margin-top: 15px;
+}

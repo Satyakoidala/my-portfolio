@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, SideLeft, SideRight } from "../modules/container";
+import { Container, SideLeft, SideRight } from "../modules/core";
+import { Section } from "../modules/common";
 import {
 	webDev,
 	instagram,
@@ -40,7 +41,7 @@ const Home = () => {
 	];
 
 	return (
-		<Container classes={["home", "section"]}>
+		<Section classes={["home", "section"]}>
 			<Container classes="intro-information">
 				<SideLeft>
 					<div className="intro-text">
@@ -89,7 +90,7 @@ const Home = () => {
 					})}
 				</ul>
 			</Container>
-		</Container>
+		</Section>
 	);
 };
 

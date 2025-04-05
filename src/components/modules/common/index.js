@@ -1,39 +1,19 @@
 import React, { Fragment } from "react";
-import cn from "classnames";
+import { Container } from "../core";
 
-import "./container.scss";
-
-export const Container = ({
-	classes,
-	children,
-	roundedCorner = false,
-	columnLayout = false,
-	...rest
-}) => {
-	return (
-		<div
-			className={cn("container", classes, {
-				round: roundedCorner,
-				column: columnLayout,
-			})}
-			{...rest}
-		>
-			{children}
-		</div>
-	);
-};
-
-export const SideLeft = ({ classes, children }) => {
-	return <div className={cn("side-left", classes)}>{children}</div>;
-};
-
-export const SideRight = ({ classes, children }) => {
-	return <div className={cn("side-right", classes)}>{children}</div>;
-};
+import "./style.scss";
 
 export const Card = ({ classes, children }) => {
 	return (
 		<Container classes={[classes, "card"]} columnLayout roundedCorner>
+			{children}
+		</Container>
+	);
+};
+
+export const Section = ({ sectionClasses = [], children, ...rest }) => {
+	return (
+		<Container classes={["section", ...sectionClasses]} {...rest}>
 			{children}
 		</Container>
 	);

@@ -1,31 +1,4 @@
-@use "../../styles/constants" as constants;
-
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	margin: 0 auto;
-	box-sizing: border-box;
-
-	&.round {
-		border-radius: 8px;
-	}
-
-	&.column {
-		flex-direction: column;
-	}
-
-	> .side-left,
-	> .side-right {
-		height: 100%;
-	}
-}
-
-.side-left,
-.side-right {
-	width: 50%;
-}
+@use "../../../styles/constants" as constants;
 
 .section {
 	min-width: 980px;
@@ -46,12 +19,14 @@
 
 	.section-header {
 		width: 100%;
-	}
 
-	h3 {
-		margin-block: 15px;
-		margin-inline-start: 10px;
-		align-content: flex-end;
+		h3 {
+			@include constants.textGradient();
+
+			margin-block: 15px;
+			margin-inline-start: 10px;
+			align-content: flex-end;
+		}
 	}
 
 	.card {

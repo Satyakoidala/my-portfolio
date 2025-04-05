@@ -14,12 +14,20 @@
 
 	.nav-left {
 		padding-inline-start: 5px;
-		font-weight: 600;
 
 		img {
 			border-radius: 50%;
 			margin-bottom: -5px;
 			margin-inline-end: 10px;
+		}
+
+		.title {
+			font-size: inherit;
+			font-weight: 600;
+			display: inline-block;
+			margin: 0;
+
+			@include constants.textGradient();
 		}
 	}
 
@@ -46,12 +54,16 @@
 		&:hover {
 			border-bottom-width: 0;
 
-			button {
+			.button-link {
 				border-bottom: solid 2px #fff;
+
+				&.active {
+					border-bottom: none;
+				}
 			}
 		}
 
-		button {
+		.button-link {
 			color: constants.$primary-txt;
 			appearance: none;
 			background-color: transparent;
@@ -59,22 +71,14 @@
 			padding: 0;
 			font-size: 20px;
 			font-weight: 300;
-			letter-spacing: 0.5px;
-		}
+			letter-spacing: -0.25px;
 
-		&.active {
-			background-color: constants.$sec-bg;
-			border-radius: 6px;
-			padding-inline-start: 10px;
-			margin-inline-end: 10px;
-
-			&:hover {
-				border-bottom-left-radius: 6px;
-				border-bottom-right-radius: 6px;
-			}
-
-			button {
+			&.active {
+				background-color: constants.$sec-bg;
 				color: constants.$sec-txt;
+				border-radius: 6px;
+				padding: 1px 10px;
+				font-weight: 400;
 			}
 		}
 	}

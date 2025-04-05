@@ -1,21 +1,21 @@
 import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import { Container, SideLeft, SideRight } from "../modules/core";
 import {
-	Container,
-	SideLeft,
-	SideRight,
 	SectionTile,
 	Timeline,
 	QuestionBox,
 	Card,
-} from "../modules/container";
+	Section,
+} from "../modules/common";
 import ProfileSummary from "./profile-summary";
-
 import {
 	checkCircleDark,
 	education,
 	experience,
 	skills as iconSkills,
 } from "../../assets";
+
 import "./style.scss";
 
 const educationDetails = [
@@ -181,7 +181,7 @@ const SkillCard = ({ data = {} }) => {
 
 const About = () => {
 	return (
-		<Container classes={["section", "about"]} columnLayout>
+		<Section classes={["section", "about"]} columnLayout>
 			<ProfileSummary />
 			<Container classes="sub-section" roundedCorner>
 				<SideLeft>
@@ -236,14 +236,12 @@ const About = () => {
 								To check my work, test APIs and see live
 								projects.
 							</p>
-							<a href="/works">Click here</a>
-							{/* convert to react-route using Link */}
-							{/* <Link to="/works"></Link> */}
+							<NavLink to="/works">Click here</NavLink>
 						</QuestionBox>
 						<QuestionBox>
 							<h3>Like my work?</h3>
 							<p>Want to contact me?</p>
-							<a href="/contact">Click here</a>
+							<NavLink to="/contact">Click here</NavLink>
 						</QuestionBox>
 					</SectionTile>
 					<SectionTile
@@ -267,7 +265,7 @@ const About = () => {
 					</SectionTile>
 				</SideRight>
 			</Container>
-		</Container>
+		</Section>
 	);
 };
 

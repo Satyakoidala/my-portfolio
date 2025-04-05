@@ -1,0 +1,25 @@
+@use "../../styles/constants" as constants;
+
+.works {
+	.tabs {
+		gap: 20px;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		.card {
+			@include constants.glass();
+
+			height: 200px;
+			width: 230px;
+			min-width: 220px;
+			margin: 0;
+			text-align: center;
+		}
+
+		.card-title {
+			// @include constants.textGradient();
+			font-size: 32px;
+			font-weight: 600;
+		}
+	}
+}

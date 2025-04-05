@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, SideLeft, SideRight } from "../modules/container";
+import { Container, SideLeft, SideRight } from "../modules/core";
 import { checkCircle } from "../../assets";
 
 import "./profile-summary.scss";

@@ -13,4 +13,16 @@ $sec-txt: rgb(3, 16, 18);
 	background-color: rgba(50, 50, 50, 0.2);
 	backdrop-filter: blur(18px);
 	border: 1px solid rgba(51, 57, 52, 0.53);
+	color: $primary-txt;
+}
+
+@mixin textGradient {
+	background: rgb(34, 193, 195);
+	background: linear-gradient(
+		0deg,
+		rgba(34, 193, 195, 1) 0%,
+		rgba(150, 45, 253, 1) 66%
+	);
+	background-clip: text;
+	color: transparent;
 }

@@ -1,57 +1,43 @@
 import React from "react";
 import { Container, SideLeft, SideRight } from "../modules/core";
 import { Section } from "../modules/common";
-import {
-	webDev,
-	instagram,
-	twitter,
-	linkedin,
-	github,
-	download,
-} from "../../assets/index";
+import { innerHTML } from "../../utils/index";
 
 import "./style.scss";
 
 const Home = () => {
-	const socialAccounts = [
-		{
-			name: "LinkedIn",
-			key: "linkedin",
-			href: "#linkedin",
-			src: linkedin,
-		},
-		{
-			name: "GitHub",
-			key: "github",
-			href: "#github",
-			src: github,
-		},
-		{
-			name: "Instagram",
-			key: "instagram",
-			href: "#instagram",
-			src: instagram,
-		},
-		{
-			name: "Twitter",
-			key: "twitter",
-			href: "#twitter",
-			src: twitter,
-		},
-	];
+	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
+	const profileData = window.bootstrap.sections.home.profile || {};
 
 	return (
 		<Section classes={["home", "section"]}>
 			<Container classes="intro-information">
 				<SideLeft>
 					<div className="intro-text">
-						<span className="line-1">Hi&#128075;</span>
-						<span className="line-2">
-							I&apos;m a Frontend Developer,
-						</span>
-						<span className="line-3">specialized in ReactJS.</span>
+						<p
+							className="line-1"
+							{...innerHTML(profileData.introText?.greeting)}
+						/>
+						<p className="line-2">
+							I&apos;m a{" "}
+							<span
+								className="keyword"
+								{...innerHTML(profileData.introText?.expertise)}
+							/>
+							,
+						</p>
+						<p className="line-3">
+							specialized in{" "}
+							<span
+								className="keyword"
+								{...innerHTML(
+									profileData.introText?.specialization
+								)}
+							/>
+							.
+						</p>
 					</div>
-					<div className="resume-box">
+					{/* <div className="resume-box">
 						<button
 							type="button"
 							onClick={() => {
@@ -62,14 +48,15 @@ const Home = () => {
 							<img src={download} alt="Download" />
 							<span>Resume</span>
 						</button>
-					</div>
+					</div> */}
 				</SideLeft>
 				<SideRight>
 					<div className="intro-image">
+						<div className="image-cover"></div>
 						<img
-							className="image-profession"
-							src={webDev}
-							alt="web developer"
+							className="image"
+							src={profileData.img?.src}
+							alt={profileData.img?.alt}
 						/>
 					</div>
 				</SideRight>

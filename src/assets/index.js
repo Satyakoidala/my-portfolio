@@ -10,6 +10,7 @@ import education from "./graduation-hat.png";
 import checkCircleDark from "./check-circle-fill-dark.png";
 import checkCircle from "./check-circle-fill.png";
 import profile from "./profile.png";
+import homeProfile from "./home-profile.png";
 
 export {
 	webDev,
@@ -24,4 +25,5 @@ export {
 	checkCircleDark,
 	checkCircle,
 	profile,
+	homeProfile,
 };

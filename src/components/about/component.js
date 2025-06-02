@@ -18,86 +18,12 @@ import {
 
 import "./style.scss";
 
-const educationDetails = [
-	{
-		timeStamp: "Jul, 2021",
-		cardDetails: {
-			institute: "Gayatri Vidya Parishad College of Engineering",
-			degree: "B.Tech",
-			course: "Computer Science",
-			gpa: "8.87/10",
-		},
-	},
-	{
-		timeStamp: "Apr, 2017",
-		cardDetails: {
-			institute: "Narayana Junior College",
-			degree: "Intermediate",
-			course: "MPC",
-			percentage: "97.4%",
-		},
-	},
-	{
-		timeStamp: "May, 2015",
-		cardDetails: {
-			institute: "Priyanka's Vidyodaya High School",
-			course: "SSC",
-			grade: "9.8/10",
-		},
-	},
-];
+const educationDetails = window.bootstrap.sections.about.educationDetails || [];
 
-const skills = [
-	{
-		title: "Frontend",
-		list: [
-			"HTML, CSS",
-			"Javascript",
-			"ReactJS",
-			"Sass",
-			"Bootstrap",
-			"Babel.js",
-			"Webpack.js",
-			"Axios",
-		],
-	},
-	{
-		title: "UI Test Frameworks",
-		list: ["Cypress JS", "Playwright JS"],
-	},
-	{
-		title: "Backend",
-		list: ["Node JS", "Django"],
-	},
-	{
-		title: "DevOps Tools",
-		list: ["Git, GitHub", "GitHub Actions", "Netlify"],
-	},
-	{
-		title: "Programming Lang.",
-		list: ["Python", "Javascript", "Java"],
-	},
-];
+const skills = window.bootstrap.sections.about.skills || [];
 
-const experienceDetails = [
-	{
-		timeStamp: "Aug, 2021",
-		cardDetails: {
-			company: "Infosys Limited",
-			role: "Specialist Programmer",
-			duration: "Present, 3 years & 1 month",
-			description:
-				"I have worked as a frontend engineer for Apple Client. Developed multiple features, upgraded, tested and improved several modules using micro frontend architecture.",
-		},
-	},
-	{
-		timeStamp: "Jul, 2021",
-		isGraduation: true,
-		cardDetails: {
-			graduation: "Graduated Engineering",
-		},
-	},
-];
+const experienceDetails =
+	window.bootstrap.sections.about.experienceDetails || [];
 
 const ExperienceCardsHtml = ({ data = [] }) => {
 	return data.map((item, index) => {

@@ -8,12 +8,19 @@ $sec-bg: rgb(247, 247, 255, 100%);
 $primary-txt: rgb(247, 247, 255);
 $sec-txt: rgb(3, 16, 18);
 
+$salmon: rgb(250, 128, 114);
+
 @mixin glass {
 	// background-color: $transparent-grey;
-	background-color: rgba(50, 50, 50, 0.2);
-	backdrop-filter: blur(18px);
-	border: 1px solid rgba(51, 57, 52, 0.53);
+	// background-color: rgba(50, 50, 50, 0.2);
+	// backdrop-filter: blur(18px);
+	// border: 1px solid rgba(51, 57, 52, 0.53);
 	color: $primary-txt;
+
+	background-color: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @mixin textGradient {
@@ -25,4 +32,11 @@ $sec-txt: rgb(3, 16, 18);
 	);
 	background-clip: text;
 	color: transparent;
+}
+
+@mixin absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

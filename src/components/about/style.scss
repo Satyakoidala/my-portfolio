@@ -45,6 +45,7 @@
 	align-items: stretch;
 
 	.question {
+		// background-color: constants.$salmon;
 		padding: 10px;
 		justify-content: space-between;
 
@@ -61,14 +62,19 @@
 	a {
 		width: 50%;
 		line-height: 2em;
-		background-color: constants.$main-bg;
-		color: constants.$primary-txt;
+		background-color: constants.$salmon;
+		color: constants.$sec-txt;
 		border-radius: 18px;
 
-		&::after {
-			margin-inline-start: 5px;
-			content: "\2197";
+		&:hover {
+			background-color: constants.$main-bg;
+			color: constants.$primary-txt;
 		}
+
+		// &::after {
+		// 	margin-inline-start: 5px;
+		// 	content: "\2197";
+		// }
 	}
 }
 

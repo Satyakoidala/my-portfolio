@@ -1,0 +1,74 @@
+@use "../../styles/constants" as constants;
+
+.profile-summary {
+	width: 100%;
+	border-radius: inherit;
+	font-size: 0.6em;
+	padding: 15px;
+
+	@include constants.glass;
+
+	.header {
+		font-size: 32px;
+		font-weight: 400;
+		// margin-bottom: 5px;
+		border-bottom: solid 1px constants.$salmon;
+	}
+
+	.sub-header {
+		letter-spacing: 0.1px;
+		font-size: 20px;
+		font-weight: 300;
+	}
+
+	.tag {
+		font-size: 16px;
+		letter-spacing: 0.2px;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	.tag,
+	.value {
+		width: 100%;
+		padding-inline: 10px;
+		box-sizing: border-box;
+	}
+
+	.value {
+		letter-spacing: 0.1px;
+		font-size: 28px;
+		font-weight: bolder;
+		flex-shrink: 1;
+		// color: constants.$sec-txt;
+	}
+
+	.details {
+		flex-grow: 1;
+	}
+
+	.summary-cards {
+		margin-top: 15px;
+		flex-wrap: wrap;
+		row-gap: 12px;
+		justify-content: space-between;
+	}
+
+	.summary-card {
+		font-weight: 600;
+		background-color: constants.$salmon;
+		// background-color: #f08080;
+		// background-color: #dc143c;
+		color: #fff;
+		// padding: 10px;
+		width: 32.66%;
+		min-width: 32.66%;
+		flex-direction: column-reverse;
+		align-self: stretch;
+		margin: 0;
+		justify-content: stretch;
+
+		&:last-child {
+			flex-grow: 1;
+		}
+	}
+}

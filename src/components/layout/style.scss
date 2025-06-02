@@ -1,0 +1,97 @@
+@use "../../styles/constants" as constants;
+
+.nav-bar {
+	justify-content: space-between;
+	margin-top: 10px;
+	padding: 10px;
+
+	@include constants.glass;
+
+	.nav-left,
+	.nav-right {
+		width: fit-content;
+	}
+
+	.nav-left {
+		padding-inline-start: 5px;
+
+		.profile-header {
+			display: flex;
+			align-items: center;
+		}
+
+		img {
+			border-radius: 50%;
+			margin-bottom: -5px;
+			margin-inline-end: 10px;
+		}
+
+		.title {
+			// @include constants.textGradient();
+			font-family: "Fira Code", monospace;
+			font-size: inherit;
+			font-weight: 400;
+			display: inline-block;
+			margin: 0;
+			color: constants.$salmon;
+		}
+	}
+
+	.nav-right {
+		padding-inline-end: 5px;
+	}
+}
+
+.app-header {
+	display: flex;
+	margin: 0;
+	align-items: stretch;
+
+	.menu-item {
+		list-style: none;
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		padding: 3px 10px 3px 0;
+		color: constants.$primary-txt;
+		border: 2px solid transparent;
+		transition: border-color 5ms;
+
+		&:hover {
+			border-bottom-width: 0;
+
+			.button-link {
+				border-bottom: solid 2px #fff;
+
+				&.active {
+					border-bottom: none;
+				}
+			}
+		}
+
+		.button-link {
+			color: constants.$primary-txt;
+			appearance: none;
+			background-color: transparent;
+			border: 0;
+			padding: 0;
+			font-size: 20px;
+			font-weight: 300;
+			letter-spacing: -0.25px;
+
+			&.active {
+				background-color: constants.$sec-bg;
+				color: constants.$sec-txt;
+				border-radius: 6px;
+				padding: 1px 10px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.root-reveal {
+	height: calc(90% - 15px);
+	overflow: scroll;
+	margin-top: 15px;
+}

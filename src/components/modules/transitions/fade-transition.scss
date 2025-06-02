@@ -1,0 +1,27 @@
+.transition-wrapper:has(.container.section) {
+	height: 100%;
+
+	> div,
+	> div > div {
+		height: 100%;
+	}
+}
+
+.fade-enter {
+	opacity: 0;
+}
+
+.fade-enter-active {
+	opacity: 1;
+	transition: opacity 120ms cubic-bezier(0, -0.53, 0.66, 0.48) 150ms;
+}
+
+.fade-exit {
+	opacity: 1;
+	display: none;
+}
+
+.fade-exit-active {
+	opacity: 0;
+	transition: opacity 180ms cubic-bezier(0, -0.53, 0.66, 0.48);
+}

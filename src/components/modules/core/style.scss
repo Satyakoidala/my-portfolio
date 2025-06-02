@@ -4,9 +4,19 @@
 	align-items: center;
 	width: 100%;
 	margin: 0 auto;
+	box-sizing: border-box;
 
 	&.round {
 		border-radius: 8px;
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+
+	> .side-left,
+	> .side-right {
+		height: 100%;
 	}
 }
 

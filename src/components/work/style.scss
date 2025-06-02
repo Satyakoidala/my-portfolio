@@ -1,0 +1,64 @@
+@use "../../styles/constants" as constants;
+
+.works {
+	gap: 20px;
+
+	.tab-menu {
+		gap: 20px;
+		width: max-content;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+
+		.card {
+			width: 220px;
+			min-width: 220px;
+			margin: 0;
+			text-align: center;
+
+			@include constants.glass();
+
+			border: none;
+
+			&.current {
+				background-color: constants.$salmon;
+				// color: constants.$sec-txt;
+			}
+		}
+
+		button {
+			// @include constants.textGradient();
+			font-family: inherit;
+			font-size: 24px;
+			font-weight: 600;
+			color: inherit;
+			width: 100%;
+			border: none;
+			background-color: transparent;
+			padding: 0;
+			line-height: 2.5rem;
+			box-sizing: content-box;
+		}
+	}
+
+	.content {
+		@include constants.glass();
+
+		height: 100%;
+		// border: 2px solid constants.$salmon;
+		border: none;
+
+		.content-wrapper {
+			height: 100%;
+			width: 100%;
+			overflow-y: scroll;
+			box-sizing: border-box;
+		}
+	}
+
+	.content-title {
+		width: calc(100% - 15px);
+		font-size: 2rem;
+		padding-inline-start: 15px;
+		margin-top: 15px;
+	}
+}

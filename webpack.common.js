@@ -5,7 +5,8 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	entry: {
-		splitwise: path.resolve(__dirname, "index.js"),
+		bootstrap: path.resolve(__dirname, "./src/assets/bootstrap.js"),
+		index: path.resolve(__dirname, "index.js"),
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),

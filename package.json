@@ -1,6 +1,6 @@
 {
 	"name": "my_personal_website",
-	"version": "0.0.1",
+	"version": "0.1.0-beta",
 	"description": "My Personal Website",
 	"private": true,
 	"scripts": {
@@ -15,12 +15,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "https://github.com/Satyakoidala/my-portfolio"
 	},
 	"keywords": [
 		"react-startup-template",
 		"initial-setup",
-		"no-cra"
+		"no-cra",
+		"my-website"
 	],
 	"author": "Koidala Veera Venkata Satya Sai",
 	"license": "MIT",
@@ -69,6 +70,6 @@
 		"react-transition-group": "^4.4.5"
 	},
 	"engines": {
-		"node": "v18.17.0"
+		"node": "v18.18.0"
 	}
 }

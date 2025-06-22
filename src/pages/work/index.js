@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container } from "../modules/core";
-import { Card, Section } from "../modules/common";
+import { Container } from "../../components/core";
+import { Card, Section } from "../../components/common";
 
 import "./style.scss";
 import TabSwitcher from "./tab-switcher";

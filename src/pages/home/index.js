@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import cn from "classnames";
-import { Container, SideLeft, SideRight } from "../modules/core";
-import { Section } from "../modules/common";
+import { Container, SideLeft, SideRight } from "../../components/core";
+import { Section } from "../../components/common";
 import { innerHTML } from "../../utils/index";
 
 import "./style.scss";

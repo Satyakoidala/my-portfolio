@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { useWindowEvent } from "../modules/hooks";
+import { useWindowEvent } from "../../hooks";
 import NavBar from "./nav-bar";
 
 import "./style.scss";

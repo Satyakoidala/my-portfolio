@@ -62,18 +62,22 @@ npm run lint
 
 ```
 .
+├── public/                 # Static files (optional, e.g. favicon, robots.txt)
 ├── src/
-│   ├── assets/        # Images and static assets
-│   ├── components/    # React components (modules, layout, pages, work, about, etc.)
-│   ├── pages/         # HTML templates
-│   ├── styles/        # SCSS styles and constants
-│   └── utils/         # Utility functions
-├── index.js           # App entry point
-├── webpack.*.js       # Webpack configs
-├── babel.config.js    # Babel config
-├── .eslintrc.js       # ESLint config
-├── .stylelintrc.js    # Stylelint config
-└── ...
+│   ├── assets/             # Images, fonts, and static assets (e.g. bootstrap.js)
+│   ├── components/         # Reusable React components (e.g. ErrorBoundary, NavBar)
+│   ├── pages/              # Page-level components (Home, About, Works, Contact, etc.)
+│   ├── styles/             # Global SCSS, variables, mixins (e.g. stylekit-core.scss, app.scss)
+│   ├── utils/              # Utility/helper functions
+│   ├── hooks/              # Custom React hooks
+│   └── app.js             # Main App component
+├── index.js                # App entry point
+├── webpack.*.js            # Webpack configs
+├── babel.config.js         # Babel config
+├── .eslintrc.js            # ESLint config
+├── .stylelintrc.js         # Stylelint config
+├── package.json
+└── README.md
 ```
 
 ---

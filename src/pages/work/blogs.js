@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../modules/common";
+import { Card } from "../../components/common";
 import ContentWrapper from "./content-wrapper";
 
 import "./blogs.scss";

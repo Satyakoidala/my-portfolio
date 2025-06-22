@@ -49,7 +49,7 @@ module.exports = {
 		new HTMLWebpackPlugin({
 			title: "Satya Koidala | Portfolio",
 			filename: "index.html",
-			template: "src/pages/homepage.html",
+			template: "public/homepage.html",
 			favicon: "src/assets/profile.png",
 		}),
 	],

@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Container, SideLeft, SideRight } from "../modules/core";
+import { Container, SideLeft, SideRight } from "../../components/core";
 import {
 	SectionTile,
 	Timeline,
 	QuestionBox,
 	Card,
 	Section,
-} from "../modules/common";
+} from "../../components/common";
 import ProfileSummary from "./profile-summary";
 import {
 	checkCircleDark,

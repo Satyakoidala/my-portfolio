@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
-import { Container, SideLeft, SideRight } from "../modules/core";
+import { Container, SideLeft, SideRight } from "../../components/core";
 import { profile } from "../../assets";
 
 import "./style.scss";

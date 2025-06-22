@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, SideLeft, SideRight } from "../modules/core";
+import { Container, SideLeft } from "../modules/core";
 // import { checkCircle } from "../../assets";
 import { innerHTML } from "../../utils";
 

@@ -1,4 +1,4 @@
-@use "../../styles/constants" as constants;
+@use "../../styles/stylekit-core" as core;
 
 .works {
 	gap: 20px;
@@ -15,18 +15,19 @@
 			margin: 0;
 			text-align: center;
 
-			@include constants.glass();
+			@include core.glass;
 
 			border: none;
 
 			&.current {
-				background-color: constants.$salmon;
-				// color: constants.$sec-txt;
+				background-color: core.color-swatch(fill-salmon);
+
+				// color: core.color-swatch(sec-txt);
 			}
 		}
 
 		button {
-			// @include constants.textGradient();
+			// @include core.text-gradient();
 			font-family: inherit;
 			font-size: 24px;
 			font-weight: 600;
@@ -41,10 +42,11 @@
 	}
 
 	.content {
-		@include constants.glass();
+		@include core.glass;
 
 		height: 100%;
-		// border: 2px solid constants.$salmon;
+
+		// border: 2px solid core.color-swatch(fill-salmon);
 		border: none;
 
 		.content-wrapper {

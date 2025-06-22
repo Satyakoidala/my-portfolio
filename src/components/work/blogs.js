@@ -6,13 +6,14 @@ import "./blogs.scss";
 
 const BlogCard = ({ data = {} }) => {
 	return (
-		<Card classes={["blog-card"]}>
+		<Card classes={["blog-card"]} data-action-type="link">
 			<div className="blog-wrapper">
 				<h3 className="blog-title">{data.header}</h3>
 				<div className="blog-desc">{data.description}</div>
 			</div>
 			<a
-				className="blog-link"
+				data-action-trigger-link
+				className="blog-link hidden"
 				href={data.link}
 				rel="noreferrer"
 				target="_blank"

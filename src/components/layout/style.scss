@@ -1,11 +1,11 @@
-@use "../../styles/constants" as constants;
+@use "../../styles/stylekit-core" as core;
 
 .nav-bar {
 	justify-content: space-between;
 	margin-top: 10px;
 	padding: 10px;
 
-	@include constants.glass;
+	@include core.glass;
 
 	.nav-left,
 	.nav-right {
@@ -27,13 +27,13 @@
 		}
 
 		.title {
-			// @include constants.textGradient();
+			// @include core.text-gradient();
 			font-family: "Fira Code", monospace;
 			font-size: inherit;
 			font-weight: 400;
 			display: inline-block;
 			margin: 0;
-			color: constants.$salmon;
+			color: core.color-swatch(fill-salmon);
 		}
 	}
 
@@ -53,7 +53,7 @@
 		font-weight: 600;
 		letter-spacing: 0.5px;
 		padding: 3px 10px 3px 0;
-		color: constants.$primary-txt;
+		color: core.color-swatch(primary-txt);
 		border: 2px solid transparent;
 		transition: border-color 5ms;
 
@@ -70,7 +70,7 @@
 		}
 
 		.button-link {
-			color: constants.$primary-txt;
+			color: core.color-swatch(primary-txt);
 			appearance: none;
 			background-color: transparent;
 			border: 0;
@@ -80,8 +80,8 @@
 			letter-spacing: -0.25px;
 
 			&.active {
-				background-color: constants.$sec-bg;
-				color: constants.$sec-txt;
+				background-color: core.color-swatch(sec-bg);
+				color: core.color-swatch(sec-txt);
 				border-radius: 6px;
 				padding: 1px 10px;
 				font-weight: 400;

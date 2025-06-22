@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
+import cn from "classnames";
 import { Container, SideLeft, SideRight } from "../modules/core";
 import { Section } from "../modules/common";
 import { innerHTML } from "../../utils/index";
 
 import "./style.scss";
 
+const IS_NOT_FIRST_TIME_LOADING = "is-not-first-time-loading";
+
 const Home = () => {
 	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
 	const profileData = window.bootstrap.sections.home.profile || {};
+	const showTypingAnimation =
+		sessionStorage.getItem(IS_NOT_FIRST_TIME_LOADING) === null;
+
+	useEffect(() => {
+		sessionStorage.setItem(IS_NOT_FIRST_TIME_LOADING, true);
+	}, []);
 
 	return (
 		<Section classes={["home", "section"]}>
 			<Container classes="intro-information">
 				<SideLeft>
-					<div className="intro-text">
+					<div
+						className={cn("intro-text", {
+							"typing-animation": showTypingAnimation,
+							"fade-in-animation": !showTypingAnimation,
+						})}
+					>
 						<p
 							className="line-1"
 							{...innerHTML(profileData.introText?.greeting)}

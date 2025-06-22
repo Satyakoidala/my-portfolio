@@ -3,7 +3,31 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title><%= htmlWebpackPlugin.options.title %></title>
+		<meta
+			name="description"
+			content="Satya Koidala's personal portfolio website. Showcasing professional experience, skills, projects, blogs, and contact information."
+		/>
+		<meta
+			name="keywords"
+			content="Satya Koidala, portfolio, React, web developer, projects, blogs, resume"
+		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content="Satya Koidala | Portfolio" />
+		<meta
+			property="og:description"
+			content="Explore Satya Koidala's projects, skills, and professional journey."
+		/>
+		<meta
+			property="og:image"
+			content="https://satyakoidala.netlify.app/profile.png"
+		/>
+		<meta property="og:url" content="https://satyakoidala.netlify.app/" />
+		<meta property="og:type" content="website" />
+
+		<link rel="canonical" href="https://satyakoidala.netlify.app/" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -21,7 +45,6 @@
 	</head>
 
 	<body>
-		<!-- <h1>This is boiler template</h1> -->
 		<div id="root"></div>
 	</body>
 </html>

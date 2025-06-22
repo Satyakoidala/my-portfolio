@@ -1,4 +1,4 @@
-@use "../../styles/constants" as constants;
+@use "../../styles/stylekit-core" as core;
 
 .pkg-modules {
 	display: flex;
@@ -9,8 +9,8 @@
 }
 
 .pkg-module-card {
-	height: 250px;
-	width: calc(25% - 12px);
+	height: 300px;
+	width: 300px;
 	padding: 15px;
 	justify-content: flex-start;
 	margin: 0;
@@ -19,7 +19,7 @@
 		width: 100%;
 		margin-bottom: 6px;
 		padding-bottom: 6px;
-		border-bottom: 2px solid constants.$salmon;
+		border-bottom: 2px solid core.color-swatch(fill-salmon);
 	}
 
 	.pkg-module-desc {
@@ -33,6 +33,10 @@
 		.pkg-module-link {
 			display: inline-block;
 			width: 50%;
+		}
+
+		.pkg-module-link:nth-child(2) {
+			text-align: end;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-@use "../../styles/constants" as constants;
+@use "../../styles/stylekit-core" as core;
 
 .about {
 	row-gap: 15px;
@@ -25,16 +25,22 @@
 
 	> .side-right {
 		width: 60%;
+		display: flex;
+		flex-direction: column;
 
 		> .container {
 			margin-bottom: 20px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
 	.skills,
 	.work-experience,
 	.education {
-		@include constants.glass;
+		@include core.glass;
 	}
 }
 
@@ -45,7 +51,7 @@
 	align-items: stretch;
 
 	.question {
-		// background-color: constants.$salmon;
+		// background-color: core.color-swatch(fill-salmon);
 		padding: 10px;
 		justify-content: space-between;
 
@@ -62,13 +68,13 @@
 	a {
 		width: 50%;
 		line-height: 2em;
-		background-color: constants.$salmon;
-		color: constants.$sec-txt;
+		background-color: core.color-swatch(fill-salmon);
+		color: core.color-swatch(sec-txt);
 		border-radius: 18px;
 
 		&:hover {
-			background-color: constants.$main-bg;
-			color: constants.$primary-txt;
+			background-color: core.color-swatch(main-bg);
+			color: core.color-swatch(primary-txt);
 		}
 
 		// &::after {

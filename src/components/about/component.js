@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { Container, SideLeft, SideRight } from "../modules/core";
 import {
@@ -31,16 +31,16 @@ const ExperienceCardsHtml = ({ data = [] }) => {
 			item.cardDetails;
 
 		return item.isGraduation ? (
-			<Fragment key={index}>
+			<div className="timeline-card" key={index}>
+				<div className="timestamp">{item.timeStamp}</div>
 				<Card>
-					<span className="timestamp">{item.timeStamp}</span>
 					<div className="graduation">{graduation}</div>
 				</Card>
-			</Fragment>
+			</div>
 		) : (
-			<Fragment key={index}>
+			<div className="timeline-card" key={index}>
+				<div className="timestamp">{item.timeStamp}</div>
 				<Card>
-					<span className="timestamp">{item.timeStamp}</span>
 					<div className="company">{company}</div>
 					<div className="subheader">
 						<div className="role">{role},</div>
@@ -48,7 +48,7 @@ const ExperienceCardsHtml = ({ data = [] }) => {
 					</div>
 					<div className="description">{description}</div>
 				</Card>
-			</Fragment>
+			</div>
 		);
 	});
 };
@@ -58,9 +58,9 @@ const EducationCardsHtml = ({ data = [] }) => {
 		const { institute, degree, course, grade, gpa, percentage } =
 			item.cardDetails;
 		return (
-			<Fragment key={index}>
+			<div className="timeline-card" key={index}>
+				<div className="timestamp">{item.timeStamp}</div>
 				<Card>
-					<span className="timestamp">{item.timeStamp}</span>
 					<div className="institute">{institute}</div>
 					<div>
 						<div className="details">
@@ -76,7 +76,7 @@ const EducationCardsHtml = ({ data = [] }) => {
 						)}
 					</div>
 				</Card>
-			</Fragment>
+			</div>
 		);
 	});
 };

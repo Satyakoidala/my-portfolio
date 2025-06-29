@@ -186,7 +186,7 @@ window.bootstrap.sections.about.summary = {
 window.bootstrap.sections.work = {
 	tabs: [
 		{ key: "web-apps", displayName: "Web Apps" },
-		{ key: "ui-comps", displayName: "UI Comps" },
+		// { key: "ui-comps", displayName: "UI Comps" },
 		{ key: "blogs", displayName: "Blogs" },
 		{ key: "npm-modules", displayName: "Node Modules" },
 		{ key: "certifications", displayName: "Certs." },

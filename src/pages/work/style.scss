@@ -1,8 +1,6 @@
-@use "../../styles/constants" as constants;
+@use "../../styles/stylekit-core" as core;
 
 .works {
-	gap: 20px;
-
 	.tab-menu {
 		gap: 20px;
 		width: max-content;
@@ -15,18 +13,16 @@
 			margin: 0;
 			text-align: center;
 
-			@include constants.glass();
+			@include core.glass;
 
 			border: none;
 
 			&.current {
-				background-color: constants.$salmon;
-				// color: constants.$sec-txt;
+				background-color: core.color-swatch(fill-salmon);
 			}
 		}
 
 		button {
-			// @include constants.textGradient();
 			font-family: inherit;
 			font-size: 24px;
 			font-weight: 600;
@@ -41,10 +37,10 @@
 	}
 
 	.content {
-		@include constants.glass();
+		@include core.glass;
 
 		height: 100%;
-		// border: 2px solid constants.$salmon;
+		margin-top: 20px;
 		border: none;
 
 		.content-wrapper {

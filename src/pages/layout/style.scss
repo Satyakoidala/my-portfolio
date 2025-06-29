@@ -1,11 +1,11 @@
-@use "../../styles/constants" as constants;
+@use "../../styles/stylekit-core" as core;
 
 .nav-bar {
 	justify-content: space-between;
 	margin-top: 10px;
 	padding: 10px;
 
-	@include constants.glass;
+	@include core.glass;
 
 	.nav-left,
 	.nav-right {
@@ -27,18 +27,77 @@
 		}
 
 		.title {
-			// @include constants.textGradient();
+			// @include core.text-gradient();
 			font-family: "Fira Code", monospace;
 			font-size: inherit;
 			font-weight: 400;
 			display: inline-block;
 			margin: 0;
-			color: constants.$salmon;
+			color: core.color-swatch(fill-salmon);
 		}
 	}
 
 	.nav-right {
 		padding-inline-end: 5px;
+	}
+}
+
+.footer {
+	width: 100%;
+	font-size: 18px;
+	display: flex;
+	align-items: flex-end;
+	padding-top: 75px;
+
+	.disclaimer,
+	.social-accounts {
+		flex: 1;
+	}
+
+	.social-accounts {
+		justify-content: space-between;
+	}
+
+	.social-media {
+		margin: 0;
+		display: flex;
+		font-size: 20px;
+		font-weight: 600;
+		border-radius: 6px;
+		align-items: end;
+
+		.media {
+			padding-inline: 10px;
+
+			a {
+				text-align: center;
+			}
+
+			.media-name {
+				color: core.color-swatch(primary-txt);
+				vertical-align: middle;
+				display: inline-block;
+				width: 0;
+				overflow: hidden;
+				transition: width 300ms cubic-bezier(0, -0.53, 0.66, 0.48);
+
+				&:hover {
+					width: auto;
+					margin-inline-start: 5px;
+				}
+			}
+
+			img {
+				width: 20px;
+				height: 20px;
+				vertical-align: middle;
+
+				&:hover + .media-name {
+					width: auto;
+					margin-inline-start: 5px;
+				}
+			}
+		}
 	}
 }
 
@@ -53,7 +112,7 @@
 		font-weight: 600;
 		letter-spacing: 0.5px;
 		padding: 3px 10px 3px 0;
-		color: constants.$primary-txt;
+		color: core.color-swatch(primary-txt);
 		border: 2px solid transparent;
 		transition: border-color 5ms;
 
@@ -70,7 +129,7 @@
 		}
 
 		.button-link {
-			color: constants.$primary-txt;
+			color: core.color-swatch(primary-txt);
 			appearance: none;
 			background-color: transparent;
 			border: 0;
@@ -80,8 +139,8 @@
 			letter-spacing: -0.25px;
 
 			&.active {
-				background-color: constants.$sec-bg;
-				color: constants.$sec-txt;
+				background-color: core.color-swatch(sec-bg);
+				color: core.color-swatch(sec-txt);
 				border-radius: 6px;
 				padding: 1px 10px;
 				font-weight: 400;

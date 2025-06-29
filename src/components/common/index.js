@@ -3,9 +3,14 @@ import { Container } from "../core";
 
 import "./style.scss";
 
-export const Card = ({ classes, children }) => {
+export const Card = ({ classes, children, ...rest }) => {
 	return (
-		<Container classes={[classes, "card"]} columnLayout roundedCorner>
+		<Container
+			classes={[classes, "card"]}
+			columnLayout
+			roundedCorner
+			{...rest}
+		>
 			{children}
 		</Container>
 	);
@@ -49,7 +54,7 @@ export const SectionTile = ({
 export const Timeline = ({ classes = {}, data, cardsHtml = "" }) => {
 	return (
 		<Container classes={[classes.timeline, "timeline"]}>
-			<div className="timeline-thread"></div>
+			{/* <div className="timeline-thread"></div> */}
 			<div className="timeline-cards-wrapper">
 				{data
 					? data.map((item, index) => {
@@ -83,4 +88,12 @@ export const Timeline = ({ classes = {}, data, cardsHtml = "" }) => {
 
 export const QuestionBox = ({ classes = {}, children }) => {
 	return <Card classes={[classes.question, "question"]}>{children}</Card>;
+};
+
+export const FootNotes = ({ classes = {}, children }) => {
+	return (
+		<Container classes={[classes.footNotes, "footnotes"]}>
+			{children}
+		</Container>
+	);
 };

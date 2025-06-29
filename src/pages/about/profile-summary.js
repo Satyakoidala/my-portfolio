@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, SideLeft, SideRight } from "../modules/core";
+import { Container, SideLeft } from "../../components/core";
 // import { checkCircle } from "../../assets";
 import { innerHTML } from "../../utils";
 
 import "./profile-summary.scss";
-import { Card } from "../modules/common";
+import { Card } from "../../components/common";
 
 const summary = window.bootstrap.sections.about.summary || {};
 

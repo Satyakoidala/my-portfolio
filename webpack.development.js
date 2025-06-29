@@ -1,5 +1,6 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const sass = require("sass");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "development",
@@ -22,9 +23,34 @@ module.exports = {
 		errorDetails: true,
 	},
 	devtool: "source-map", // to enable normal view of es6 js and sass code in browser
+	module: {
+		rules: [
+			{
+				test: /\.s?css$/i,
+				exclude: /node_modules/,
+				use: [
+					"style-loader",
+					{
+						loader: "css-loader",
+						options: { sourceMap: true },
+					},
+					{
+						loader: "sass-loader",
+						options: {
+							sourceMap: true,
+							implementation: sass,
+						},
+					},
+				],
+			},
+		],
+	},
 	plugins: [
-		new MiniCssExtractPlugin({
-			filename: "[name]_debug.css",
+		new HTMLWebpackPlugin({
+			title: "Satya Koidala | Portfolio",
+			filename: "index.html",
+			template: "public/homepage.html",
+			favicon: "src/assets/profile.png",
 		}),
 	],
 };

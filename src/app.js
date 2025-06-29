@@ -1,10 +1,11 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PageLayout from "./layout";
-import Home from "./home";
-import { About } from "./about";
-import Works from "./work";
-import "../styles/app.scss";
+import PageLayout from "./pages/layout";
+import Home from "./pages/home";
+import About from "./pages/about";
+import Works from "./pages/work";
+
+import "./styles/app.scss";
 
 const Contact = () => <div>Contact</div>;
 

@@ -7,7 +7,7 @@
 	text-align: start;
 	align-items: flex-start;
 	position: relative;
-	transition: margin-inline 1.5ms cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: margin-inline 50ms cubic-bezier(0.165, 0.84, 0.44, 1);
 
 	&:hover {
 		margin-inline: 10px;

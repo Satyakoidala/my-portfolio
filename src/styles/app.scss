@@ -42,6 +42,7 @@ ol {
 *::-webkit-scrollbar {
 	width: 0;
 	background: transparent; /* make scrollbar transparent */
+	scroll-behavior: smooth;
 }
 
 h3 {

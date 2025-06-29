@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import cn from "classnames";
 import { Container, SideLeft, SideRight } from "../../components/core";
 import { Section } from "../../components/common";
+import Footer from "../layout/footer";
 import { innerHTML } from "../../utils/index";
 
 import "./style.scss";
@@ -9,7 +10,6 @@ import "./style.scss";
 const IS_NOT_FIRST_TIME_LOADING = "is-not-first-time-loading";
 
 const Home = () => {
-	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
 	const profileData = window.bootstrap.sections.home.profile || {};
 	const showTypingAnimation =
 		sessionStorage.getItem(IS_NOT_FIRST_TIME_LOADING) === null;
@@ -75,22 +75,7 @@ const Home = () => {
 					</div>
 				</SideRight>
 			</Container>
-			<Container classes="social-accounts">
-				<ul className="social-media">
-					{socialAccounts.map((item) => {
-						return (
-							<li className="media" key={item.key}>
-								<a className={item.key} href={item.href}>
-									<img src={item.src} alt={item.name} />
-									<span className="media-name">
-										{item.name}
-									</span>
-								</a>
-							</li>
-						);
-					})}
-				</ul>
-			</Container>
+			<Footer />
 		</Section>
 	);
 };

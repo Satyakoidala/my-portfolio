@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { Container } from "../../components/core";
-import { Card, Section } from "../../components/common";
+import { Card } from "../../components/common";
+import Footer from "../layout/footer";
+import TabSwitcher from "./tab-switcher";
 
 import "./style.scss";
-import TabSwitcher from "./tab-switcher";
 
 const Works = () => {
 	const menu = window.bootstrap.sections.work.tabs || [];
 	const [currSelection, updateCurrSelection] = useState(menu[0].key);
 
 	return (
-		<Section classes={["works", "section"]} roundedCorner>
-			<Container classes={["tab-menu"]} columnLayout>
+		<div className="works section">
+			<Container classes={["tab-menu"]}>
 				{menu.map((item, key) => (
 					<Card
 						key={`work_menu_${key}`}
@@ -31,7 +32,9 @@ const Works = () => {
 			<Container classes={["content"]} roundedCorner columnLayout>
 				<TabSwitcher currSelection={currSelection} />
 			</Container>
-		</Section>
+
+			<Footer />
+		</div>
 	);
 };
 

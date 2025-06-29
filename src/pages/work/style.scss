@@ -1,8 +1,6 @@
 @use "../../styles/stylekit-core" as core;
 
 .works {
-	gap: 20px;
-
 	.tab-menu {
 		gap: 20px;
 		width: max-content;
@@ -21,13 +19,10 @@
 
 			&.current {
 				background-color: core.color-swatch(fill-salmon);
-
-				// color: core.color-swatch(sec-txt);
 			}
 		}
 
 		button {
-			// @include core.text-gradient();
 			font-family: inherit;
 			font-size: 24px;
 			font-weight: 600;
@@ -45,8 +40,7 @@
 		@include core.glass;
 
 		height: 100%;
-
-		// border: 2px solid core.color-swatch(fill-salmon);
+		margin-top: 20px;
 		border: none;
 
 		.content-wrapper {

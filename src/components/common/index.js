@@ -89,3 +89,11 @@ export const Timeline = ({ classes = {}, data, cardsHtml = "" }) => {
 export const QuestionBox = ({ classes = {}, children }) => {
 	return <Card classes={[classes.question, "question"]}>{children}</Card>;
 };
+
+export const FootNotes = ({ classes = {}, children }) => {
+	return (
+		<Container classes={[classes.footNotes, "footnotes"]}>
+			{children}
+		</Container>
+	);
+};

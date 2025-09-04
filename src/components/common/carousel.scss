@@ -1,0 +1,181 @@
+@use "../../styles/stylekit-core" as core;
+
+.carousel {
+	&-container {
+		position: relative;
+		width: 100%;
+		justify-content: flex-start;
+		overflow: hidden; // Prevent container overflow
+	}
+
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		margin: 0;
+		width: 100%;
+	}
+
+	&-header {
+		order: -1; // Places header at the top
+		padding: 0;
+	}
+
+	&-title {
+		font-size: 1.2rem;
+		font-weight: 300;
+		letter-spacing: 0.025rem;
+		margin: 0;
+		margin-bottom: 0.5rem;
+
+		// @include core.custom-border-bottom(
+		// 	1px,
+		// 	core.color-swatch(fill-salmon),
+		// 	30%
+		// );
+	}
+
+	&-legend {
+		font-size: 0.875rem;
+		color: var(--text-secondary);
+		margin: 0;
+	}
+
+	&-content {
+		position: relative;
+		width: 100%;
+		overflow: hidden; // Hide overflow outside the padded area
+	}
+
+	&-inner {
+		position: relative;
+		width: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		scrollbar-width: none; // Firefox
+		-ms-overflow-style: none; // IE/Edge
+		scroll-behavior: smooth;
+		padding: 0.5rem 0; // Add vertical padding only
+
+		&::-webkit-scrollbar {
+			display: none; // Chrome/Safari/Opera
+		}
+	}
+
+	&-slides {
+		display: flex;
+		gap: 1.5rem;
+		width: fit-content; // Adjust to content width
+		align-items: flex-start; // Align items to the start
+	}
+
+	&-slide {
+		position: relative;
+		flex: 0 0 280px; // Fixed width for each slide
+		width: 280px;
+		display: flex; // Allow content to determine dimensions
+		align-items: flex-start; // Align content to the start
+	}
+
+	&-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 40%);
+		color: white;
+		border: none;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s ease;
+		opacity: 0;
+		z-index: 2; // Lower z-index to stay within content area
+		padding: 0;
+
+		&.visible {
+			opacity: 0.4; // Show when visible class is applied
+		}
+
+		.arrow-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.25rem;
+			line-height: 1;
+
+			// Use a smaller arrow
+			// &::after {
+			// 	content: "";
+			// 	width: 8px;
+			// 	height: 8px;
+			// 	// border: solid white;
+			// 	// border-width: 0 2px 2px 0;
+			// 	display: inline-block;
+			// }
+		}
+
+		&:hover {
+			opacity: 1;
+			background: rgba(0, 0, 0, 60%);
+		}
+
+		&:disabled {
+			opacity: 0 !important;
+			cursor: not-allowed;
+			pointer-events: none;
+		}
+
+		&-prev {
+			left: 10px;
+
+			.arrow-icon {
+				padding-right: 3px;
+			}
+		}
+
+		&-next {
+			right: 10px;
+
+			.arrow-icon {
+				padding-left: 3px;
+			}
+		}
+	}
+
+	&-dots {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+		margin-top: 1rem;
+	}
+
+	&-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 20%);
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba(0, 0, 0, 40%);
+		}
+
+		&.active {
+			background: rgba(0, 0, 0, 60%);
+			transform: scale(1.2);
+		}
+	}
+} // Hide arrows on touch devices
+
+@media (hover: none) {
+	.carousel-arrow {
+		display: none;
+	}
+}

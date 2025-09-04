@@ -111,31 +111,46 @@ window.bootstrap.sections.about.skills = [
 	{
 		title: "Frontend",
 		list: [
-			"HTML, CSS",
-			"Javascript",
-			"ReactJS",
-			"Sass",
-			"Bootstrap",
-			"Babel.js",
-			"Webpack.js",
-			"Axios",
+			{ name: "HTML5", icon: "html" },
+			{ name: "CSS3", icon: "css" },
+			{ name: "Javascript", icon: "javascript" },
+			{ name: "ReactJS", icon: "react" },
+			{ name: "Sass", icon: "scss" },
+			{ name: "Bootstrap", icon: "bootstrap" },
+			{ name: "Babel.js", icon: "babel" },
+			{ name: "Webpack.js", icon: "webpack" },
+			// { name: "Axios", icon: "" },
 		],
 	},
 	{
 		title: "UI Test Frameworks",
-		list: ["Cypress JS", "Playwright JS"],
+		list: [
+			{ name: "Cypress JS", icon: "cypress" },
+			{ name: "Playwright JS", icon: "playwright" },
+		],
 	},
 	{
 		title: "Backend",
-		list: ["Node JS", "Django"],
+		list: [
+			{ name: "Node JS", icon: "nodejs" },
+			{ name: "Django", icon: "django" },
+		],
 	},
 	{
-		title: "DevOps Tools",
-		list: ["Git, GitHub", "GitHub Actions", "Netlify"],
+		title: "Version Control & DevOps Tools",
+		list: [
+			{ name: "Git", icon: "git" },
+			{ name: "GitHub Actions", icon: "github" },
+			{ name: "Netlify", icon: "netlify" },
+		],
 	},
 	{
-		title: "Programming Lang.",
-		list: ["Python", "Javascript", "Java"],
+		title: "Programming Languages",
+		list: [
+			{ name: "Python", icon: "python" },
+			{ name: "Javascript", icon: "javascript" },
+			{ name: "Java", icon: "java" },
+		],
 	},
 ];
 
@@ -162,7 +177,7 @@ window.bootstrap.sections.about.experienceDetails = [
 window.bootstrap.sections.about.summary = {
 	header: "About Me",
 	legendHeader:
-		"I&apos;m a frontend web professional experienced in UI development and automation testing.",
+		"Frontend Engineer with 4 years’ experience delivering modern web applications using React, Node.js, and TypeScript. Skilled in scalable component design, accessibility-first development, automated testing, and CI/CD practices. Adept at collaborating with cross-functional teams to ship reliable, user-focused products.",
 	additionalDetails: [
 		{
 			tagName: "Experience",
@@ -189,7 +204,7 @@ window.bootstrap.sections.work = {
 		// { key: "ui-comps", displayName: "UI Comps" },
 		{ key: "blogs", displayName: "Blogs" },
 		{ key: "npm-modules", displayName: "Node Modules" },
-		{ key: "certifications", displayName: "Certs." },
+		// { key: "certifications", displayName: "Certs." },
 	],
 
 	blogs: [

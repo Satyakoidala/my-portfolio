@@ -58,9 +58,9 @@ export const EducationCardsHtml = ({ data = [] }) => {
 	});
 };
 
-export const SkillCard = ({ data = {} }) => {
+export const SkillCard = ({ data = {}, ...rest }) => {
 	return (
-		<Card>
+		<Card {...rest}>
 			<ul>
 				<legend>{data.title}</legend>
 				<li></li>

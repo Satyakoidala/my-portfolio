@@ -5,7 +5,8 @@
 	margin-top: 10px;
 	padding: 10px;
 
-	@include core.glass;
+	// @include core.glass;
+	border-bottom: 1px solid core.color-swatch("glass-border");
 
 	.nav-left,
 	.nav-right {
@@ -29,8 +30,9 @@
 		.title {
 			// @include core.text-gradient();
 			font-family: "Fira Code", monospace;
-			font-size: inherit;
+			font-size: 1.5rem;
 			font-weight: 400;
+			letter-spacing: -0.05rem;
 			display: inline-block;
 			margin: 0;
 			color: core.color-swatch(fill-salmon);
@@ -44,7 +46,9 @@
 
 .footer {
 	width: 100%;
-	font-size: 18px;
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: -0.0025rem;
 	display: flex;
 	align-items: flex-end;
 	padding-top: 75px;
@@ -52,6 +56,7 @@
 	.disclaimer,
 	.social-accounts {
 		flex: 1;
+		margin: 0.5rem;
 	}
 
 	.social-accounts {
@@ -61,8 +66,6 @@
 	.social-media {
 		margin: 0;
 		display: flex;
-		font-size: 20px;
-		font-weight: 600;
 		border-radius: 6px;
 		align-items: end;
 
@@ -79,7 +82,7 @@
 				display: inline-block;
 				width: 0;
 				overflow: hidden;
-				transition: width 300ms cubic-bezier(0, -0.53, 0.66, 0.48);
+				transition: width 300ms smooth;
 
 				&:hover {
 					width: auto;
@@ -88,8 +91,8 @@
 			}
 
 			img {
-				width: 20px;
-				height: 20px;
+				width: 15px;
+				height: 15px;
 				vertical-align: middle;
 
 				&:hover + .media-name {
@@ -108,7 +111,7 @@
 
 	.menu-item {
 		list-style: none;
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 600;
 		letter-spacing: 0.5px;
 		padding: 3px 10px 3px 0;
@@ -134,7 +137,7 @@
 			background-color: transparent;
 			border: 0;
 			padding: 0;
-			font-size: 20px;
+			font-size: 1rem;
 			font-weight: 300;
 			letter-spacing: -0.25px;
 

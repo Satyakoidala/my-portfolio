@@ -2,20 +2,23 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
 	Container,
-	SideLeft,
-	SideRight,
+	// SideLeft,
+	// SideRight,
 	SectionTile,
 	Timeline,
 	QuestionBox,
 	Section,
+	Carousel,
+	Card,
 } from "../../components";
 import Footer from "../layout/footer";
 import ProfileSummary from "./profile-summary";
 import {
 	ExperienceCardsHtml,
-	SkillCard,
+	// SkillCard,
 	EducationCardsHtml,
 } from "./component";
+import { getIcon } from "../../assets/icons";
 import { education, experience, skills as iconSkills } from "../../assets";
 
 import "./style.scss";
@@ -32,87 +35,107 @@ const About = () => {
 	return (
 		<Section classes={["section", "about"]} columnLayout>
 			<ProfileSummary />
-			<Container classes="sub-section" roundedCorner>
-				<SideLeft>
-					<SectionTile
-						classes={{ section: "skills" }}
-						title="Skills"
-						iconHtml={
-							<img
-								src={iconSkills}
-								alt=""
-								width="40"
-								height="42"
-							/>
+			<Container
+				classes="sub-section"
+				columnLayout
+				roundedCorner
+				noPadding
+			>
+				{/* <SideLeft> */}
+				<SectionTile
+					classes={{ section: "work-experience" }}
+					title="Experience"
+					iconHtml={
+						<img src={experience} alt="" width="50" height="30" />
+					}
+					noCard
+				>
+					<Timeline
+						cardsHtml={
+							<ExperienceCardsHtml data={experienceDetails} />
 						}
-						noCard
-					>
-						{skills.map((section) => (
-							<SkillCard key={section.title} data={section} />
-						))}
-					</SectionTile>
-				</SideLeft>
-				<SideRight>
-					<SectionTile
-						classes={{ section: "work-experience" }}
-						title="Experience"
-						iconHtml={
-							<img
-								src={experience}
-								alt=""
-								width="70"
-								height="50"
+					/>
+				</SectionTile>
+				<SectionTile
+					classes={{ section: "skills" }}
+					title="Skills"
+					iconHtml={
+						<img src={iconSkills} alt="" width="30" height="34" />
+					}
+					noCard
+				>
+					{skills.map((section) => (
+						// <SkillCard
+						// 	key={section.title}
+						// 	classes="skill-card"
+						// 	data={section}
+						// />
+						<div className="skill-card" key={section.title}>
+							<Carousel
+								key={section.title}
+								title={section.title}
+								slides={section.list || []}
+								renderSlide={(skill) => (
+									<Card classes="skill">
+										<div className="skill-name">
+											{skill.name}
+										</div>
+										<img
+											className="skill-icon"
+											src={getIcon(skill.icon)}
+											alt={skill.name}
+										/>
+									</Card>
+								)}
+								interval={1000}
+								showArrows
 							/>
-						}
-						noCard
-					>
-						<Timeline
-							cardsHtml={
-								<ExperienceCardsHtml data={experienceDetails} />
-							}
+						</div>
+					))}
+				</SectionTile>
+				{/* </SideLeft> */}
+				{/* <SideRight> */}
+
+				<SectionTile
+					classes={{ section: "questionnaire" }}
+					noRound
+					noCard
+					noSectionHeader
+					noColumn
+				>
+					<QuestionBox>
+						<h3>Wanna see my work?</h3>
+						<p>
+							To check my work, test APIs and see live projects.
+						</p>
+						<NavLink to="/works">Click here</NavLink>
+					</QuestionBox>
+					<QuestionBox>
+						<h3>Like my work?</h3>
+						<p>Want to contact me?</p>
+						<NavLink to="/contact">Click here</NavLink>
+					</QuestionBox>
+				</SectionTile>
+				<SectionTile
+					classes={{ section: "education" }}
+					title="Education"
+					iconHtml={
+						<img
+							src={education}
+							alt="education"
+							width={40}
+							height={42}
 						/>
-					</SectionTile>
-					<SectionTile
-						classes={{ section: "questionnaire" }}
-						noRound
-						noCard
-						noSectionHeader
-						noColumn
-					>
-						<QuestionBox>
-							<h3>Wanna see my work?</h3>
-							<p>
-								To check my work, test APIs and see live
-								projects.
-							</p>
-							<NavLink to="/works">Click here</NavLink>
-						</QuestionBox>
-						<QuestionBox>
-							<h3>Like my work?</h3>
-							<p>Want to contact me?</p>
-							<NavLink to="/contact">Click here</NavLink>
-						</QuestionBox>
-					</SectionTile>
-					<SectionTile
-						classes={{ section: "education" }}
-						title="Education"
-						iconHtml={
-							<img
-								src={education}
-								alt="education"
-								width={60}
-								height={64}
-							/>
+					}
+					noCard
+				>
+					<Timeline
+						cardsHtml={
+							<EducationCardsHtml data={educationDetails} />
 						}
-						noCard
-					>
-						<Timeline
-							cardsHtml={
-								<EducationCardsHtml data={educationDetails} />
-							}
-						/>
-					</SectionTile>
-				</SideRight>
+					/>
+				</SectionTile>
+				{/* </SideRight> */}
 			</Container>
 
 			<Footer />

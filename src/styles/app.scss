@@ -1,68 +1,151 @@
 @use "./stylekit-core" as core;
 
-* {
+// Reset and base styles
+*,
+*::before,
+*::after {
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px; // Base font size for rem units
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
 	width: 100%;
 	height: 100%;
-	margin: 0;
 	background-color: core.color-swatch(main-bg);
 	overflow: hidden;
 }
 
+// Root container styles
 #root {
 	min-width: 980px;
 	width: 90%;
 	height: 100%;
+	margin: 0 auto;
 	color: core.color-swatch(primary-txt);
 	font-family: "Source Sans 3",
 		"Source Code Pro",
 		"Source Serif 4",
 		Outfit,
 		sans-serif;
-	font-size: 32px;
+	font-size: 2rem;
 	letter-spacing: 0.1px;
-	margin: 0 auto;
 }
 
-ul,
-ol {
-	padding-inline-start: 0;
-	margin-block: 10px;
-
-	li {
-		list-style: none;
-		list-style-type: none;
-	}
-}
-
-*::-webkit-scrollbar {
-	width: 0;
-	background: transparent; /* make scrollbar transparent */
-	scroll-behavior: smooth;
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 600;
+	line-height: 1.2;
 }
 
 h3 {
-	margin-block: 0 15px;
-	font-size: 24px;
-	font-weight: 600;
+	margin-block: 0 0.9375rem;
+	font-size: 1.5rem;
 }
 
+p {
+	margin-bottom: 1rem;
+	line-height: 1.6;
+}
+
+// Lists
+ul,
+ol {
+	padding: 0;
+	margin-block: 0.625rem;
+	list-style: none;
+}
+
+// Links
 a {
+	color: inherit;
 	text-decoration: none;
+
+	@include core.transition-smooth;
+
+	&:hover {
+		color: core.color-swatch(accent-primary);
+	}
+
+	@include core.focus-ring;
 }
 
+// Scrollbars
+* {
+	scrollbar-width: none; // Firefox
+	-ms-overflow-style: none; // IE/Edge
+
+	&::-webkit-scrollbar {
+		display: none; // Chrome/Safari/Opera
+	}
+}
+
+// Utility classes
 .hidden {
-	display: none;
+	display: none !important;
 }
 
-div[data-action-type="link"] {
+.text-gradient {
+	@include core.text-gradient;
+}
+
+// Interactive elements
+[data-action-type="link"] {
 	cursor: pointer;
+
+	@include core.transition-smooth;
 
 	* {
 		pointer-events: none;
 	}
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+// Responsive breakpoints
+@media screen and (max-width: 980px) {
+	#root {
+		min-width: 100%;
+		width: 100%;
+		padding: 0 1rem;
+	}
+}
+
+// Accessibility
+:focus-visible {
+	@include core.focus-ring;
+}
+
+// Button reset
+button {
+	border: none;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+	font: inherit;
+	color: inherit;
+
+	@include core.focus-ring;
+}
+
+.page-transition {
+	display: block;
+	height: 100%;
+	min-height: fit-content;
 }

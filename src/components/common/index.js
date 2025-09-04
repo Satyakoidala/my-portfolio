@@ -1,7 +1,11 @@
 import React, { Fragment } from "react";
 import { Container } from "../core";
+import Typography from "./typography";
+import Carousel from "./carousel";
 
 import "./style.scss";
+
+export { Typography, Carousel };
 
 export const Card = ({ classes, children, ...rest }) => {
 	return (
@@ -18,7 +22,7 @@ export const Card = ({ classes, children, ...rest }) => {
 
 export const Section = ({ sectionClasses = [], children, ...rest }) => {
 	return (
-		<Container classes={["section", ...sectionClasses]} {...rest}>
+		<Container classes={["section", ...sectionClasses]} noPadding {...rest}>
 			{children}
 		</Container>
 	);
@@ -92,7 +96,7 @@ export const QuestionBox = ({ classes = {}, children }) => {
 
 export const FootNotes = ({ classes = {}, children }) => {
 	return (
-		<Container classes={[classes.footNotes, "footnotes"]}>
+		<Container classes={[classes.footNotes, "footnotes"]} noPadding>
 			{children}
 		</Container>
 	);

@@ -18,10 +18,14 @@ export default () => {
 					className="sub-header"
 					{...innerHTML(summary.legendHeader)}
 				/>
-				<Container classes={["summary-cards"]}>
+				<Container classes={["summary-cards"]} noPadding>
 					{summary.additionalDetails.map((item) => {
 						return (
-							<Card key={item.tagName} classes={["summary-card"]}>
+							<Card
+								key={item.tagName}
+								classes={["summary-card"]}
+								noPadding
+							>
 								{/* <img
 											src={checkCircle}
 											alt="checkbox"

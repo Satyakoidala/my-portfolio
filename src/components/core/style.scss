@@ -5,6 +5,7 @@
 	width: 100%;
 	margin: 0 auto;
 	box-sizing: border-box;
+	padding: 1rem;
 
 	&.round {
 		border-radius: 8px;
@@ -12,6 +13,10 @@
 
 	&.column {
 		flex-direction: column;
+	}
+
+	&.nopadding {
+		padding: 0 !important;
 	}
 
 	> .side-left,

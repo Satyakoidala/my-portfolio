@@ -1,7 +1,18 @@
-// Barrel file for all reusable components
+// Core components
+export { Container, SideLeft, SideRight } from "./core";
+
+// Common components
+export {
+	Card,
+	Section,
+	SectionTile,
+	Timeline,
+	QuestionBox,
+	FootNotes,
+	Typography,
+	Carousel,
+} from "./common";
+
+// Other components
 export { default as NavBar } from "../pages/layout/nav-bar";
 export { default as ErrorBoundary } from "./error-boundary";
-// ...add more as you refactor
-
-export * from "./core"; // Export all core components
-export * from "./common"; // Export all common components

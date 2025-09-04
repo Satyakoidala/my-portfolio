@@ -3,10 +3,10 @@ import { useEffect } from "react";
 // eslint-disable-next-line import/prefer-default-export
 export const useWindowEvent = (eventName, callback) => {
 	useEffect(() => {
-		window.addEventListener(eventName, callback);
+		if (typeof callback !== "function") return;
 
-		return () => {
-			window.removeEventListener(eventName);
-		};
-	}, []);
+		window.addEventListener(eventName, callback);
+		// eslint-disable-next-line consistent-return
+		return () => window.removeEventListener(eventName, callback);
+	}, [eventName, callback]);
 };

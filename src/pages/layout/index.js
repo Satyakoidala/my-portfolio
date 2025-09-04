@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { useWindowEvent } from "../../hooks";
 import NavBar from "./nav-bar";
+import { RouteTransition } from "../../components/transitions";
 
 import "./style.scss";
 
@@ -19,8 +20,9 @@ const PageLayout = () => {
 		<>
 			<NavBar />
 			<div className="root-reveal">
-				<Outlet />
-				{/* used for rendering the children with exact child route match */}
+				<RouteTransition>
+					<Outlet />
+				</RouteTransition>
 			</div>
 		</>
 	);

@@ -1,38 +1,54 @@
 @use "sass:map";
 
-// color constants
-
-$transparent-grey: rgb(51, 57, 52, 30%);
-$main-bg: #000;
-$sec-bg: rgb(247, 247, 255, 100%);
-$primary-txt: rgb(247, 247, 255);
-$sec-txt: rgb(3, 16, 18);
-$salmon: rgb(250, 128, 114);
+// Color palette
 $colors: (
-	"main-bg": #000,
+	// Background colors
+	"main-bg": #151515,
 	"sec-bg": rgb(247, 247, 255, 100%),
+	"glass-bg": rgba(255, 255, 255, 5%),
+	"glass-border": rgba(255, 255, 255, 10%),
+	// Text colors
 	"primary-txt": rgb(247, 247, 255),
 	"sec-txt": rgb(3, 16, 18),
+	// Accent colors
+	"accent-primary": rgb(250, 128, 114),
+	// Salmon
+	"accent-secondary": rgb(249, 115, 22),
+	// Orange
 	"fill-salmon": rgb(250, 128, 114),
-	"transparent-grey": rgb(51, 57, 52, 30%),
+	// Utility colors
+	"transparent-grey": rgba(51, 57, 52, 30%),
+	"success": rgb(16, 185, 129),
+	"error": rgb(239, 68, 68),
+	// Gradients
+	"gradient-start": rgb(34, 193, 195),
+	"gradient-end": rgb(150, 45, 253),
+	// alpha versions
+	"secondary-white": rgba(255, 255, 255, 0.75)
 );
 
+// Utility functions
+@function color-swatch($name) {
+	@return map.get($colors, $name);
+}
+
+// Common mixins
 @mixin glass {
-	color: $primary-txt;
-	background-color: rgba(255, 255, 255, 5%);
+	color: color-swatch("primary-txt");
+	background-color: color-swatch("glass-bg");
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 10%);
+	border: 1px solid color-swatch("glass-border");
 }
 
 @mixin text-gradient {
-	background: rgb(34, 193, 195);
 	background: linear-gradient(
 		0deg,
-		rgba(34, 193, 195, 100%) 0%,
-		rgba(150, 45, 253, 100%) 66%
+		color-swatch("gradient-start") 0%,
+		color-swatch("gradient-end") 66%
 	);
 	background-clip: text;
+	-webkit-background-clip: text;
 	color: transparent;
 }
 
@@ -43,6 +59,67 @@ $colors: (
 	transform: translate(-50%, -50%);
 }
 
-@function color-swatch($name) {
-	@return map.get($colors, $name);
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin transition-smooth {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Typography mixins
+@mixin heading-xl {
+	font-size: 2.5rem;
+	line-height: 1.2;
+	font-weight: 700;
+}
+
+@mixin heading-lg {
+	font-size: 2rem;
+	line-height: 1.3;
+	font-weight: 600;
+}
+
+@mixin body-lg {
+	font-size: 1.25rem;
+	line-height: 1.6;
+}
+
+@mixin body-base {
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+// Interactive states
+@mixin hover-lift {
+	&:hover {
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+@mixin focus-ring {
+	&:focus-visible {
+		outline: 2px solid color-swatch("accent-primary");
+		outline-offset: 2px;
+	}
+}
+
+@mixin custom-border-bottom($thickness: 2px, $color: black, $length: 50%) {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: $length;
+		height: $thickness;
+		background-color: $color;
+	}
 }

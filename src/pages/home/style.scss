@@ -37,7 +37,7 @@
 
 @keyframes size-reducer {
 	from {
-		font-size: 48px;
+		font-size: 3rem;
 	}
 
 	to {
@@ -50,12 +50,10 @@
 	justify-content: space-between;
 
 	.intro-information {
-		height: 80%;
+		height: 100vh;
 		width: 100%;
 		font-family: "Fira Code", monospace;
 		font-optical-sizing: auto;
-
-		// font-weight: 600;
 
 		.side-left {
 			width: 68%;
@@ -67,11 +65,15 @@
 		}
 
 		.line-1 {
-			font-size: 36px;
+			font-size: 2.25rem;
 		}
 
 		.line-2 {
-			font-size: 42px;
+			font-size: 2.5rem;
+		}
+
+		.line-3 {
+			font-size: 1.75rem;
 		}
 	}
 
@@ -87,7 +89,7 @@
 			outline: none;
 			border: none;
 			color: core.color-swatch(primary-txt);
-			font-size: 18px;
+			font-size: 1.125rem;
 			vertical-align: middle;
 			text-align: center;
 			padding: 0;

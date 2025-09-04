@@ -10,11 +10,11 @@ const NavBar = () => {
 	const navItems = window.bootstrap.navBarLinks;
 
 	return (
-		<Container classes={["nav-bar"]} roundedCorner>
+		<Container classes={["nav-bar"]}>
 			<SideLeft classes={["nav-left"]}>
 				<div className="profile-header">
 					<img src={profile} alt="profile" width={30} height={35} />
-					<h1 className="title">Satya</h1>
+					<h1 className="title">Satya Koidala</h1>
 				</div>
 			</SideLeft>
 			<SideRight classes={["nav-right"]}>

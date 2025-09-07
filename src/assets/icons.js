@@ -15,6 +15,7 @@ import pythonIcon from "./python.svg";
 import reactIcon from "./reactjs.svg";
 import scssIcon from "./scss2.svg";
 import webpackIcon from "./webpack.svg";
+import chevronDownIcon from "./chevron-down.svg";
 
 export const icons = {
 	babel: babelIcon,
@@ -34,6 +35,7 @@ export const icons = {
 	react: reactIcon,
 	scss: scssIcon,
 	webpack: webpackIcon,
+	chevrondown: chevronDownIcon,
 };
 
 // Helper function to get icon by name

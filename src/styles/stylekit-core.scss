@@ -124,3 +124,15 @@ $colors: (
 		background-color: $color;
 	}
 }
+
+@mixin viewport($variant) {
+	@if $variant == "small" {
+		@media screen and (max-width: 768px) {
+			@content;
+		}
+	} @else if $variant == "desktop" {
+		@media screen and (min-width: 769px) {
+			@content;
+		}
+	}
+}

@@ -8,6 +8,10 @@
 	// @include core.glass;
 	border-bottom: 1px solid core.color-swatch("glass-border");
 
+	@include core.viewport(small) {
+		border-bottom: none;
+	}
+
 	.nav-left,
 	.nav-right {
 		width: fit-content;
@@ -41,6 +45,79 @@
 
 	.nav-right {
 		padding-inline-end: 5px;
+
+		.mobile-menu-container {
+			position: relative;
+		}
+
+		.chevron-button {
+			color: core.color-swatch(primary-txt);
+			padding: 8px;
+			border-radius: 4px;
+			transition: background-color 0.3s ease;
+
+			.chevron-icon {
+				transition: transform 0.3s ease;
+
+				&.rotated {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.mobile-menu {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			background: rgba(core.color-swatch(main-bg), 0.95);
+			backdrop-filter: blur(8px);
+			border: 1px solid core.color-swatch(glass-border);
+			border-radius: 8px;
+			min-width: 200px;
+			opacity: 0;
+			transform: translateY(-10px);
+			visibility: hidden;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 10%),
+				0 2px 4px -1px rgba(0, 0, 0, 6%);
+			z-index: 1;
+
+			&.open {
+				opacity: 1;
+				transform: translateY(0);
+				visibility: visible;
+			}
+
+			&-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			&-item {
+				padding: 0;
+				margin: 0;
+			}
+
+			&-link {
+				display: block;
+				padding: 8px 12px;
+				font-size: 1.2rem;
+				font-weight: 300;
+				color: core.color-swatch(primary-txt);
+				text-decoration: none;
+				transition: background-color 0.2s ease;
+
+				&:hover {
+					background-color: rgba(core.color-swatch(primary-txt), 0.1);
+				}
+
+				&.active {
+					color: core.color-swatch(fill-salmon);
+					background-color: rgba(core.color-swatch(fill-salmon), 0.1);
+				}
+			}
+		}
 	}
 }
 
@@ -53,10 +130,20 @@
 	align-items: flex-end;
 	padding-top: 75px;
 
+	@include core.viewport(small) {
+		flex-direction: column-reverse;
+		padding-top: 50px;
+	}
+
 	.disclaimer,
 	.social-accounts {
 		flex: 1;
-		margin: 0.5rem;
+		padding: 0.5rem;
+
+		@include core.viewport(small) {
+			width: 100%;
+			text-align: center;
+		}
 	}
 
 	.social-accounts {

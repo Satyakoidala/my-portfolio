@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from "react";
 import { Container, Section, Typography, Button } from "../../components";
+import { isMobile } from "../../utils";
 import "./style.scss";
 
 const Contact = () => {
@@ -12,6 +13,7 @@ const Contact = () => {
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState(null);
+	const isMobileViewport = isMobile();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -154,15 +156,26 @@ const Contact = () => {
 				</div>
 				<div className="follow-me">
 					<div className="follow-me-header">
-						<Typography
-							variant="heading-xs"
-							className="main-header"
-						>
-							Follow me!
-						</Typography>
-						<Typography variant="body-md" className="sub-header">
-							Like & Subscribe
-						</Typography>
+						{isMobileViewport ? (
+							<Typography variant="heading-xs">
+								Follow & Connect.
+							</Typography>
+						) : (
+							<>
+								<Typography
+									variant="heading-xs"
+									className="main-header"
+								>
+									Follow me!
+								</Typography>
+								<Typography
+									variant="body-md"
+									className="sub-header"
+								>
+									Like & Connect.
+								</Typography>
+							</>
+						)}
 					</div>
 					<div className="social-links">
 						{socialAccounts.map((item) => {

@@ -8,6 +8,10 @@
 	margin: 0;
 	font-weight: 600;
 
+	@include core.viewport(small) {
+		width: 100%;
+	}
+
 	.project-title {
 		width: 100%;
 		margin-bottom: 6px;

@@ -6,17 +6,33 @@
 	align-items: center;
 	justify-content: center;
 
+	@include core.viewport(small) {
+		align-items: flex-start;
+	}
+
 	&-wrapper {
 		justify-content: space-between;
 		align-items: stretch;
 		width: 100%;
 		max-width: 1200px;
+
+		@include core.viewport(small) {
+			height: 100%;
+			flex-direction: column;
+			align-items: space-between;
+		}
 	}
 
 	.contact-content {
 		width: 70%;
 		max-width: 600px;
 		padding: 3rem;
+
+		@include core.viewport(small) {
+			width: 100%;
+			padding: 2rem 1rem;
+			margin: 0 auto;
+		}
 	}
 
 	.follow-me {
@@ -25,6 +41,13 @@
 		padding: 3rem;
 		text-align: center;
 		border-inline-start: 2px solid core.color-swatch(transparent-grey);
+
+		@include core.viewport(small) {
+			width: 100%;
+			max-width: 100%;
+			border: none;
+			padding: 1rem;
+		}
 	}
 
 	.contact-header,
@@ -118,6 +141,11 @@
 		gap: 1.5rem;
 		width: max(100px, 50%);
 
+		@include core.viewport(small) {
+			width: 100%;
+			flex-direction: row;
+		}
+
 		.media {
 			width: 100%;
 			line-height: 1.5rem;
@@ -125,6 +153,11 @@
 			align-items: center;
 			justify-content: flex-start;
 			gap: 0.5rem;
+
+			@include core.viewport(small) {
+				width: 50%;
+				justify-content: center;
+			}
 		}
 
 		img {

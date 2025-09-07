@@ -13,6 +13,10 @@
 	font-weight: 600;
 	background-color: transparent;
 
+	@include core.viewport(small) {
+		width: 100%;
+	}
+
 	&:hover {
 		.blog-wrapper {
 			transform: scale(0.98);
@@ -30,10 +34,18 @@
 
 	&:nth-child(odd) .blog-wrapper {
 		margin-inline-end: 7.5px;
+
+		@include core.viewport(small) {
+			margin-inline-end: 0;
+		}
 	}
 
 	&:nth-child(even) .blog-wrapper {
 		margin-inline-start: 7.5px;
+
+		@include core.viewport(small) {
+			margin-inline-start: 0;
+		}
 	}
 
 	&-title {

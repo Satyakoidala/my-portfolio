@@ -1,3 +1,5 @@
+@use "../../styles/stylekit-core.scss" as core;
+
 .container {
 	display: flex;
 	justify-content: center;
@@ -28,4 +30,8 @@
 .side-left,
 .side-right {
 	width: 50%;
+
+	@include core.viewport(small) {
+		width: 100%;
+	}
 }

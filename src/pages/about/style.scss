@@ -127,11 +127,19 @@
 	.course {
 		width: 50%;
 		display: inline-block;
+
+		@include core.viewport(small) {
+			width: 100%;
+		}
 	}
 
 	.details {
 		width: 88%;
 		font-size: 1.1rem;
+
+		@include core.viewport(small) {
+			width: 80%;
+		}
 	}
 
 	.percentage,
@@ -140,6 +148,10 @@
 		width: 12%;
 		text-align: end;
 		font-size: 1.25rem;
+
+		@include core.viewport(small) {
+			width: 20%;
+		}
 
 		&::after {
 			font-size: 0.75rem;
@@ -165,10 +177,18 @@
 	.role,
 	.company {
 		width: 50%;
+
+		@include core.viewport(small) {
+			width: 100%;
+		}
 	}
 
 	.company {
 		text-align: end;
+
+		@include core.viewport(small) {
+			text-align: start;
+		}
 	}
 
 	.description {

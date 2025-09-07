@@ -3,7 +3,7 @@ import cn from "classnames";
 import { Container, SideLeft, SideRight } from "../../components/core";
 import { Section } from "../../components/common";
 import Footer from "../layout/footer";
-import { innerHTML } from "../../utils/index";
+import { innerHTML, isMobile } from "../../utils";
 
 import "./style.scss";
 
@@ -11,8 +11,10 @@ const IS_NOT_FIRST_TIME_LOADING = "is-not-first-time-loading";
 
 const Home = () => {
 	const profileData = window.bootstrap.sections.home.profile || {};
+	const isMobileViewport = isMobile();
 	const showTypingAnimation =
-		sessionStorage.getItem(IS_NOT_FIRST_TIME_LOADING) === null;
+		sessionStorage.getItem(IS_NOT_FIRST_TIME_LOADING) === null &&
+		!isMobileViewport;
 
 	useEffect(() => {
 		sessionStorage.setItem(IS_NOT_FIRST_TIME_LOADING, true);

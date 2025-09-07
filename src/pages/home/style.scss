@@ -37,7 +37,7 @@
 
 @keyframes size-reducer {
 	from {
-		font-size: 48px;
+		font-size: 3rem;
 	}
 
 	to {
@@ -50,28 +50,56 @@
 	justify-content: space-between;
 
 	.intro-information {
-		height: 80%;
+		height: 100vh;
 		width: 100%;
 		font-family: "Fira Code", monospace;
 		font-optical-sizing: auto;
 
-		// font-weight: 600;
+		@include core.viewport(small) {
+			flex-direction: column-reverse;
+		}
 
 		.side-left {
 			width: 68%;
 			align-content: center;
+
+			@include core.viewport(small) {
+				display: flex;
+				width: 100%;
+			}
 		}
 
 		.side-right {
 			width: 32%;
+
+			@include core.viewport(small) {
+				max-height: 200px;
+				width: 100%;
+			}
 		}
 
 		.line-1 {
-			font-size: 36px;
+			font-size: 2.25rem;
+
+			@include core.viewport(small) {
+				font-size: 1.3rem;
+			}
 		}
 
 		.line-2 {
-			font-size: 42px;
+			font-size: 2.5rem;
+
+			@include core.viewport(small) {
+				font-size: 1.5rem;
+			}
+		}
+
+		.line-3 {
+			font-size: 1.75rem;
+
+			@include core.viewport(small) {
+				font-size: 1.4rem;
+			}
 		}
 	}
 
@@ -87,7 +115,7 @@
 			outline: none;
 			border: none;
 			color: core.color-swatch(primary-txt);
-			font-size: 18px;
+			font-size: 1.125rem;
 			vertical-align: middle;
 			text-align: center;
 			padding: 0;
@@ -111,6 +139,10 @@
 	}
 
 	.intro-text {
+		@include core.viewport(small) {
+			margin-top: 20px;
+		}
+
 		> p {
 			margin-block: 0 5px;
 			white-space: nowrap;
@@ -179,15 +211,25 @@
 		justify-content: center;
 		position: relative;
 
-		.image-cover {
+		.image-cover,
+		.image {
 			@include core.absolute-center;
 
-			height: 300px;
 			width: 300px;
-			overflow: hidden;
-			border: 2px solid rgba(255, 255, 255, 10%);
+			height: 300px;
 			border-radius: 20px;
 			clip-path: circle(50% at 50% 50%);
+
+			@include core.viewport(small) {
+				// justify-content: center;
+				height: 150px;
+				width: 150px;
+			}
+		}
+
+		.image-cover {
+			overflow: hidden;
+			border: 2px solid rgba(255, 255, 255, 10%);
 			background-color: core.color-swatch(fill-salmon);
 		}
 
@@ -195,10 +237,6 @@
 			@include core.absolute-center;
 
 			object-fit: cover;
-			border-radius: 20px;
-			width: 300px;
-			height: 300px;
-			clip-path: circle(50% at 50% 50%);
 		}
 	}
 }

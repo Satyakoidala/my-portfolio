@@ -1,2 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-export { default as FadeTransition } from "./fade-transition";
+import FadeTransition from "./fade-transition";
+import RouteTransition from "./route-transition";
+
+export { RouteTransition, FadeTransition };

@@ -2,9 +2,9 @@ import React from "react";
 import { Container, SideLeft } from "../../components/core";
 // import { checkCircle } from "../../assets";
 import { innerHTML } from "../../utils";
+// import { Card } from "../../components/common";
 
 import "./profile-summary.scss";
-import { Card } from "../../components/common";
 
 const summary = window.bootstrap.sections.about.summary || {};
 
@@ -18,16 +18,15 @@ export default () => {
 					className="sub-header"
 					{...innerHTML(summary.legendHeader)}
 				/>
-				<Container classes={["summary-cards"]}>
+
+				{/* <Container classes={["summary-cards"]} noPadding>
 					{summary.additionalDetails.map((item) => {
 						return (
-							<Card key={item.tagName} classes={["summary-card"]}>
-								{/* <img
-											src={checkCircle}
-											alt="checkbox"
-											width={15}
-											height={15}
-										/> */}
+							<Card
+								key={item.tagName}
+								classes={["summary-card"]}
+								noPadding
+							>
 								<div
 									className="tag"
 									{...innerHTML(item.tagName)}
@@ -39,7 +38,7 @@ export default () => {
 							</Card>
 						);
 					})}
-				</Container>
+				</Container> */}
 			</SideLeft>
 			{/* <SideRight>
 				<img alt="profile" src={profile} width={300} height={350} />

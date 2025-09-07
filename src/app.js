@@ -4,10 +4,9 @@ import PageLayout from "./pages/layout";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Works from "./pages/work";
+import Contact from "./pages/contact";
 
 import "./styles/app.scss";
-
-const Contact = () => <div>Contact</div>;
 
 const router = createBrowserRouter([
 	{

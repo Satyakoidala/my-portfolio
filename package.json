@@ -1,6 +1,6 @@
 {
 	"name": "my_personal_website",
-	"version": "0.1.0-gamma",
+	"version": "1.0.0",
 	"description": "My Personal Website",
 	"private": true,
 	"sideEffects": [

@@ -3,27 +3,32 @@
 .profile-summary {
 	width: 100%;
 	border-radius: inherit;
-	font-size: 0.6em;
+	font-size: 0.875rem;
 	padding: 15px;
 
 	@include core.glass;
 
 	.header {
-		font-size: 32px;
+		font-size: 1.25rem;
 		font-weight: 400;
+		letter-spacing: 0.025rem;
 
-		// margin-bottom: 5px;
-		border-bottom: solid 1px core.color-swatch(fill-salmon);
+		@include core.custom-border-bottom(
+			1px,
+			core.color-swatch(fill-salmon),
+			22.5%
+		);
 	}
 
 	.sub-header {
-		letter-spacing: 0.1px;
-		font-size: 20px;
-		font-weight: 300;
+		font-size: 1rem;
+		font-weight: 400;
+		letter-spacing: 0.01rem;
+		color: core.color-swatch(secondary-white);
 	}
 
 	.tag {
-		font-size: 16px;
+		font-size: 1rem;
 		letter-spacing: 0.2px;
 		background-color: rgba(0, 0, 0, 20%);
 	}
@@ -37,7 +42,7 @@
 
 	.value {
 		letter-spacing: 0.1px;
-		font-size: 28px;
+		font-size: 1.75rem;
 		font-weight: bolder;
 		flex-shrink: 1;
 

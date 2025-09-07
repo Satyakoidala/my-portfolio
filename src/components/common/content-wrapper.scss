@@ -1,0 +1,14 @@
+.content-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.content-title {
+	width: calc(100% - 15px);
+	font-size: 2rem;
+	padding-inline-start: 15px;
+	margin-top: 15px;
+}

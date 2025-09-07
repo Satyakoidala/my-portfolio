@@ -8,6 +8,7 @@ export const Container = ({
 	children,
 	roundedCorner = false,
 	columnLayout = false,
+	noPadding = false,
 	...rest
 }) => {
 	return (
@@ -15,6 +16,7 @@ export const Container = ({
 			className={cn("container", classes, {
 				round: roundedCorner,
 				column: columnLayout,
+				nopadding: noPadding,
 			})}
 			{...rest}
 		>

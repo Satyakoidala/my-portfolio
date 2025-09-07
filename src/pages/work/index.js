@@ -1,38 +1,52 @@
-import React, { useState } from "react";
-import { Container } from "../../components/core";
-import { Card } from "../../components/common";
+import React from "react";
+
+import { TabSwitcher } from "../../components";
+import LazyContent from "./lazy-content";
 import Footer from "../layout/footer";
-import TabSwitcher from "./tab-switcher";
 
 import "./style.scss";
 
 const Works = () => {
 	const menu = window.bootstrap.sections.work.tabs || [];
-	const [currSelection, updateCurrSelection] = useState(menu[0].key);
+
+	const getCurrentContent = (selection) => {
+		switch (selection) {
+			case "web-apps":
+				return (
+					<LazyContent
+						template="projects"
+						fallback={<div>Loading Web Apps...</div>}
+						path="sections.work.webApps"
+					/>
+				);
+			case "ui-comps":
+				return <div>Content for UI comps </div>;
+			case "blogs":
+				return (
+					<LazyContent
+						template="blogs"
+						fallback={<div>Loading Blogs...</div>}
+						path="sections.work.blogs"
+					/>
+				);
+			case "npm-modules":
+				return (
+					<LazyContent
+						template="projects"
+						fallback={<div>Loading Node Modules...</div>}
+						path="sections.work.pkgModules"
+					/>
+				);
+			case "certifications":
+				return <div>Content for Certifications </div>;
+			default:
+				return <div>No matching content found!!</div>;
+		}
+	};
 
 	return (
 		<div className="works section">
-			<Container classes={["tab-menu"]}>
-				{menu.map((item, key) => (
-					<Card
-						key={`work_menu_${key}`}
-						classes={[
-							currSelection === item.key ? "current" : null,
-						]}
-					>
-						<button
-							type="button"
-							onClick={() => updateCurrSelection(item.key)}
-						>
-							{item.displayName}
-						</button>
-					</Card>
-				))}
-			</Container>
-			<Container classes={["content"]} roundedCorner columnLayout>
-				<TabSwitcher currSelection={currSelection} />
-			</Container>
-
+			<TabSwitcher data={menu} getCurrentContent={getCurrentContent} />
 			<Footer />
 		</div>
 	);

@@ -1,0 +1,179 @@
+@use "../../styles/stylekit-core" as core;
+
+.contact-section {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include core.viewport(small) {
+		align-items: flex-start;
+	}
+
+	&-wrapper {
+		justify-content: space-between;
+		align-items: stretch;
+		width: 100%;
+		max-width: 1200px;
+
+		@include core.viewport(small) {
+			height: 100%;
+			flex-direction: column;
+			align-items: space-between;
+		}
+	}
+
+	.contact-content {
+		width: 70%;
+		max-width: 600px;
+		padding: 3rem;
+
+		@include core.viewport(small) {
+			width: 100%;
+			padding: 2rem 1rem;
+			margin: 0 auto;
+		}
+	}
+
+	.follow-me {
+		width: 30%;
+		max-width: 300px;
+		padding: 3rem;
+		text-align: center;
+		border-inline-start: 2px solid core.color-swatch(transparent-grey);
+
+		@include core.viewport(small) {
+			width: 100%;
+			max-width: 100%;
+			border: none;
+			padding: 1rem;
+		}
+	}
+
+	.contact-header,
+	.follow-me-header {
+		text-align: center;
+		margin-bottom: 1rem;
+
+		& .sub-header {
+			color: core.color-swatch(secondary-white);
+		}
+	}
+
+	.contact-form {
+		text-align: center;
+
+		.form-group {
+			margin-bottom: 1.5rem;
+
+			label {
+				display: block;
+				font-size: 1rem;
+				color: core.color-swatch(primary-txt);
+				text-align: left;
+			}
+
+			input,
+			textarea {
+				@include core.glass;
+
+				width: 100%;
+				padding: 0.75rem;
+				font-size: 1rem;
+				letter-spacing: 0.03rem;
+				transition: all 0.3s ease;
+				border-radius: 6px;
+				color: core.color-swatch(secondary-white);
+
+				&:focus {
+					outline: none;
+					border-color: core.color-swatch(fill-salmon);
+					background: rgba(255, 255, 255, 10%);
+				}
+			}
+
+			textarea {
+				resize: vertical;
+				margin-top: 0.4rem;
+				min-height: 100px;
+			}
+		}
+
+		.submit-btn {
+			font-size: 1rem;
+			background-color: core.color-swatch(sec-bg);
+			color: core.color-swatch(sec-txt);
+			border-radius: 6px;
+			padding: 4px 8px;
+
+			&:disabled {
+				opacity: 0.7;
+				cursor: not-allowed;
+			}
+		}
+
+		.form-status {
+			text-align: center;
+			margin-top: 1rem;
+			padding: 0.5rem;
+			border-radius: 0.25rem;
+			font-size: 0.875rem;
+
+			&.success {
+				color: #10b981;
+				background-color: rgba(16, 185, 129, 10%);
+			}
+
+			&.error {
+				color: #ef4444;
+				background-color: rgba(239, 68, 68, 10%);
+			}
+		}
+	}
+
+	.social-links {
+		margin-top: 2rem;
+		margin-inline: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		width: max(100px, 50%);
+
+		@include core.viewport(small) {
+			width: 100%;
+			flex-direction: row;
+		}
+
+		.media {
+			width: 100%;
+			line-height: 1.5rem;
+			display: inline-flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 0.5rem;
+
+			@include core.viewport(small) {
+				width: 50%;
+				justify-content: center;
+			}
+		}
+
+		img {
+			width: 16px;
+			height: 16px;
+			transition: transform 0.3s ease;
+		}
+
+		a {
+			color: core.color-swatch(primary-txt);
+			font-size: 1rem;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: core.color-swatch(fill-salmon);
+			}
+		}
+	}
+}

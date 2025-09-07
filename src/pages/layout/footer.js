@@ -6,13 +6,13 @@ export default () => {
 
 	return (
 		<footer className="footer">
-			<p className="disclaimer">
+			<div className="disclaimer">
 				&copy; {new Date().getFullYear()} My Website. All rights
 				reserved.
-			</p>
+			</div>
 
 			<FootNotes classes={{ footNotes: "social-accounts" }}>
-				<span>Follow, Love and Support. </span>
+				<div>Follow, Love and Support. </div>
 				<ul className="social-media">
 					{socialAccounts.map((item) => {
 						return (

@@ -1,7 +1,14 @@
 import React, { Fragment } from "react";
 import { Container } from "../core";
+import Typography from "./typography";
+import Carousel from "./carousel";
+import TabSwitcher from "./tab-switcher";
+import ContentWrapper from "./content-wrapper";
+import Button from "./button";
 
 import "./style.scss";
+
+export { Typography, Carousel, TabSwitcher, ContentWrapper, Button };
 
 export const Card = ({ classes, children, ...rest }) => {
 	return (
@@ -18,7 +25,7 @@ export const Card = ({ classes, children, ...rest }) => {
 
 export const Section = ({ sectionClasses = [], children, ...rest }) => {
 	return (
-		<Container classes={["section", ...sectionClasses]} {...rest}>
+		<Container classes={["section", ...sectionClasses]} noPadding {...rest}>
 			{children}
 		</Container>
 	);
@@ -53,14 +60,14 @@ export const SectionTile = ({
 
 export const Timeline = ({ classes = {}, data, cardsHtml = "" }) => {
 	return (
-		<Container classes={[classes.timeline, "timeline"]}>
+		<Container classes={[classes.timeline, "timeline"]} noPadding>
 			{/* <div className="timeline-thread"></div> */}
 			<div className="timeline-cards-wrapper">
 				{data
 					? data.map((item, index) => {
 							return (
 								<Fragment key={index}>
-									<Card>
+									<Container classes={["card"]} rounderCorner>
 										<span className="timestamp">
 											{item.timeStamp}
 										</span>
@@ -76,7 +83,7 @@ export const Timeline = ({ classes = {}, data, cardsHtml = "" }) => {
 												);
 											}
 										)}
-									</Card>
+									</Container>
 								</Fragment>
 							);
 					  })
@@ -92,7 +99,7 @@ export const QuestionBox = ({ classes = {}, children }) => {
 
 export const FootNotes = ({ classes = {}, children }) => {
 	return (
-		<Container classes={[classes.footNotes, "footnotes"]}>
+		<Container classes={[classes.footNotes, "footnotes"]} noPadding>
 			{children}
 		</Container>
 	);

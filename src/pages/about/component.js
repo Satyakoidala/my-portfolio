@@ -1,11 +1,11 @@
 import React from "react";
-import { Card } from "../../components";
+import { Card, Container } from "../../components";
 import { checkCircleDark } from "../../assets";
+import { innerHTML } from "../../utils";
 
 export const ExperienceCardsHtml = ({ data = [] }) => {
 	return data.map((item, index) => {
-		const { company, role, duration, graduation, description } =
-			item.cardDetails;
+		const { company, role, graduation, description } = item.cardDetails;
 
 		return item.isGraduation ? (
 			<div className="timeline-card" key={index}>
@@ -17,14 +17,11 @@ export const ExperienceCardsHtml = ({ data = [] }) => {
 		) : (
 			<div className="timeline-card" key={index}>
 				<div className="timestamp">{item.timeStamp}</div>
-				<Card>
+				<Container classes={["card"]} roundedCorner>
+					<div className="role">{role}</div>
 					<div className="company">{company}</div>
-					<div className="subheader">
-						<div className="role">{role},</div>
-						<div className="duration">{duration}</div>
-					</div>
-					<div className="description">{description}</div>
-				</Card>
+					<div className="description" {...innerHTML(description)} />
+				</Container>
 			</div>
 		);
 	});
@@ -37,22 +34,18 @@ export const EducationCardsHtml = ({ data = [] }) => {
 		return (
 			<div className="timeline-card" key={index}>
 				<div className="timestamp">{item.timeStamp}</div>
-				<Card>
-					<div className="institute">{institute}</div>
-					<div>
-						<div className="details">
-							{degree && (
-								<span className="degree">{degree}, &nbsp;</span>
-							)}
-							{course && <span className="course">{course}</span>}
-						</div>
-						{grade && <div className="grade">{grade}</div>}
-						{gpa && <div className="gpa">{gpa}</div>}
-						{percentage && (
-							<div className="percentage">{percentage}</div>
-						)}
+				<Container classes={["card"]} roundedCorner>
+					<div className="details">
+						{degree && <span className="degree">{degree}</span>}
+						{course && <span className="course">{course}</span>}
 					</div>
-				</Card>
+					{grade && <div className="grade">{grade}</div>}
+					{gpa && <div className="gpa">{gpa}</div>}
+					{percentage && (
+						<div className="percentage">{percentage}</div>
+					)}
+					<div className="institute">{institute}</div>
+				</Container>
 			</div>
 		);
 	});

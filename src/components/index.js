@@ -11,6 +11,9 @@ export {
 	FootNotes,
 	Typography,
 	Carousel,
+	TabSwitcher,
+	ContentWrapper,
+	Button,
 } from "./common";
 
 // Other components

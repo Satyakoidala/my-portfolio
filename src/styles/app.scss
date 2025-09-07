@@ -27,7 +27,7 @@ body {
 // Root container styles
 #root {
 	min-width: 980px;
-	width: 90%;
+	width: min(90%, 980px);
 	height: 100%;
 	margin: 0 auto;
 	color: core.color-swatch(primary-txt);
@@ -147,5 +147,5 @@ button {
 .page-transition {
 	display: block;
 	height: 100%;
-	min-height: fit-content;
+	min-height: 0;
 }

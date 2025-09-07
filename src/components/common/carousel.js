@@ -14,7 +14,6 @@ const Carousel = ({
 	renderSlide,
 	className,
 }) => {
-	// const [scrollPosition, setScrollPosition] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(autoPlay);
 	const [touchStart, setTouchStart] = useState(0);
 	const [touchEnd, setTouchEnd] = useState(0);

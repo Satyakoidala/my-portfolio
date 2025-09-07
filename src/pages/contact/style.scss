@@ -6,41 +6,61 @@
 	align-items: center;
 	justify-content: center;
 
-	.contact-content {
-		@include core.glass;
-
+	&-wrapper {
+		justify-content: space-between;
+		align-items: stretch;
 		width: 100%;
-		max-width: 600px;
-		padding: 3rem;
-		border-radius: 1rem;
+		max-width: 1200px;
 	}
 
-	.contact-header {
+	.contact-content {
+		width: 70%;
+		max-width: 600px;
+		padding: 3rem;
+	}
+
+	.follow-me {
+		width: 30%;
+		max-width: 300px;
+		padding: 3rem;
 		text-align: center;
-		margin-bottom: 2rem;
+		border-inline-start: 2px solid core.color-swatch(transparent-grey);
+	}
+
+	.contact-header,
+	.follow-me-header {
+		text-align: center;
+		margin-bottom: 1rem;
+
+		& .sub-header {
+			color: core.color-swatch(secondary-white);
+		}
 	}
 
 	.contact-form {
+		text-align: center;
+
 		.form-group {
 			margin-bottom: 1.5rem;
 
 			label {
 				display: block;
 				font-size: 1rem;
-				margin-bottom: 0.5rem;
 				color: core.color-swatch(primary-txt);
+				text-align: left;
 			}
 
 			input,
 			textarea {
+				@include core.glass;
+
 				width: 100%;
 				padding: 0.75rem;
-				border: 2px solid rgba(255, 255, 255, 10%);
-				border-radius: 0.5rem;
-				background: rgba(255, 255, 255, 5%);
-				color: core.color-swatch(primary-txt);
 				font-size: 1rem;
+				letter-spacing: 0.03rem;
 				transition: all 0.3s ease;
+				border-radius: 6px;
+				color: core.color-swatch(secondary-white);
 
 				&:focus {
 					outline: none;
@@ -51,13 +71,17 @@
 
 			textarea {
 				resize: vertical;
+				margin-top: 0.4rem;
 				min-height: 100px;
 			}
 		}
 
 		.submit-btn {
-			width: 100%;
-			margin-top: 1rem;
+			font-size: 1rem;
+			background-color: core.color-swatch(sec-bg);
+			color: core.color-swatch(sec-txt);
+			border-radius: 6px;
+			padding: 4px 8px;
 
 			&:disabled {
 				opacity: 0.7;
@@ -80,6 +104,42 @@
 			&.error {
 				color: #ef4444;
 				background-color: rgba(239, 68, 68, 10%);
+			}
+		}
+	}
+
+	.social-links {
+		margin-top: 2rem;
+		margin-inline: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		width: max(100px, 50%);
+
+		.media {
+			width: 100%;
+			line-height: 1.5rem;
+			display: inline-flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 0.5rem;
+		}
+
+		img {
+			width: 16px;
+			height: 16px;
+			transition: transform 0.3s ease;
+		}
+
+		a {
+			color: core.color-swatch(primary-txt);
+			font-size: 1rem;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: core.color-swatch(fill-salmon);
 			}
 		}
 	}

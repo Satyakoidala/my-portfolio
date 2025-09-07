@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from "react";
-import { Container, Section } from "../../components";
-import Button from "../../components/common/button";
-import { Typography } from "../../components/common";
+import { Container, Section, Typography, Button } from "../../components";
 import "./style.scss";
 
 const Contact = () => {
+	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -20,11 +19,37 @@ const Contact = () => {
 		setSubmitStatus(null);
 
 		try {
+			// The recipient email address
+			const recipient = "koidalasai@gmail.com";
+
+			// Encode the subject and body for the mailto link
+			const subject = encodeURIComponent(
+				`Contact Message from ${formData.name}`
+			);
+			const body = encodeURIComponent(`
+                    Name: ${formData.name}
+                    Email: ${formData.email}
+                    
+                    Message:
+                    ${formData.message}
+                `);
+
+			// Construct the mailto link
+			const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+			// Create a temporary link element and click it to trigger the email client
+			const tempLink = document.createElement("a");
+			tempLink.href = mailtoLink;
+			document.body.appendChild(tempLink);
+			tempLink.click();
+			document.body.removeChild(tempLink);
+
 			// Here you would typically make an API call
 			// For now, we'll simulate a submission
 			await new Promise((resolve) => {
 				setTimeout(resolve, 1000);
 			});
+
 			setSubmitStatus("success");
 			setFormData({ name: "", email: "", message: "" });
 		} catch (error) {
@@ -32,6 +57,10 @@ const Contact = () => {
 			console.error("Form submission error:", error);
 		} finally {
 			setIsSubmitting(false);
+
+			setTimeout(() => {
+				setSubmitStatus(null);
+			}, 3000);
 		}
 	};
 
@@ -45,13 +74,16 @@ const Contact = () => {
 
 	return (
 		<Section id="contact" classes="contact-section">
-			<Container>
+			<Container noPadding classes="contact-section-wrapper">
 				<div className="contact-content">
 					<div className="contact-header">
-						<Typography variant="heading-xl">
+						<Typography
+							variant="heading-sm"
+							className="main-header"
+						>
 							Connect with me
 						</Typography>
-						<Typography variant="body-lg" className="text-gradient">
+						<Typography variant="body-md" className="sub-header">
 							Have a project in mind? Let&apos;s talk!
 						</Typography>
 					</div>
@@ -96,7 +128,7 @@ const Contact = () => {
 						<Button
 							type="submit"
 							variant="primary"
-							size="lg"
+							size="sm"
 							className="submit-btn"
 							disabled={isSubmitting}
 						>
@@ -107,7 +139,7 @@ const Contact = () => {
 								variant="body-lg"
 								className="form-status success"
 							>
-								Message sent successfully!
+								Mail Opened successfully! Just click Send.
 							</Typography>
 						)}
 						{submitStatus === "error" && (
@@ -119,6 +151,33 @@ const Contact = () => {
 							</Typography>
 						)}
 					</form>
+				</div>
+				<div className="follow-me">
+					<div className="follow-me-header">
+						<Typography
+							variant="heading-xs"
+							className="main-header"
+						>
+							Follow me!
+						</Typography>
+						<Typography variant="body-md" className="sub-header">
+							Like & Subscribe
+						</Typography>
+					</div>
+					<div className="social-links">
+						{socialAccounts.map((item) => {
+							return (
+								<div className="media" key={item.key}>
+									<img src={item.src} alt={item.name} />
+									<a className={item.key} href={item.href}>
+										<span className="media-name">
+											{item.name}
+										</span>
+									</a>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</Container>
 		</Section>

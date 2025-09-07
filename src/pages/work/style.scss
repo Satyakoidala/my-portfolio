@@ -1,60 +1,9 @@
 @use "../../styles/stylekit-core" as core;
 
 .works {
-	.tab-menu {
-		gap: 20px;
-		width: max-content;
-		flex-wrap: nowrap;
-		justify-content: flex-start;
-
-		.card {
-			width: 220px;
-			min-width: 220px;
-			margin: 0;
-			text-align: center;
-
-			@include core.glass;
-
-			border: none;
-
-			&.current {
-				background-color: core.color-swatch(fill-salmon);
-			}
-		}
-
-		button {
-			font-family: inherit;
-			font-size: 1.5rem;
-			font-weight: 600;
-			color: inherit;
-			width: 100%;
-			border: none;
-			background-color: transparent;
-			padding: 0;
-			line-height: 2.5rem;
-			box-sizing: content-box;
-		}
-	}
-
-	.content {
-		@include core.glass;
-
-		height: 100%;
-		margin-top: 20px;
-		border: none;
-
-		.content-wrapper {
-			height: 100%;
-			width: 100%;
-			overflow-y: scroll;
-			box-sizing: border-box;
-		}
-	}
-
-	.content-title {
-		width: calc(100% - 15px);
-		font-size: 2rem;
-		padding-inline-start: 15px;
-		margin-top: 15px;
+	.tab-content {
+		min-height: 72%;
+		overflow-y: scroll;
+		box-sizing: border-box;
 	}
 }

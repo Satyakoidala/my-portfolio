@@ -1,7 +1,7 @@
 import {
 	homeProfile,
-	instagram,
-	twitter,
+	// instagram,
+	// twitter,
 	linkedin,
 	github,
 	// download,
@@ -40,27 +40,27 @@ window.bootstrap.sections.home.socialAccounts = [
 	{
 		name: "LinkedIn",
 		key: "linkedin",
-		href: "#linkedin",
+		href: "https://www.linkedin.com/in/satyakoidala/",
 		src: linkedin,
 	},
 	{
 		name: "GitHub",
 		key: "github",
-		href: "#github",
+		href: "https://github.com/Satyakoidala",
 		src: github,
 	},
-	{
-		name: "Instagram",
-		key: "instagram",
-		href: "#instagram",
-		src: instagram,
-	},
-	{
-		name: "Twitter",
-		key: "twitter",
-		href: "#twitter",
-		src: twitter,
-	},
+	// {
+	// 	name: "Instagram",
+	// 	key: "instagram",
+	// 	href: "#instagram",
+	// 	src: instagram,
+	// },
+	// {
+	// 	name: "Twitter",
+	// 	key: "twitter",
+	// 	href: "#twitter",
+	// 	src: twitter,
+	// },
 ];
 
 window.bootstrap.sections.home.profile = {
@@ -83,26 +83,26 @@ window.bootstrap.sections.about.educationDetails = [
 		timeStamp: "Jul, 2021",
 		cardDetails: {
 			institute: "Gayatri Vidya Parishad College of Engineering",
-			degree: "B.Tech",
-			course: "Computer Science",
-			gpa: "8.87/10",
+			degree: "Bachelor of Technology",
+			course: "Computer Science Engineering",
+			gpa: "8.87",
 		},
 	},
 	{
 		timeStamp: "Apr, 2017",
 		cardDetails: {
 			institute: "Narayana Junior College",
-			degree: "Intermediate",
+			degree: "Intermediate Education",
 			course: "MPC",
-			percentage: "97.4%",
+			percentage: "97.4",
 		},
 	},
 	{
 		timeStamp: "May, 2015",
 		cardDetails: {
 			institute: "Priyanka's Vidyodaya High School",
-			course: "SSC",
-			grade: "9.8/10",
+			course: "SSC Board",
+			gpa: "9.8",
 		},
 	},
 ];
@@ -156,22 +156,30 @@ window.bootstrap.sections.about.skills = [
 
 window.bootstrap.sections.about.experienceDetails = [
 	{
-		timeStamp: "Aug, 2021",
+		timeStamp: "Jul, 2024",
 		cardDetails: {
 			company: "Infosys Limited",
-			role: "Specialist Programmer",
-			duration: "Present, 3 years & 1 month",
+			role: "Specialist Programmer L2 (SDE2)",
 			description:
-				"I have worked as a frontend engineer for Apple Client. Developed multiple features, upgraded, tested and improved several modules using micro frontend architecture.",
+				"🧑🏻‍💻I have been working as a frontend engineer for one of the MAANG companies as client using Micro Frontend Architecture.<br/>⚛️ Developed reusable ReactJS components and integrated with CMS to support multi-language storefronts across global markets.<br/>🎨 Translated wireframes & designs into pixel-perfect, scalable UI features, improving design-to-dev handoff speed.<br/>🌍 Enhanced cross-browser and multilingual compatibility, ensuring consistent user experience across regions.",
 		},
 	},
 	{
-		timeStamp: "Jul, 2021",
-		isGraduation: true,
+		timeStamp: "Aug, 2021",
 		cardDetails: {
-			graduation: "Graduated Engineering",
+			company: "Infosys Limited",
+			role: "Specialist Programmer (SDE1)",
+			description:
+				"🔧 Built and maintained high-performance React apps, ensuring scalability and reliability in production environments.<br/>🧪 Implemented automated testing (Cypress, Playwright), reducing bugs and increasing deployment confidence.<br/>📈 Optimized web performance & reduced technical debt by creating reusable, maintainable components.<br/>🚀 Contributed to faster iteration cycles by streamlining frontend workflows and automation pipelines.<br/>🤝 Collaborated with cross-functional teams to deliver features aligned with business goals, consistently meeting deadlines.",
 		},
 	},
+	// {
+	// 	timeStamp: "Jul, 2021",
+	// 	isGraduation: true,
+	// 	cardDetails: {
+	// 		graduation: "Graduated Engineering",
+	// 	},
+	// },
 ];
 
 window.bootstrap.sections.about.summary = {
@@ -202,9 +210,174 @@ window.bootstrap.sections.work = {
 	tabs: [
 		{ key: "web-apps", displayName: "Web Apps" },
 		// { key: "ui-comps", displayName: "UI Comps" },
-		{ key: "blogs", displayName: "Blogs" },
 		{ key: "npm-modules", displayName: "Node Modules" },
+		{ key: "blogs", displayName: "Blogs" },
 		// { key: "certifications", displayName: "Certs." },
+	],
+
+	webApps: [
+		{
+			name: "chess-board-react",
+			description:
+				"A modern, feature-rich chess game built with React featuring timers, move validation, and polished UI",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/chess-board-react",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+				{
+					name: "Live",
+					url: "https://react-chess-board-game.netlify.app/",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
+		// {
+		// 	name: "my-portfolio",
+		// 	description:
+		// 		"A personal portfolio website built with ReactJS, featuring custom webpack and Babel setup",
+		// 	links: [
+		// 		{
+		// 			name: "GitHub",
+		// 			url: "https://github.com/Satyakoidala/my-portfolio",
+		// 			rel: "noreferrer",
+		// 			target: "_blank",
+		// 		},
+		// 		{
+		// 			name: "Live",
+		// 			url: "https://satyakoidala.netlify.app/",
+		// 			rel: "noreferrer",
+		// 			target: "_blank",
+		// 		},
+		// 	],
+		// },
+		{
+			name: "monk-commerce",
+			description:
+				"Creative task by Monk Commerce for frontend developer role - eCommerce product management",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/monk-commerce",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+				{
+					name: "Live",
+					url: "https://monk-commerce-devchef.netlify.app/",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
+		{
+			name: "split-wise-app",
+			description:
+				"An application to note and split bills among friends or a group of people",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/split-wise-app",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+				{
+					name: "Live",
+					url: "https://zippy-lolly-c9a4b3.netlify.app/",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
+		// {
+		// 	name: "frontend-mentor.io",
+		// 	description:
+		// 		"Set of frontend projects done for practice including NFT preview card and media API demo",
+		// 	links: [
+		// 		{
+		// 			name: "GitHub",
+		// 			url: "https://github.com/Satyakoidala/frontend-mentor.io",
+		// 			rel: "noreferrer",
+		// 			target: "_blank",
+		// 		},
+		// 	],
+		// },
+		// {
+		// 	name: "chatcord-nodejs",
+		// 	description:
+		// 		"Real-time chat application using Node.js, Express.js, Socket.io, and Moment",
+		// 	links: [
+		// 		{
+		// 			name: "GitHub",
+		// 			url: "https://github.com/Satyakoidala/chatcord-nodejs",
+		// 			rel: "noreferrer",
+		// 			target: "_blank",
+		// 		},
+		// 	],
+		// },
+		// {
+		// 	name: "react-pocs",
+		// 	description: "React Concepts with Demos - educational repository",
+		// 	links: [
+		// 		{
+		// 			name: "GitHub",
+		// 			url: "https://github.com/Satyakoidala/react-pocs",
+		// 			rel: "noreferrer",
+		// 			target: "_blank",
+		// 		},
+		// 	],
+		// },
+		// {
+		// 	name: "react-resume-builder",
+		// 	description: "Resume builder application built with React",
+		// 	links: [
+		// 		{
+		// 			name: "GitHub",
+		// 			url: "https://github.com/Satyakoidala/react-resume-builder",
+		// 			rel: "noreferrer",
+		// 			target: "_blank",
+		// 		},
+		// 	],
+		// },
+		{
+			name: "e-lib-management",
+			description: "Final project - Electronic library management system",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/e-lib-management",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
+		{
+			name: "bill-manager",
+			description: "Personal ledger application for bill management",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/bill-manager",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
+		{
+			name: "college-predictor-web-interface",
+			description: "Mini project - College predictor web interface",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/college-predictor-web-interface",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
 	],
 
 	blogs: [
@@ -232,11 +405,42 @@ window.bootstrap.sections.work = {
 
 	pkgModules: [
 		{
-			name: "sk-create-react-app",
+			name: "create-react-app-clone",
 			description:
-				"A custom create react app automated package with starter template.",
-			link: "https://www.npmjs.com/package/sk-create-react-app",
-			github: "https://github.com/Satyakoidala/create-react-app-clone",
+				"A custom create-react-app automated package with starter template, published on NPM",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/create-react-app-clone",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+				{
+					name: "NPM",
+					url: "https://www.npmjs.com/package/sk-create-react-app",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
+		},
+		{
+			name: "create-react-app-demo-without-CRA",
+			description:
+				"Setup demo for creating React application without using CRA or any other framework",
+			links: [
+				{
+					name: "GitHub",
+					url: "https://github.com/Satyakoidala/create-react-app-demo-without-CRA",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+				{
+					name: "NPM",
+					url: "https://www.npmjs.com/package/satyakodes-cra-template",
+					rel: "noreferrer",
+					target: "_blank",
+				},
+			],
 		},
 	],
 };

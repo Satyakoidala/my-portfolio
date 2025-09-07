@@ -1,12 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import {
 	Container,
 	// SideLeft,
 	// SideRight,
 	SectionTile,
 	Timeline,
-	QuestionBox,
+	// QuestionBox,
 	Section,
 	Carousel,
 	Card,
@@ -19,7 +19,7 @@ import {
 	EducationCardsHtml,
 } from "./component";
 import { getIcon } from "../../assets/icons";
-import { education, experience, skills as iconSkills } from "../../assets";
+import { education, experience, skills as skillsIcon } from "../../assets";
 
 import "./style.scss";
 
@@ -41,7 +41,6 @@ const About = () => {
 				roundedCorner
 				noPadding
 			>
-				{/* <SideLeft> */}
 				<SectionTile
 					classes={{ section: "work-experience" }}
 					title="Experience"
@@ -60,7 +59,7 @@ const About = () => {
 					classes={{ section: "skills" }}
 					title="Skills"
 					iconHtml={
-						<img src={iconSkills} alt="" width="30" height="34" />
+						<img src={skillsIcon} alt="" width="30" height="34" />
 					}
 					noCard
 				>
@@ -93,10 +92,7 @@ const About = () => {
 						</div>
 					))}
 				</SectionTile>
-				{/* </SideLeft> */}
-				{/* <SideRight> */}
-
-				<SectionTile
+				{/* <SectionTile
 					classes={{ section: "questionnaire" }}
 					noRound
 					noCard
@@ -115,7 +111,7 @@ const About = () => {
 						<p>Want to contact me?</p>
 						<NavLink to="/contact">Click here</NavLink>
 					</QuestionBox>
-				</SectionTile>
+				</SectionTile> */}
 				<SectionTile
 					classes={{ section: "education" }}
 					title="Education"
@@ -135,7 +131,6 @@ const About = () => {
 						}
 					/>
 				</SectionTile>
-				{/* </SideRight> */}
 			</Container>
 
 			<Footer />

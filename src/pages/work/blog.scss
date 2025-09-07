@@ -1,0 +1,56 @@
+@use "../../styles/stylekit-core" as core;
+
+.blogs {
+	column-gap: 0;
+}
+
+.blog {
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	text-align: start;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: transparent;
+
+	&:hover {
+		.blog-wrapper {
+			transform: scale(0.98);
+		}
+	}
+
+	&-wrapper {
+		width: calc(100% - 7.5px);
+		height: 100%;
+		border-radius: inherit;
+		padding: 16px;
+		background-color: core.color-swatch(sec-bg);
+		transition: all 300ms ease-in-out;
+	}
+
+	&:nth-child(odd) .blog-wrapper {
+		margin-inline-end: 7.5px;
+	}
+
+	&:nth-child(even) .blog-wrapper {
+		margin-inline-start: 7.5px;
+	}
+
+	&-title {
+		font-size: 1rem;
+		margin-block: 0 5px;
+	}
+
+	&-desc {
+		font-size: 0.9rem;
+		color: core.color-swatch(secondary-black);
+		margin: 0;
+	}
+
+	&-link {
+		width: initial;
+		position: absolute;
+		inset-inline-end: 15px;
+		top: 18px;
+	}
+}

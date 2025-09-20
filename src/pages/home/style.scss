@@ -150,7 +150,7 @@
 		}
 
 		.keyword {
-			color: core.color-swatch(fill-salmon);
+			color: core.color-swatch(lively-green);
 		}
 
 		&.typing-animation {
@@ -184,21 +184,21 @@
 			}
 		}
 
-		&.fade-in-animation {
-			> p {
-				opacity: 0;
-				animation-name: fade-in;
-				animation-delay: 1s;
-				animation-duration: 3s;
-				animation-fill-mode: forwards;
-			}
-		}
-
 		+ .resume-box {
 			margin-top: 30px;
 			opacity: 0;
 			animation-name: fade-in;
 			animation-delay: 8s;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	.fade-in-animation {
+		> * {
+			opacity: 0;
+			animation-name: fade-in;
+			animation-delay: 1s;
 			animation-duration: 3s;
 			animation-fill-mode: forwards;
 		}
@@ -230,7 +230,7 @@
 		.image-cover {
 			overflow: hidden;
 			border: 2px solid rgba(255, 255, 255, 10%);
-			background-color: core.color-swatch(fill-salmon);
+			background-color: core.color-swatch(lively-green);
 		}
 
 		.image {

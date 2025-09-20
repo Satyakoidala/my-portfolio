@@ -1,30 +1,23 @@
 @use "../../styles/stylekit-core" as core;
 
 .profile-summary {
+	@include core.glass;
+
+	border: none;
 	width: 100%;
 	border-radius: inherit;
 	font-size: 0.875rem;
 	padding: 15px;
 
-	@include core.glass;
-
 	.header {
-		font-size: 1.25rem;
-		font-weight: 400;
-		letter-spacing: 0.025rem;
+		@include core.typography(body);
 
-		@include core.custom-border-bottom(
-			1px,
-			core.color-swatch(fill-salmon),
-			22.5%
-		);
+		color: core.color-swatch(lively-green);
+		margin-bottom: 0.5rem;
 	}
 
 	.sub-header {
-		font-size: 1rem;
-		font-weight: 400;
-		letter-spacing: 0.01rem;
-		color: core.color-swatch(secondary-white);
+		@include core.typography(body-small);
 	}
 
 	.tag {
@@ -61,8 +54,8 @@
 	}
 
 	.summary-card {
-		font-weight: 600;
-		background-color: core.color-swatch(fill-salmon);
+		// font-weight: 600;
+		// background-color: core.color-swatch(lively-green);
 
 		// background-color: #f08080;
 		// background-color: #dc143c;

@@ -39,7 +39,7 @@
 			letter-spacing: -0.05rem;
 			display: inline-block;
 			margin: 0;
-			color: core.color-swatch(fill-salmon);
+			color: core.color-swatch(lively-green);
 		}
 	}
 
@@ -102,8 +102,6 @@
 			&-link {
 				display: block;
 				padding: 8px 12px;
-				font-size: 1.2rem;
-				font-weight: 300;
 				color: core.color-swatch(primary-txt);
 				text-decoration: none;
 				transition: background-color 0.2s ease;
@@ -113,8 +111,11 @@
 				}
 
 				&.active {
-					color: core.color-swatch(fill-salmon);
-					background-color: rgba(core.color-swatch(fill-salmon), 0.1);
+					color: core.color-swatch(lively-green);
+					background-color: rgba(
+						core.color-swatch(lively-green),
+						0.1
+					);
 				}
 			}
 		}
@@ -122,10 +123,9 @@
 }
 
 .footer {
+	@include core.typography(footer);
+
 	width: 100%;
-	font-size: 1rem;
-	font-weight: 300;
-	letter-spacing: -0.0025rem;
 	display: flex;
 	align-items: flex-end;
 	padding-top: 75px;
@@ -198,42 +198,27 @@
 
 	.menu-item {
 		list-style: none;
-		font-size: 1.25rem;
-		font-weight: 600;
-		letter-spacing: 0.5px;
 		padding: 3px 10px 3px 0;
 		color: core.color-swatch(primary-txt);
 		border: 2px solid transparent;
 		transition: border-color 5ms;
 
-		&:hover {
-			border-bottom-width: 0;
-
-			.button-link {
-				border-bottom: solid 2px #fff;
-
-				&.active {
-					border-bottom: none;
-				}
-			}
-		}
-
 		.button-link {
+			@include core.typography(body-small);
+
 			color: core.color-swatch(primary-txt);
 			appearance: none;
 			background-color: transparent;
 			border: 0;
 			padding: 0;
-			font-size: 1rem;
-			font-weight: 300;
-			letter-spacing: -0.25px;
+			display: block;
+			line-height: 1.75;
 
 			&.active {
-				background-color: core.color-swatch(sec-bg);
+				background-color: core.color-swatch(lively-green);
 				color: core.color-swatch(sec-txt);
 				border-radius: 6px;
 				padding: 1px 10px;
-				font-weight: 400;
 			}
 		}
 	}

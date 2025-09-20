@@ -16,6 +16,8 @@
 	.education {
 		@include core.glass;
 
+		border: none;
+
 		.section-header {
 			margin-bottom: 20px;
 		}
@@ -43,16 +45,10 @@
 			flex: 0 0 150px;
 			width: 150px;
 		}
-
-		.carousel-title {
-			font-size: 1.125rem;
-			font-weight: 500;
-			letter-spacing: 0.025rem;
-		}
 	}
 
 	.skill {
-		font-size: 1rem;
+		// font-size: 1rem;
 		padding: 8px;
 		display: inline-block;
 		margin: 5px 8px;
@@ -79,7 +75,7 @@
 	align-items: stretch;
 
 	.question {
-		// background-color: core.color-swatch(fill-salmon);
+		// background-color: core.color-swatch(lively-green);
 		padding: 10px;
 		justify-content: space-between;
 
@@ -96,7 +92,7 @@
 	a {
 		width: 50%;
 		line-height: 2em;
-		background-color: core.color-swatch(fill-salmon);
+		background-color: core.color-swatch(lively-green);
 		color: core.color-swatch(sec-txt);
 		border-radius: 18px;
 
@@ -120,6 +116,7 @@
 	.institute {
 		width: 100%;
 		font-size: 0.9rem;
+		font-weight: 500;
 		color: core.color-swatch(secondary-black);
 	}
 
@@ -135,7 +132,8 @@
 
 	.details {
 		width: 88%;
-		font-size: 1.1rem;
+		font-size: 0.9rem;
+		font-weight: 500;
 
 		@include core.viewport(small) {
 			width: 80%;
@@ -177,6 +175,8 @@
 	.role,
 	.company {
 		width: 50%;
+		font-size: 0.9rem;
+		font-weight: 500;
 
 		@include core.viewport(small) {
 			width: 100%;
@@ -185,6 +185,7 @@
 
 	.company {
 		text-align: end;
+		font-style: oblique;
 
 		@include core.viewport(small) {
 			text-align: start;
@@ -192,9 +193,11 @@
 	}
 
 	.description {
-		font-size: 0.9rem;
-		letter-spacing: -0.0025rem;
+		@include core.typography(body-small);
+
+		font-weight: 500;
 		color: core.color-swatch(secondary-black);
+		width: 100%;
 		margin-top: 10px;
 	}
 }

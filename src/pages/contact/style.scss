@@ -54,6 +54,7 @@
 	.follow-me-header {
 		text-align: center;
 		margin-bottom: 1rem;
+		color: core.color-swatch(lively-green);
 
 		& .sub-header {
 			color: core.color-swatch(secondary-white);
@@ -87,7 +88,7 @@
 
 				&:focus {
 					outline: none;
-					border-color: core.color-swatch(fill-salmon);
+					border-color: core.color-swatch(lively-green);
 					background: rgba(255, 255, 255, 10%);
 				}
 			}
@@ -101,7 +102,7 @@
 
 		.submit-btn {
 			font-size: 1rem;
-			background-color: core.color-swatch(sec-bg);
+			background-color: core.color-swatch(lively-green);
 			color: core.color-swatch(sec-txt);
 			border-radius: 6px;
 			padding: 4px 8px;
@@ -172,7 +173,7 @@
 			transition: color 0.3s ease;
 
 			&:hover {
-				color: core.color-swatch(fill-salmon);
+				color: core.color-swatch(lively-green);
 			}
 		}
 	}

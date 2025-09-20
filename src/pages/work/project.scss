@@ -13,23 +13,37 @@
 	}
 
 	.project-title {
+		@include core.typography(body);
+
+		font-weight: inherit;
 		width: 100%;
 		margin-bottom: 6px;
-		font-size: 1rem;
 	}
 
 	.project-desc {
+		@include core.typography(body-small);
+
+		font-weight: inherit;
 		flex-grow: 1;
+		width: 100%;
 		color: core.color-swatch(secondary-black);
 	}
 
 	.project-links {
+		@include core.typography(body-xs);
+
+		font-weight: inherit;
 		width: 100%;
 		margin-top: 15px;
+		color: core.color-swatch(secondary-black);
 
 		.project-link {
 			display: inline-block;
 			width: 50%;
+
+			&::after {
+				content: "↗";
+			}
 		}
 
 		.project-link:nth-child(2) {

@@ -22,19 +22,19 @@
 		width: 100%;
 
 		h3 {
+			@include core.typography(body);
+
+			color: core.color-swatch(lively-green);
 			margin-block: 0;
 			margin-inline-start: 10px;
-			font-size: 1.25rem;
-			font-weight: 400;
-			letter-spacing: 0.025rem;
 			flex-grow: 1;
 			align-content: flex-end;
 
-			@include core.custom-border-bottom(
-				2px,
-				core.color-swatch(fill-salmon),
-				30%
-			);
+			// @include core.custom-border-bottom(
+			// 	2px,
+			// 	core.color-swatch(lively-green),
+			// 	30%
+			// );
 		}
 	}
 
@@ -80,8 +80,6 @@
 			margin-top: 25px;
 			padding: 10px 20px;
 			align-items: start;
-			font-size: 1rem;
-			font-weight: 600;
 			flex-wrap: wrap;
 		}
 
@@ -98,9 +96,10 @@
 	}
 
 	.timestamp {
+		@include core.typography(body-xs);
+
+		color: core.color-swatch(lively-green);
 		width: 12%;
-		font-size: 0.85rem;
-		font-weight: 600;
 		margin-inline-end: -2%;
 		padding-inline-end: 4%;
 		padding-top: 25px;

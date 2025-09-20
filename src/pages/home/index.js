@@ -67,7 +67,7 @@ const Home = () => {
 					</div> */}
 				</SideLeft>
 				<SideRight>
-					<div className="intro-image">
+					<div className="intro-image fade-in-animation">
 						<div className="image-cover"></div>
 						<img
 							className="image"

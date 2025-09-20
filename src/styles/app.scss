@@ -22,22 +22,17 @@ body {
 	height: 100%;
 	background-color: core.color-swatch(main-bg);
 	overflow: hidden;
+
+	@include core.typography(body);
 }
 
 // Root container styles
 #root {
-	min-width: 980px;
-	width: min(90%, 980px);
+	width: 100%;
+	max-width: 1040px;
 	height: 100%;
 	margin: 0 auto;
 	color: core.color-swatch(primary-txt);
-	font-family: "Source Sans 3",
-		"Source Code Pro",
-		"Source Serif 4",
-		Outfit,
-		sans-serif;
-	font-size: 2rem;
-	letter-spacing: 0.1px;
 }
 
 // Typography
@@ -48,18 +43,8 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	font-weight: 600;
-	line-height: 1.2;
-}
 
-h3 {
-	margin-block: 0 0.9375rem;
-	font-size: 1.5rem;
-}
-
-p {
-	margin-bottom: 1rem;
-	line-height: 1.6;
+	@include core.typography(heading);
 }
 
 // Lists
@@ -78,7 +63,7 @@ a {
 	@include core.transition-smooth;
 
 	&:hover {
-		color: core.color-swatch(accent-primary);
+		color: core.color-swatch(sec-txt);
 	}
 
 	@include core.focus-ring;

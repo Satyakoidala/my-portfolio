@@ -7,7 +7,7 @@ export default () => {
 	return (
 		<footer className="footer">
 			<div className="disclaimer">
-				&copy; {new Date().getFullYear()} My Website. All rights
+				&copy; {new Date().getFullYear()} Satya Koidala. All rights
 				reserved.
 			</div>
 

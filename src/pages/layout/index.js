@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { useWindowEvent } from "../../hooks";
-import NavBar from "./nav-bar";
 import { RouteTransition } from "../../components/transitions";
+import NavBar from "./navbar";
 
 import "./style.scss";
 

@@ -38,7 +38,7 @@ $colors: (
 @mixin glass {
 	color: color-swatch("primary-txt");
 	background-color: color-swatch("glass-bg");
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px) brightness(1.1);
 	-webkit-backdrop-filter: blur(10px);
 	border: 1px solid color-swatch("glass-border");
 }
@@ -182,3 +182,12 @@ $colors: (
 		}
 	}
 }
+
+// $new_colors: (
+// 	contrast_color: #c5f82a,
+// 	background_color: #f72ac4,
+// 	highlights: #912af7,
+
+// 	#00ff00,
+// 	#ff00bf,
+// );

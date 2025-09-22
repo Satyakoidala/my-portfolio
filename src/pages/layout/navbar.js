@@ -2,11 +2,11 @@ import React from "react";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import { Container, SideLeft, SideRight, Button } from "../../components";
-import { profile } from "../../assets";
+// import { profile } from "../../assets";
 import { getIcon } from "../../assets/icons";
 import { isMobile } from "../../utils";
 
-import "./style.scss";
+import "./navbar.scss";
 
 const NavBar = () => {
 	const navItems = window.bootstrap.navBarLinks || [];
@@ -38,7 +38,7 @@ const NavBar = () => {
 		<Container classes={["nav-bar"]}>
 			<SideLeft classes={["nav-left"]}>
 				<div className="profile-header">
-					<img src={profile} alt="profile" width={30} height={35} />
+					{/* <img src={profile} alt="profile" width={30} height={35} /> */}
 					<h1 className="title">Satya Koidala</h1>
 				</div>
 			</SideLeft>

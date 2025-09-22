@@ -12,12 +12,16 @@
 	.header {
 		@include core.typography(body);
 
+		font-size: 3.5rem;
 		color: core.color-swatch(lively-green);
 		margin-bottom: 0.5rem;
 	}
 
 	.sub-header {
 		@include core.typography(body-small);
+
+		font-family: "Fira Code", monospace;
+		font-size: 1.1rem;
 	}
 
 	.tag {

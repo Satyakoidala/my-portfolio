@@ -1,6 +1,8 @@
 import React from "react";
 import { FootNotes } from "../../components";
 
+import "./footer.scss";
+
 export default () => {
 	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
 

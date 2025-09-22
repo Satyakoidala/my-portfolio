@@ -1,20 +1,8 @@
 // Core components
-export { Container, SideLeft, SideRight } from "./core";
+export * from "./core";
 
 // Common components
-export {
-	Card,
-	Section,
-	SectionTile,
-	Timeline,
-	QuestionBox,
-	FootNotes,
-	Typography,
-	Carousel,
-	TabSwitcher,
-	ContentWrapper,
-	Button,
-} from "./common";
+export * from "./common";
 
 // Other components
 export { default as ErrorBoundary } from "./error-boundary";

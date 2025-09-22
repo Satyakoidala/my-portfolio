@@ -1,0 +1,70 @@
+@use "../../styles/stylekit-core" as core;
+
+.footer {
+	@include core.typography(footer);
+
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	padding-top: 75px;
+
+	@include core.viewport(small) {
+		flex-direction: column-reverse;
+		padding-top: 50px;
+	}
+
+	.disclaimer,
+	.social-accounts {
+		flex: 1;
+		padding: 0.5rem !important;
+
+		@include core.viewport(small) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.social-accounts {
+		justify-content: space-between;
+	}
+
+	.social-media {
+		margin: 0;
+		display: flex;
+		border-radius: 6px;
+		align-items: end;
+
+		.media {
+			padding-inline: 10px;
+
+			a {
+				text-align: center;
+			}
+
+			.media-name {
+				color: core.color-swatch(primary-txt);
+				vertical-align: middle;
+				display: inline-block;
+				width: 0;
+				overflow: hidden;
+				transition: width 300ms smooth;
+
+				&:hover {
+					width: auto;
+					margin-inline-start: 5px;
+				}
+			}
+
+			img {
+				width: 15px;
+				height: 15px;
+				vertical-align: middle;
+
+				&:hover + .media-name {
+					width: auto;
+					margin-inline-start: 5px;
+				}
+			}
+		}
+	}
+}

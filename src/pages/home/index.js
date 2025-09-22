@@ -35,12 +35,10 @@ const Home = () => {
 							{...innerHTML(profileData.introText?.greeting)}
 						/>
 						<p className="line-2">
-							I&apos;m a{" "}
 							<span
 								className="keyword"
 								{...innerHTML(profileData.introText?.expertise)}
 							/>
-							,
 						</p>
 						<p className="line-3">
 							specialized in{" "}

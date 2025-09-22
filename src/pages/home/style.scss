@@ -79,7 +79,7 @@
 		}
 
 		.line-1 {
-			font-size: 2.25rem;
+			font-size: 4rem;
 
 			@include core.viewport(small) {
 				font-size: 1.3rem;
@@ -87,7 +87,7 @@
 		}
 
 		.line-2 {
-			font-size: 2.5rem;
+			font-size: 5rem;
 
 			@include core.viewport(small) {
 				font-size: 1.5rem;
@@ -95,7 +95,11 @@
 		}
 
 		.line-3 {
-			font-size: 1.75rem;
+			font-size: 4rem;
+
+			.keyword {
+				display: inline-block;
+			}
 
 			@include core.viewport(small) {
 				font-size: 1.4rem;
@@ -144,6 +148,10 @@
 		}
 
 		> p {
+			font-family: "Sofia Sans Condensed", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 400;
+			font-style: normal;
 			margin-block: 0 5px;
 			white-space: nowrap;
 			border-right: 2px solid transparent;
@@ -151,6 +159,8 @@
 
 		.keyword {
 			color: core.color-swatch(lively-green);
+			display: block;
+			font-size: 6rem;
 		}
 
 		&.typing-animation {

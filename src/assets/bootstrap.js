@@ -65,7 +65,7 @@ window.bootstrap.sections.home.socialAccounts = [
 
 window.bootstrap.sections.home.profile = {
 	introText: {
-		greeting: "Hi&#128075;",
+		greeting: "Hello, I'm a",
 		expertise: "Frontend Developer",
 		specialization: "ReactJS",
 	},

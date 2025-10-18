@@ -22,7 +22,7 @@
 		width: 100%;
 
 		h3 {
-			@include core.typography(body);
+			@include core.typography(h3);
 
 			color: core.color-swatch(lively-green);
 			margin-block: 0;

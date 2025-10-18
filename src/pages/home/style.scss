@@ -148,13 +148,12 @@
 		}
 
 		> p {
-			font-family: "Sofia Sans Condensed", sans-serif;
-			font-optical-sizing: auto;
+			@include core.typography(h2);
+
 			font-weight: 400;
-			font-style: normal;
-			margin-block: 0 5px;
+			line-height: normal;
+			margin: 0;
 			white-space: nowrap;
-			border-right: 2px solid transparent;
 		}
 
 		.keyword {

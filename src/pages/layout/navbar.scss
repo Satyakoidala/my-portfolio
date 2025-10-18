@@ -32,20 +32,13 @@
 		}
 
 		.title {
-			// @include core.text-gradient();
-			// font-family: "Fira Code", monospace;
 			font-family: "Sofia Sans Condensed", sans-serif;
 			font-size: 2.5rem;
 			font-weight: 400;
-			letter-spacing: -0.05rem;
 			line-height: normal;
 			display: inline-block;
 			margin: 0;
 			color: core.color-swatch(lively-green);
-
-			// border: 2px solid core.color-swatch(lively-green);
-			// padding-inline: 6px;
-			// border-radius: 50%;
 		}
 	}
 
@@ -144,7 +137,8 @@
 		.button-link {
 			@include core.typography(sub-heading);
 
-			font-family: "Fira Code", monospace;
+			font-size: 1rem;
+			line-height: 2;
 			color: core.color-swatch(primary-txt);
 			appearance: none;
 			background-color: transparent;
@@ -152,11 +146,13 @@
 			padding: 0;
 			display: block;
 
-			// line-height: 1.75;
-
 			&.active {
-				background-color: core.color-swatch(lively-green);
-				color: core.color-swatch(sec-txt);
+				// background-color: core.color-swatch(lively-green);
+				@include core.glass;
+
+				border: none;
+
+				// color: core.color-swatch(sec-txt);
 				border-radius: 6px;
 				padding: 1px 10px;
 			}

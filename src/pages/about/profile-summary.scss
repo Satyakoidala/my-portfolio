@@ -10,18 +10,14 @@
 	padding: 15px;
 
 	.header {
-		@include core.typography(body);
+		@include core.typography(h3);
 
-		font-size: 3.5rem;
 		color: core.color-swatch(lively-green);
 		margin-bottom: 0.5rem;
 	}
 
-	.sub-header {
-		@include core.typography(body-small);
-
-		font-family: "Fira Code", monospace;
-		font-size: 1.1rem;
+	.description {
+		@include core.typography(body);
 	}
 
 	.tag {

@@ -50,6 +50,7 @@ const About = () => {
 					noCard
 				>
 					<Timeline
+						classes={{ timeline: "timeline-horizon" }}
 						cardsHtml={
 							<ExperienceCardsHtml data={experienceDetails} />
 						}
@@ -126,6 +127,7 @@ const About = () => {
 					noCard
 				>
 					<Timeline
+						classes={{ timeline: "timeline-horizon" }}
 						cardsHtml={
 							<EducationCardsHtml data={educationDetails} />
 						}

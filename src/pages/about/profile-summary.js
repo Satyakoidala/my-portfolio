@@ -15,7 +15,7 @@ export default () => {
 				{/* eslint-disable-next-line jsx-a11y/heading-has-content */}
 				<h3 className="header" {...innerHTML(summary.header)} />
 				<div
-					className="sub-header"
+					className="description"
 					{...innerHTML(summary.legendHeader)}
 				/>
 

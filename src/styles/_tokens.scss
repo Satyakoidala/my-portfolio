@@ -1,0 +1,140 @@
+@use "sass:map";
+
+// Color System - Base Tokens
+$color-primary: #f7f7ff;
+$color-secondary: #c5f82a;
+$color-background: #151515;
+$color-surface: #ffffff0d;
+$color-success: #2ecc71;
+$color-warning: #f1c40f;
+$color-error: #e74c3c;
+
+// Extended Color Scales
+$color-primary-scale: (
+	50: #fff,
+	100: #f9f9ff,
+	200: #f2f2ff,
+	300: #ececff,
+	400: #f0f0ff,
+	500: #d9d9ff,
+	600: #bfbfe6,
+	700: #a5a5cc,
+	800: #8b8bb3,
+	900: #6f6f99,
+);
+$color-secondary-scale: (
+	50: #f5ffb8,
+	100: #e9ff91,
+	200: #dfff63,
+	300: #d1f936,
+	400: #c5f82a,
+	500: #a6d31e,
+	600: #8bb41a,
+	700: #6f9314,
+	800: #4f6c0e,
+	900: #334707,
+);
+$color-success-scale: (
+	50: #e8fdf2,
+	100: #d2f9e2,
+	200: #aef5ca,
+	300: #85ecae,
+	400: #5ce390,
+	500: #3cd37c,
+	600: #2eaa61,
+	700: #24884e,
+	800: #1a663b,
+	900: #114429,
+);
+$color-error-scale: (
+	50: #fdecea,
+	100: #f8d7da,
+	200: #f1aeb5,
+	300: #ea868f,
+	400: #e35d6a,
+	500: #dc3545,
+	600: #b02a37,
+	700: #842029,
+	800: #5a1a20,
+	900: #3b0f14,
+);
+
+// Typography System
+$font-primary: "Inter", sans-serif;
+$font-secondary: "Sofia Sans Condensed", sans-serif;
+
+// Type Scale
+$font-sizes: (
+	xs: (
+		size: 12px,
+		line-height: 16px,
+		letter-spacing: 0.02em,
+		weight: 400,
+	),
+	sm: (
+		size: 14px,
+		line-height: 20px,
+		letter-spacing: 0,
+		weight: 400,
+	),
+	md: (
+		size: 16px,
+		line-height: 24px,
+		letter-spacing: 0,
+		weight: 400,
+	),
+	lg: (
+		size: 20px,
+		line-height: 28px,
+		letter-spacing: -0.01em,
+		weight: 500,
+	),
+	xl: (
+		size: 24px,
+		line-height: 32px,
+		letter-spacing: -0.015em,
+		weight: 600,
+	),
+	xxl: (
+		size: 32px,
+		line-height: 40px,
+		letter-spacing: -0.02em,
+		weight: 700,
+	),
+);
+
+// Spacing System
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 16px;
+$space-4: 24px;
+$space-5: 32px;
+$space-6: 40px;
+$space-7: 56px;
+$space-8: 72px;
+
+// Shadow System
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 12%);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 16%);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 24%);
+$shadow-focus: 0 0 0 3px rgba($color-secondary, 0.4);
+
+// Motion System
+$motion-fast: 100ms;
+$motion-medium: 200ms;
+$motion-slow: 400ms;
+$ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+$ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+
+// Helper functions to access color scales
+@function color($scale, $shade) {
+	@return map.get(map.get($color-scales, $scale), $shade);
+}
+
+$color-scales: (
+	primary: $color-primary-scale,
+	secondary: $color-secondary-scale,
+	success: $color-success-scale,
+	error: $color-error-scale,
+);

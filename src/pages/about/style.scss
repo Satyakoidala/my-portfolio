@@ -1,25 +1,33 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
 
 .about {
-	row-gap: 15px;
+	row-gap: $space-3;
 	justify-content: flex-start;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .about .sub-section {
 	width: 100%;
 	flex-grow: 1;
-	gap: 15px;
+	gap: $space-3;
 
 	.skills,
 	.work-experience,
 	.education {
-		@include core.glass;
+		background-color: $theme-surface;
+		border-radius: 12px;
+		padding: $space-4;
 
-		border: none;
+		// box-shadow: $shadow-sm;
+		// border: 1px solid $color-border;
 
 		.section-header {
-			margin-bottom: 20px;
+			margin-bottom: $space-4;
+
+			@include h2;
 		}
 	}
 }
@@ -31,14 +39,14 @@
 
 	.skill-card {
 		width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: $space-4;
 
 		&:last-child {
 			margin-bottom: 0;
 		}
 
 		.carousel-slides {
-			gap: 0.75rem;
+			gap: $space-2;
 		}
 
 		.carousel-slide {
@@ -75,7 +83,7 @@
 	align-items: stretch;
 
 	.question {
-		// background-color: core.color-swatch(lively-green);
+		// background-color: color-swatch(lively-green);
 		padding: 10px;
 		justify-content: space-between;
 
@@ -92,13 +100,13 @@
 	a {
 		width: 50%;
 		line-height: 2em;
-		background-color: core.color-swatch(lively-green);
-		color: core.color-swatch(sec-txt);
+		background-color: color-swatch(lively-green);
+		color: color-swatch(sec-txt);
 		border-radius: 18px;
 
 		&:hover {
-			background-color: core.color-swatch(main-bg);
-			color: core.color-swatch(primary-txt);
+			background-color: color-swatch(main-bg);
+			color: color-swatch(primary-txt);
 		}
 
 		// &::after {
@@ -117,7 +125,7 @@
 		width: 100%;
 		font-size: 0.9rem;
 		font-weight: 500;
-		color: core.color-swatch(secondary-black);
+		color: color-swatch(secondary-black);
 	}
 
 	.degree,
@@ -125,7 +133,7 @@
 		width: 50%;
 		display: inline-block;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 100%;
 		}
 	}
@@ -135,7 +143,7 @@
 		font-size: 0.9rem;
 		font-weight: 500;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 80%;
 		}
 	}
@@ -147,13 +155,13 @@
 		text-align: end;
 		font-size: 1.25rem;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 20%;
 		}
 
 		&::after {
 			font-size: 0.75rem;
-			color: core.color-swatch(secondary-black);
+			color: color-swatch(secondary-black);
 		}
 	}
 
@@ -178,7 +186,7 @@
 		font-size: 0.9rem;
 		font-weight: 500;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 100%;
 		}
 	}
@@ -187,16 +195,16 @@
 		text-align: end;
 		font-style: oblique;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			text-align: start;
 		}
 	}
 
 	.description {
-		@include core.typography(body-small);
+		@include typography(body-small);
 
 		font-weight: 500;
-		color: core.color-swatch(secondary-black);
+		color: color-swatch(secondary-black);
 		width: 100%;
 		margin-top: 10px;
 	}

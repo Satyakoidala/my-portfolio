@@ -1,16 +1,10 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
 
 .nav-bar {
 	justify-content: space-between;
-	margin-top: 10px;
-	padding: 10px;
-
-	// @include core.glass;
-	// border-bottom: 1px solid core.color-swatch("glass-border");
-
-	@include core.viewport(small) {
-		border-bottom: none;
-	}
 
 	.nav-left,
 	.nav-right {
@@ -18,7 +12,7 @@
 	}
 
 	.nav-left {
-		padding-inline-start: 5px;
+		padding-inline-start: $space-1;
 
 		.profile-header {
 			display: flex;
@@ -27,36 +21,37 @@
 
 		img {
 			border-radius: 50%;
-			margin-bottom: -5px;
-			margin-inline-end: 10px;
+			margin-bottom: -$space-1;
+			margin-inline-end: $space-2;
 		}
 
 		.title {
-			font-family: "Sofia Sans Condensed", sans-serif;
-			font-size: 2.5rem;
-			font-weight: 400;
-			line-height: normal;
+			font-family: $font-secondary;
+
+			@include font(xxl);
+
+			font-weight: 500;
 			display: inline-block;
 			margin: 0;
-			color: core.color-swatch(lively-green);
+			color: $color-secondary;
 		}
 	}
 
 	.nav-right {
-		padding-inline-end: 5px;
+		padding-inline-end: $space-1;
 
 		.mobile-menu-container {
 			position: relative;
 		}
 
 		.chevron-button {
-			color: core.color-swatch(primary-txt);
-			padding: 8px;
-			border-radius: 4px;
-			transition: background-color 0.3s ease;
+			color: $color-text-primary;
+			padding: $space-2;
+			border-radius: $space-1;
+			transition: all $motion-medium $ease-standard;
 
 			.chevron-icon {
-				transition: transform 0.3s ease;
+				transition: transform $motion-medium $ease-standard;
 
 				&.rotated {
 					transform: rotate(180deg);
@@ -68,17 +63,16 @@
 			position: absolute;
 			top: 100%;
 			right: 0;
-			background: rgba(core.color-swatch(main-bg), 0.95);
+			background: rgba($theme-bg, 0.95);
 			backdrop-filter: blur(8px);
-			border: 1px solid core.color-swatch(glass-border);
-			border-radius: 8px;
+			border: 1px solid $color-border;
+			border-radius: $space-2;
 			min-width: 200px;
 			opacity: 0;
-			transform: translateY(-10px);
+			transform: translateY(-$space-2);
 			visibility: hidden;
-			transition: all 0.3s ease;
-			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 10%),
-				0 2px 4px -1px rgba(0, 0, 0, 6%);
+			transition: all $motion-medium $ease-standard;
+			box-shadow: $shadow-lg;
 			z-index: 1;
 
 			&.open {
@@ -101,20 +95,17 @@
 			&-link {
 				display: block;
 				padding: 8px 12px;
-				color: core.color-swatch(primary-txt);
+				color: color-swatch(primary-txt);
 				text-decoration: none;
 				transition: background-color 0.2s ease;
 
 				&:hover {
-					background-color: rgba(core.color-swatch(primary-txt), 0.1);
+					background-color: rgba(color-swatch(primary-txt), 0.1);
 				}
 
 				&.active {
-					color: core.color-swatch(lively-green);
-					background-color: rgba(
-						core.color-swatch(lively-green),
-						0.1
-					);
+					color: color-swatch(lively-green);
+					background-color: rgba(color-swatch(lively-green), 0.1);
 				}
 			}
 		}
@@ -129,17 +120,17 @@
 	.menu-item {
 		list-style: none;
 		padding: 3px 10px 3px 0;
-		color: core.color-swatch(primary-txt);
+		color: color-swatch(primary-txt);
 		border: 2px solid transparent;
 		transition: border-color 5ms;
 		align-content: end;
 
 		.button-link {
-			@include core.typography(sub-heading);
+			@include typography(sub-heading);
 
 			font-size: 1rem;
 			line-height: 2;
-			color: core.color-swatch(primary-txt);
+			color: color-swatch(primary-txt);
 			appearance: none;
 			background-color: transparent;
 			border: 0;
@@ -147,12 +138,12 @@
 			display: block;
 
 			&.active {
-				// background-color: core.color-swatch(lively-green);
-				@include core.glass;
+				// background-color: color-swatch(lively-green);
+				@include glass;
 
 				border: none;
 
-				// color: core.color-swatch(sec-txt);
+				// color: color-swatch(sec-txt);
 				border-radius: 6px;
 				padding: 1px 10px;
 			}

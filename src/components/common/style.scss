@@ -1,4 +1,4 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
 
 .section {
 	// min-width: 980px;
@@ -7,8 +7,8 @@
 }
 
 .card {
-	background-color: core.color-swatch(sec-bg);
-	color: core.color-swatch(sec-txt);
+	background-color: color-swatch(sec-bg);
+	color: color-swatch(sec-txt);
 	font-size: 0.875rem;
 }
 
@@ -22,17 +22,18 @@
 		width: 100%;
 
 		h3 {
-			@include core.typography(h3);
+			@include typography(h3);
 
-			color: core.color-swatch(lively-green);
+			color: color-swatch(lively-green);
 			margin-block: 0;
-			margin-inline-start: 10px;
+
+			// margin-inline-start: 10px;
 			flex-grow: 1;
 			align-content: flex-end;
 
-			// @include core.custom-border-bottom(
+			// @include custom-border-bottom(
 			// 	2px,
-			// 	core.color-swatch(lively-green),
+			// 	color-swatch(lively-green),
 			// 	30%
 			// );
 		}
@@ -48,7 +49,7 @@
 				font-size: 1.25rem;
 				font-weight: 600;
 				text-align: center;
-				border-bottom: 1px solid core.color-swatch(transparent-grey);
+				border-bottom: 1px solid color-swatch(transparent-grey);
 			}
 		}
 
@@ -96,9 +97,9 @@
 	}
 
 	.timestamp {
-		@include core.typography(body-xs);
+		@include typography(body-xs);
 
-		color: core.color-swatch(lively-green);
+		color: color-swatch(lively-green);
 		width: 12%;
 		margin-inline-end: -2%;
 		padding-inline-end: 4%;

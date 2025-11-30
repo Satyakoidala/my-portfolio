@@ -1,4 +1,7 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
 
 .contact-section {
 	height: 100%;
@@ -6,7 +9,7 @@
 	align-items: center;
 	justify-content: center;
 
-	@include core.viewport(small) {
+	@include viewport(small) {
 		align-items: flex-start;
 	}
 
@@ -15,8 +18,11 @@
 		align-items: stretch;
 		width: 100%;
 		max-width: 1200px;
+		background-color: $theme-surface;
+		border-radius: 12px;
+		box-shadow: $shadow-md;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			height: 100%;
 			flex-direction: column;
 			align-items: space-between;
@@ -26,11 +32,11 @@
 	.contact-content {
 		width: 70%;
 		max-width: 600px;
-		padding: 3rem;
+		padding: $space-6;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 100%;
-			padding: 2rem 1rem;
+			padding: $space-4 $space-3;
 			margin: 0 auto;
 		}
 	}
@@ -38,11 +44,11 @@
 	.follow-me {
 		width: 30%;
 		max-width: 300px;
-		padding: 3rem;
+		padding: $space-6;
 		text-align: center;
-		border-inline-start: 2px solid core.color-swatch(transparent-grey);
+		border-inline-start: 1px solid $color-border;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 100%;
 			max-width: 100%;
 			border: none;
@@ -52,12 +58,15 @@
 
 	.contact-header,
 	.follow-me-header {
+		@include h1;
+
 		text-align: center;
 		margin-bottom: 1rem;
-		color: core.color-swatch(lively-green);
+		color: color-swatch(lively-green);
 
 		& .sub-header {
-			color: core.color-swatch(secondary-white);
+			color: color-swatch(secondary-white);
+			font-family: $font-primary;
 		}
 	}
 
@@ -70,13 +79,13 @@
 			label {
 				display: block;
 				font-size: 1rem;
-				color: core.color-swatch(primary-txt);
+				color: color-swatch(primary-txt);
 				text-align: left;
 			}
 
 			input,
 			textarea {
-				@include core.glass;
+				@include glass;
 
 				width: 100%;
 				padding: 0.75rem;
@@ -84,11 +93,11 @@
 				letter-spacing: 0.03rem;
 				transition: all 0.3s ease;
 				border-radius: 6px;
-				color: core.color-swatch(secondary-white);
+				color: color-swatch(secondary-white);
 
 				&:focus {
 					outline: none;
-					border-color: core.color-swatch(lively-green);
+					border-color: color-swatch(lively-green);
 					background: rgba(255, 255, 255, 10%);
 				}
 			}
@@ -102,8 +111,8 @@
 
 		.submit-btn {
 			font-size: 1rem;
-			background-color: core.color-swatch(lively-green);
-			color: core.color-swatch(sec-txt);
+			background-color: color-swatch(lively-green);
+			color: color-swatch(sec-txt);
 			border-radius: 6px;
 			padding: 4px 8px;
 
@@ -142,7 +151,7 @@
 		gap: 1.5rem;
 		width: max(100px, 50%);
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			width: 100%;
 			flex-direction: row;
 		}
@@ -155,7 +164,7 @@
 			justify-content: flex-start;
 			gap: 0.5rem;
 
-			@include core.viewport(small) {
+			@include viewport(small) {
 				width: 50%;
 				justify-content: center;
 			}
@@ -168,12 +177,12 @@
 		}
 
 		a {
-			color: core.color-swatch(primary-txt);
+			color: color-swatch(primary-txt);
 			font-size: 1rem;
 			transition: color 0.3s ease;
 
 			&:hover {
-				color: core.color-swatch(lively-green);
+				color: color-swatch(lively-green);
 			}
 		}
 	}

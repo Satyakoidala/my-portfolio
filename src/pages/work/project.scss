@@ -1,4 +1,4 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
 
 .project-card {
 	height: 200px;
@@ -8,34 +8,35 @@
 	margin: 0;
 	font-weight: 600;
 
-	@include core.viewport(small) {
+	@include viewport(small) {
 		width: 100%;
 	}
 
 	.project-title {
-		@include core.typography(body);
+		@include typography(body);
 
+		color: color-swatch(sec-txt);
 		font-weight: inherit;
 		width: 100%;
 		margin-bottom: 6px;
 	}
 
 	.project-desc {
-		@include core.typography(body-small);
+		@include typography(body-small);
 
 		font-weight: inherit;
 		flex-grow: 1;
 		width: 100%;
-		color: core.color-swatch(secondary-black);
+		color: color-swatch(secondary-black);
 	}
 
 	.project-links {
-		@include core.typography(body-xs);
+		@include typography(body-xs);
 
 		font-weight: inherit;
 		width: 100%;
 		margin-top: 15px;
-		color: core.color-swatch(secondary-black);
+		color: color-swatch(secondary-black);
 
 		.project-link {
 			display: inline-block;

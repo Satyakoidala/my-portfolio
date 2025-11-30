@@ -1,23 +1,23 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
 
 .profile-summary {
-	@include core.glass;
+	@include glass;
 
 	border: none;
 	width: 100%;
 	border-radius: inherit;
 	font-size: 0.875rem;
-	padding: 15px;
+	padding: 24px;
 
 	.header {
-		@include core.typography(h3);
+		@include typography(h3);
 
-		color: core.color-swatch(lively-green);
+		color: color-swatch(lively-green);
 		margin-bottom: 0.5rem;
 	}
 
 	.description {
-		@include core.typography(body);
+		@include typography(body);
 	}
 
 	.tag {
@@ -39,7 +39,7 @@
 		font-weight: bolder;
 		flex-shrink: 1;
 
-		// color: core.color-swatch(sec-txt);
+		// color: color-swatch(sec-txt);
 	}
 
 	.details {
@@ -55,7 +55,7 @@
 
 	.summary-card {
 		// font-weight: 600;
-		// background-color: core.color-swatch(lively-green);
+		// background-color: color-swatch(lively-green);
 
 		// background-color: #f08080;
 		// background-color: #dc143c;

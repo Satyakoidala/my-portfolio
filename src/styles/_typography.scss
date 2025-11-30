@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "tokens" as *;
+@use "theme" as *;
+
+// Typography Scale Mixins
+@mixin font($size) {
+	$font-config: map.get($font-sizes, $size);
+
+	font-size: map.get($font-config, "size");
+	line-height: map.get($font-config, "line-height");
+	letter-spacing: map.get($font-config, "letter-spacing");
+	font-weight: map.get($font-config, "weight");
+}
+
+// Typography Hierarchy Mixins
+@mixin h1 {
+	font-family: $font-secondary;
+
+	@include font(xxl);
+
+	font-weight: 700;
+	color: $color-text-primary;
+}
+
+@mixin h2 {
+	font-family: $font-secondary;
+
+	@include font(xl);
+
+	font-weight: 600;
+	color: $color-text-primary;
+}
+
+@mixin h3 {
+	font-family: $font-secondary;
+
+	@include font(lg);
+
+	font-weight: 500;
+	color: $color-text-primary;
+}
+
+@mixin body {
+	font-family: $font-primary;
+
+	@include font(md);
+
+	color: $color-text-secondary;
+}
+
+@mixin label {
+	font-family: $font-primary;
+
+	@include font(sm);
+
+	font-weight: 500;
+	color: $color-text-secondary;
+}
+
+@mixin caption {
+	font-family: $font-primary;
+
+	@include font(xs);
+
+	color: rgba($color-text-primary, 0.6);
+}
+
+// Helper Classes
+.h1 {
+	@include h1;
+}
+
+.h2 {
+	@include h2;
+}
+
+.h3 {
+	@include h3;
+}
+
+.body {
+	@include body;
+}
+
+.label {
+	@include label;
+}
+
+.caption {
+	@include caption;
+}
+
+// Global Typography Reset
+body {
+	font-family: $font-primary;
+
+	@include font(md);
+
+	color: $color-text-primary;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

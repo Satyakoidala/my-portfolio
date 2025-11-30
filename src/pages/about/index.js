@@ -11,7 +11,7 @@ import {
 	Carousel,
 	Card,
 } from "../../components";
-import Footer from "../layout/footer";
+// import Footer from "../layout/footer";
 import ProfileSummary from "./profile-summary";
 import {
 	ExperienceCardsHtml,
@@ -19,18 +19,17 @@ import {
 	EducationCardsHtml,
 } from "./component";
 import { getIcon } from "../../assets/icons";
-import { education, experience, skills as skillsIcon } from "../../assets";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
+// import { education, experience, skills as skillsIcon } from "../../assets";
 
 import "./style.scss";
 
 const About = () => {
-	const educationDetails =
-		window.bootstrap.sections.about.educationDetails || [];
-
-	const skills = window.bootstrap.sections.about.skills || [];
-
-	const experienceDetails =
-		window.bootstrap.sections.about.experienceDetails || [];
+	const {
+		educationDetails = [],
+		skills = [],
+		experienceDetails = [],
+	} = useBootstrap("about") || {};
 
 	return (
 		<Section classes={["section", "about"]} columnLayout>
@@ -44,12 +43,13 @@ const About = () => {
 				<SectionTile
 					classes={{ section: "work-experience" }}
 					title="Experience"
-					iconHtml={
-						<img src={experience} alt="" width="50" height="30" />
-					}
+					// iconHtml={
+					// 	<img src={experience} alt="" width="50" height="30" />
+					// }
 					noCard
 				>
 					<Timeline
+						classes={{ timeline: "timeline-horizon" }}
 						cardsHtml={
 							<ExperienceCardsHtml data={experienceDetails} />
 						}
@@ -58,9 +58,9 @@ const About = () => {
 				<SectionTile
 					classes={{ section: "skills" }}
 					title="Skills"
-					iconHtml={
-						<img src={skillsIcon} alt="" width="30" height="34" />
-					}
+					// iconHtml={
+					// 	<img src={skillsIcon} alt="" width="30" height="34" />
+					// }
 					noCard
 				>
 					{skills.map((section) => (
@@ -115,17 +115,18 @@ const About = () => {
 				<SectionTile
 					classes={{ section: "education" }}
 					title="Education"
-					iconHtml={
-						<img
-							src={education}
-							alt="education"
-							width={40}
-							height={42}
-						/>
-					}
+					// iconHtml={
+					// 	<img
+					// 		src={education}
+					// 		alt="education"
+					// 		width={40}
+					// 		height={42}
+					// 	/>
+					// }
 					noCard
 				>
 					<Timeline
+						classes={{ timeline: "timeline-horizon" }}
 						cardsHtml={
 							<EducationCardsHtml data={educationDetails} />
 						}
@@ -133,7 +134,7 @@ const About = () => {
 				</SectionTile>
 			</Container>
 
-			<Footer />
+			{/* <Footer /> */}
 		</Section>
 	);
 };

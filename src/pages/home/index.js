@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import cn from "classnames";
 import { Container, SideLeft, SideRight } from "../../components/core";
 import { Section } from "../../components/common";
-import Footer from "../layout/footer";
+// import Footer from "../layout/footer";
 import { innerHTML, isMobile } from "../../utils";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./style.scss";
 
 const IS_NOT_FIRST_TIME_LOADING = "is-not-first-time-loading";
 
 const Home = () => {
-	const profileData = window.bootstrap.sections.home.profile || {};
+	const profileData = useBootstrap("home.profile") || {};
 	const isMobileViewport = isMobile();
 	const showTypingAnimation =
 		sessionStorage.getItem(IS_NOT_FIRST_TIME_LOADING) === null &&
@@ -35,12 +36,10 @@ const Home = () => {
 							{...innerHTML(profileData.introText?.greeting)}
 						/>
 						<p className="line-2">
-							I&apos;m a{" "}
 							<span
 								className="keyword"
 								{...innerHTML(profileData.introText?.expertise)}
 							/>
-							,
 						</p>
 						<p className="line-3">
 							specialized in{" "}
@@ -67,7 +66,7 @@ const Home = () => {
 					</div> */}
 				</SideLeft>
 				<SideRight>
-					<div className="intro-image">
+					<div className="intro-image fade-in-animation">
 						<div className="image-cover"></div>
 						<img
 							className="image"
@@ -77,7 +76,7 @@ const Home = () => {
 					</div>
 				</SideRight>
 			</Container>
-			<Footer />
+			{/* <Footer /> */}
 		</Section>
 	);
 };

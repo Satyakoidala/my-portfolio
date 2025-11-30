@@ -1,25 +1,28 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
 
 .button {
-	@include core.flex-center;
-
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: $space-2;
+	border-radius: 8px;
+	font-family: $font-primary;
 	position: relative;
-	gap: 0.5rem;
-	border-radius: 0.5rem;
-	font-weight: 600;
-	border: 2px solid transparent;
+	transition: all $motion-medium $ease-standard;
+	border: none;
 
-	@include core.transition-smooth;
-
-	// Disabled state
 	&:disabled {
-		opacity: 0.6;
 		cursor: not-allowed;
-		pointer-events: none;
+		opacity: $button-disabled-opacity;
 	}
 
-	// Focus state
-	@include core.focus-ring;
+	&:focus {
+		box-shadow: $shadow-focus;
+		outline: none;
+	}
 
 	&-icon {
 		display: flex;
@@ -35,69 +38,71 @@
 
 	// Variants
 	&-primary {
-		background: linear-gradient(
-			135deg,
-			core.color-swatch("accent-primary"),
-			core.color-swatch("accent-secondary")
-		);
-		color: core.color-swatch("primary-txt");
+		background-color: $button-primary-bg;
+		color: $button-primary-text;
+		box-shadow: $shadow-sm;
 
-		@include core.hover-lift;
-
-		&:hover {
-			box-shadow: 0 4px 12px
-				rgba(core.color-swatch("accent-secondary"), 0.3);
+		&:hover:not(:disabled) {
+			// background-color: darken($button-primary-bg, 10%);
+			box-shadow: $shadow-md;
 		}
 
-		&:active {
-			box-shadow: 0 2px 4px
-				rgba(core.color-swatch("accent-secondary"), 0.2);
+		&:disabled {
+			background-color: rgba(
+				$button-primary-bg,
+				$button-disabled-opacity
+			);
+			color: rgba($button-primary-text, 0.5);
+			box-shadow: none;
 		}
 	}
 
 	&-secondary {
-		background: rgba(core.color-swatch("accent-primary"), 0.1);
-		color: core.color-swatch("accent-primary");
-		border-color: currentcolor;
+		background-color: transparent;
+		color: $button-secondary-border;
+		border: 1px solid $button-secondary-border;
 
-		@include core.hover-lift;
+		&:hover:not(:disabled) {
+			background-color: $color-surface;
 
-		&:hover {
-			background: rgba(core.color-swatch("accent-primary"), 0.15);
+			// border-color: darken($button-secondary-border, 10%);
+			// color: darken($button-secondary-border, 10%);
 		}
 
-		&:active {
-			background: rgba(core.color-swatch("accent-primary"), 0.2);
+		&:disabled {
+			border-color: rgba(
+				$button-secondary-border,
+				$button-disabled-opacity
+			);
+			color: rgba($button-secondary-border, $button-disabled-opacity);
 		}
 	}
 
 	&-ghost {
-		background: transparent;
-		color: core.color-swatch("primary-txt");
-		border-color: core.color-swatch("glass-border");
+		background-color: transparent;
+		color: $color-text-primary;
 
-		&:hover {
-			border-color: core.color-swatch("accent-primary");
-			background: rgba(core.color-swatch("accent-primary"), 0.1);
-			color: core.color-swatch("accent-primary");
+		&:hover:not(:disabled) {
+			background-color: $color-surface;
+			color: $color-text-secondary;
 		}
 
-		&:active {
-			background: rgba(core.color-swatch("accent-primary"), 0.15);
+		&:disabled {
+			color: rgba($color-text-primary, $button-disabled-opacity);
 		}
 	}
 
 	// Sizes
 	&-sm {
-		height: 36px;
-		padding: 0 16px;
-		font-size: 0.875rem;
+		@include font(sm);
+
+		padding: calc($space-2 / 2) $space-2;
 	}
 
 	&-md {
-		height: 44px;
-		padding: 0 24px;
-		font-size: 1rem;
+		@include font(md);
+
+		padding: $space-2 $space-3;
 	}
 
 	&-lg {

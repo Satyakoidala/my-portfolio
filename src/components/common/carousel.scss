@@ -1,4 +1,4 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
 
 .carousel {
 	&-container {
@@ -22,15 +22,14 @@
 	}
 
 	&-title {
-		font-size: 1.2rem;
-		font-weight: 300;
-		letter-spacing: 0.025rem;
+		@include typography(body);
+
 		margin: 0;
 		margin-bottom: 0.5rem;
 
-		// @include core.custom-border-bottom(
+		// @include custom-border-bottom(
 		// 	1px,
-		// 	core.color-swatch(fill-salmon),
+		// 	color-swatch(lively-green),
 		// 	30%
 		// );
 	}

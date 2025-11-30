@@ -1,0 +1,78 @@
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
+
+.footer {
+	@include caption;
+
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding-top: $space-8;
+	position: absolute;
+	bottom: 10px;
+	margin: 0 auto;
+
+	@include viewport(small) {
+		width: calc(100% - 2rem);
+		flex-direction: column-reverse;
+		padding-top: $space-6;
+	}
+
+	.disclaimer,
+	.social-accounts {
+		@include viewport(small) {
+			width: 100%;
+			text-align: center;
+			flex: 1;
+			padding: $space-2;
+		}
+	}
+
+	.social-accounts {
+		justify-content: space-between;
+	}
+
+	.social-media {
+		margin: 0;
+		display: flex;
+		border-radius: $space-1;
+		align-items: end;
+
+		.media {
+			padding-inline: $space-2;
+
+			a {
+				text-align: center;
+			}
+
+			.media-name {
+				color: $color-text-primary;
+				vertical-align: middle;
+				display: inline-block;
+				width: 0;
+				overflow: hidden;
+				transition: width $motion-medium $ease-standard;
+
+				&:hover {
+					width: auto;
+					margin-inline-start: 5px;
+				}
+			}
+
+			img {
+				width: 15px;
+				height: 15px;
+				vertical-align: middle;
+
+				&:hover + .media-name {
+					width: auto;
+					margin-inline-start: 5px;
+				}
+			}
+		}
+	}
+}

@@ -20,7 +20,7 @@ const Project = ({ data = {} }) => {
 							rel={link?.rel}
 							target={link.target}
 						>
-							{link.name} &#8599;
+							{link.name}
 						</a>
 					))}
 				</div>

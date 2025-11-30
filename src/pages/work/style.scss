@@ -1,9 +1,16 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
 
 .works {
 	.tab-content {
 		min-height: 72%;
-		overflow-y: scroll;
+		overflow-y: auto;
 		box-sizing: border-box;
+
+		// background-color: $theme-surface;
+		// border-radius: 12px;
+		// padding: $space-4;
+		// margin-top: $space-3;
 	}
 }

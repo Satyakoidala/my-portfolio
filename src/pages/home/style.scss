@@ -1,4 +1,8 @@
-@use "../../styles/stylekit-core" as core;
+@use "sass:map";
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/tokens" as *;
+@use "../../styles/theme" as *;
+@use "../../styles/typography" as *;
 @import "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap";
 
 /* The typing effect */
@@ -20,11 +24,11 @@
 	}
 
 	50% {
-		border-color: core.color-swatch(primary-txt);
+		border-color: $color-text-primary;
 	}
 }
 
-/* Fade in transistion */
+/* Fade in transition */
 @keyframes fade-in {
 	from {
 		opacity: 0;
@@ -37,7 +41,9 @@
 
 @keyframes size-reducer {
 	from {
-		font-size: 3rem;
+		$xxl-size: map.get($font-sizes, "xxl");
+
+		font-size: map.get($xxl-size, "size");
 	}
 
 	to {
@@ -55,15 +61,16 @@
 		font-family: "Fira Code", monospace;
 		font-optical-sizing: auto;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			flex-direction: column-reverse;
+			height: 50vh;
 		}
 
 		.side-left {
 			width: 68%;
 			align-content: center;
 
-			@include core.viewport(small) {
+			@include viewport(small) {
 				display: flex;
 				width: 100%;
 			}
@@ -72,33 +79,37 @@
 		.side-right {
 			width: 32%;
 
-			@include core.viewport(small) {
+			@include viewport(small) {
 				max-height: 200px;
 				width: 100%;
 			}
 		}
 
 		.line-1 {
-			font-size: 2.25rem;
+			font-size: 4rem;
 
-			@include core.viewport(small) {
-				font-size: 1.3rem;
+			@include viewport(small) {
+				font-size: 2rem;
 			}
 		}
 
 		.line-2 {
-			font-size: 2.5rem;
+			font-size: 5rem;
 
-			@include core.viewport(small) {
-				font-size: 1.5rem;
+			@include viewport(small) {
+				font-size: 2rem;
 			}
 		}
 
 		.line-3 {
-			font-size: 1.75rem;
+			font-size: 4rem;
 
-			@include core.viewport(small) {
-				font-size: 1.4rem;
+			.keyword {
+				display: inline-block;
+			}
+
+			@include viewport(small) {
+				font-size: 2rem;
 			}
 		}
 	}
@@ -114,7 +125,7 @@
 			border-radius: 6px;
 			outline: none;
 			border: none;
-			color: core.color-swatch(primary-txt);
+			color: color-swatch(primary-txt);
 			font-size: 1.125rem;
 			vertical-align: middle;
 			text-align: center;
@@ -123,7 +134,7 @@
 			align-items: center;
 			justify-content: center;
 
-			@include core.glass;
+			@include glass;
 
 			img {
 				width: 20px;
@@ -139,18 +150,28 @@
 	}
 
 	.intro-text {
-		@include core.viewport(small) {
+		@include viewport(small) {
 			margin-top: 20px;
 		}
 
 		> p {
-			margin-block: 0 5px;
+			@include typography(h2);
+
+			font-weight: 400;
+			line-height: normal;
+			color: inherit;
+			margin: 0;
 			white-space: nowrap;
-			border-right: 2px solid transparent;
 		}
 
 		.keyword {
-			color: core.color-swatch(fill-salmon);
+			color: color-swatch(lively-green);
+			display: block;
+			font-size: 6rem;
+
+			@include viewport(small) {
+				font-size: 3rem;
+			}
 		}
 
 		&.typing-animation {
@@ -184,21 +205,21 @@
 			}
 		}
 
-		&.fade-in-animation {
-			> p {
-				opacity: 0;
-				animation-name: fade-in;
-				animation-delay: 1s;
-				animation-duration: 3s;
-				animation-fill-mode: forwards;
-			}
-		}
-
 		+ .resume-box {
 			margin-top: 30px;
 			opacity: 0;
 			animation-name: fade-in;
 			animation-delay: 8s;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	.fade-in-animation {
+		> * {
+			opacity: 0;
+			animation-name: fade-in;
+			animation-delay: 1s;
 			animation-duration: 3s;
 			animation-fill-mode: forwards;
 		}
@@ -213,14 +234,14 @@
 
 		.image-cover,
 		.image {
-			@include core.absolute-center;
+			@include absolute-center;
 
 			width: 300px;
 			height: 300px;
 			border-radius: 20px;
 			clip-path: circle(50% at 50% 50%);
 
-			@include core.viewport(small) {
+			@include viewport(small) {
 				// justify-content: center;
 				height: 150px;
 				width: 150px;
@@ -230,11 +251,11 @@
 		.image-cover {
 			overflow: hidden;
 			border: 2px solid rgba(255, 255, 255, 10%);
-			background-color: core.color-swatch(fill-salmon);
+			background-color: color-swatch(lively-green);
 		}
 
 		.image {
-			@include core.absolute-center;
+			@include absolute-center;
 
 			object-fit: cover;
 		}

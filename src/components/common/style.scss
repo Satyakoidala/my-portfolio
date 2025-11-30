@@ -1,4 +1,4 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
 
 .section {
 	// min-width: 980px;
@@ -7,8 +7,8 @@
 }
 
 .card {
-	background-color: core.color-swatch(sec-bg);
-	color: core.color-swatch(sec-txt);
+	background-color: color-swatch(sec-bg);
+	color: color-swatch(sec-txt);
 	font-size: 0.875rem;
 }
 
@@ -22,19 +22,20 @@
 		width: 100%;
 
 		h3 {
+			@include typography(h3);
+
+			color: color-swatch(lively-green);
 			margin-block: 0;
-			margin-inline-start: 10px;
-			font-size: 1.25rem;
-			font-weight: 400;
-			letter-spacing: 0.025rem;
+
+			// margin-inline-start: 10px;
 			flex-grow: 1;
 			align-content: flex-end;
 
-			@include core.custom-border-bottom(
-				2px,
-				core.color-swatch(fill-salmon),
-				30%
-			);
+			// @include custom-border-bottom(
+			// 	2px,
+			// 	color-swatch(lively-green),
+			// 	30%
+			// );
 		}
 	}
 
@@ -48,7 +49,7 @@
 				font-size: 1.25rem;
 				font-weight: 600;
 				text-align: center;
-				border-bottom: 1px solid core.color-swatch(transparent-grey);
+				border-bottom: 1px solid color-swatch(transparent-grey);
 			}
 		}
 
@@ -80,8 +81,6 @@
 			margin-top: 25px;
 			padding: 10px 20px;
 			align-items: start;
-			font-size: 1rem;
-			font-weight: 600;
 			flex-wrap: wrap;
 		}
 
@@ -98,9 +97,10 @@
 	}
 
 	.timestamp {
+		@include typography(body-xs);
+
+		color: color-swatch(lively-green);
 		width: 12%;
-		font-size: 0.85rem;
-		font-weight: 600;
 		margin-inline-end: -2%;
 		padding-inline-end: 4%;
 		padding-top: 25px;

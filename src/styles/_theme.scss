@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "tokens" as *;
+
+// Semantic Color Tokens
+$color-text-primary: $color-primary;
+$color-text-secondary: rgba($color-primary, 0.7);
+$color-border: rgba($color-primary, 0.15);
+$color-overlay: rgba(#000, 0.6);
+
+// Theme Configuration
+$themes: (
+	dark: (
+		background: $color-background,
+		surface: $color-surface,
+		text: $color-primary,
+		accent: $color-secondary,
+	),
+	light: (
+		background: #f7f7ff,
+		surface: #fff,
+		text: #151515,
+		accent: $color-secondary,
+	),
+);
+
+// Default theme (dark)
+$dark-theme: map.get($themes, "dark");
+$theme-bg: map.get($dark-theme, "background");
+$theme-surface: map.get($dark-theme, "surface");
+$theme-text: map.get($dark-theme, "text");
+$theme-accent: map.get($dark-theme, "accent");
+
+// Theme Mixin
+@mixin themed() {
+	@each $theme, $map in $themes {
+		.theme-#{$theme} & {
+			$theme-bg: map.get($map, "background") !global;
+			$theme-surface: map.get($map, "surface") !global;
+			$theme-text: map.get($map, "text") !global;
+			$theme-accent: map.get($map, "accent") !global;
+			@content;
+		}
+	}
+}
+
+// Component-specific theme tokens
+$button-primary-bg: $color-secondary;
+$button-primary-text: $color-background;
+$button-secondary-border: $color-secondary;
+$button-disabled-opacity: 0.3;
+$input-bg: $color-surface;
+$input-border: $color-border;
+$input-text: $color-text-primary;
+$input-placeholder: $color-text-secondary;
+$card-bg: $theme-surface;
+$card-border: $color-border;

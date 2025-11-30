@@ -1,4 +1,5 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
+@use "../../styles/typography" as *;
 
 .blogs {
 	column-gap: 0;
@@ -13,7 +14,7 @@
 	font-weight: 600;
 	background-color: transparent;
 
-	@include core.viewport(small) {
+	@include viewport(small) {
 		width: 100%;
 	}
 
@@ -28,14 +29,14 @@
 		height: 100%;
 		border-radius: inherit;
 		padding: 16px;
-		background-color: core.color-swatch(sec-bg);
+		background-color: color-swatch(sec-bg);
 		transition: all 300ms ease-in-out;
 	}
 
 	&:nth-child(odd) .blog-wrapper {
 		margin-inline-end: 7.5px;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			margin-inline-end: 0;
 		}
 	}
@@ -43,19 +44,23 @@
 	&:nth-child(even) .blog-wrapper {
 		margin-inline-start: 7.5px;
 
-		@include core.viewport(small) {
+		@include viewport(small) {
 			margin-inline-start: 0;
 		}
 	}
 
 	&-title {
+		@include body;
+
 		font-size: 1rem;
+		font-weight: inherit;
+		color: color-swatch(sec-txt);
 		margin-block: 0 5px;
 	}
 
 	&-desc {
 		font-size: 0.9rem;
-		color: core.color-swatch(secondary-black);
+		color: color-swatch(secondary-black);
 		margin: 0;
 	}
 

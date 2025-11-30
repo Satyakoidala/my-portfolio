@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import { Container, Section, Typography, Button } from "../../components";
 import { isMobile } from "../../utils";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
+
 import "./style.scss";
 
 const Contact = () => {
-	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
+	const socialAccounts = useBootstrap("home.socialAccounts") || [];
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -79,10 +81,7 @@ const Contact = () => {
 			<Container noPadding classes="contact-section-wrapper">
 				<div className="contact-content">
 					<div className="contact-header">
-						<Typography
-							variant="heading-sm"
-							className="main-header"
-						>
+						<Typography variant="" className="main-header">
 							Connect with me
 						</Typography>
 						<Typography variant="body-md" className="sub-header">
@@ -162,10 +161,7 @@ const Contact = () => {
 							</Typography>
 						) : (
 							<>
-								<Typography
-									variant="heading-xs"
-									className="main-header"
-								>
+								<Typography variant="" className="main-header">
 									Follow me!
 								</Typography>
 								<Typography

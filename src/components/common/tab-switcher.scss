@@ -1,4 +1,4 @@
-@use "../../styles/stylekit-core" as core;
+@use "../../styles/stylekit-core" as *;
 
 .tab {
 	&-menu {
@@ -15,21 +15,21 @@
 			color: inherit;
 			width: fit-content;
 			border-radius: 6px;
-			border: 2px solid core.color-swatch(transparent-grey);
+			border: 2px solid color-swatch(transparent-grey);
 			background-color: transparent;
 			padding: 4px 12px;
 			line-height: 1.5rem;
 			box-sizing: content-box;
 
 			&.current {
-				border-color: core.color-swatch(fill-salmon);
+				border-color: color-swatch(lively-green);
 			}
 		}
 	}
 
 	&-content {
 		&.glass-bg {
-			@include core.glass;
+			@include glass;
 
 			border: none;
 		}

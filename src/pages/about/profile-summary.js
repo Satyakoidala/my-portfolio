@@ -3,12 +3,13 @@ import { Container, SideLeft } from "../../components/core";
 // import { checkCircle } from "../../assets";
 import { innerHTML } from "../../utils";
 // import { Card } from "../../components/common";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./profile-summary.scss";
 
-const summary = window.bootstrap.sections.about.summary || {};
-
 export default () => {
+	const summary = useBootstrap("about.summary") || {};
+
 	return (
 		<Container classes="profile-summary" roundedCorner>
 			<SideLeft classes="details">

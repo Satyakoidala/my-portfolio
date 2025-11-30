@@ -3,11 +3,12 @@ import React from "react";
 import { TabSwitcher } from "../../components";
 import LazyContent from "./lazy-content";
 import Footer from "../layout/footer";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./style.scss";
 
 const Works = () => {
-	const menu = window.bootstrap.sections.work.tabs || [];
+	const menu = useBootstrap("work.tabs") || [];
 
 	const getCurrentContent = (selection) => {
 		switch (selection) {
@@ -16,7 +17,7 @@ const Works = () => {
 					<LazyContent
 						template="projects"
 						fallback={<div>Loading Web Apps...</div>}
-						path="sections.work.webApps"
+						path="work.webApps"
 					/>
 				);
 			case "ui-comps":
@@ -26,7 +27,7 @@ const Works = () => {
 					<LazyContent
 						template="blogs"
 						fallback={<div>Loading Blogs...</div>}
-						path="sections.work.blogs"
+						path="work.blogs"
 					/>
 				);
 			case "npm-modules":
@@ -34,7 +35,7 @@ const Works = () => {
 					<LazyContent
 						template="projects"
 						fallback={<div>Loading Node Modules...</div>}
-						path="sections.work.pkgModules"
+						path="work.pkgModules"
 					/>
 				);
 			case "certifications":

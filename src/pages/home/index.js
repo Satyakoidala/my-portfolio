@@ -4,13 +4,14 @@ import { Container, SideLeft, SideRight } from "../../components/core";
 import { Section } from "../../components/common";
 import Footer from "../layout/footer";
 import { innerHTML, isMobile } from "../../utils";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./style.scss";
 
 const IS_NOT_FIRST_TIME_LOADING = "is-not-first-time-loading";
 
 const Home = () => {
-	const profileData = window.bootstrap.sections.home.profile || {};
+	const profileData = useBootstrap("home.profile") || {};
 	const isMobileViewport = isMobile();
 	const showTypingAnimation =
 		sessionStorage.getItem(IS_NOT_FIRST_TIME_LOADING) === null &&

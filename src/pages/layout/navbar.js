@@ -5,11 +5,12 @@ import { Container, SideLeft, SideRight, Button } from "../../components";
 // import { profile } from "../../assets";
 import { getIcon } from "../../assets/icons";
 import { isMobile } from "../../utils";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./navbar.scss";
 
 const NavBar = () => {
-	const navItems = window.bootstrap.navBarLinks || [];
+	const navItems = useBootstrap("navBarLinks") || [];
 	const isMobileViewport = isMobile();
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 

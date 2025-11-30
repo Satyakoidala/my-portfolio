@@ -19,18 +19,17 @@ import {
 	EducationCardsHtml,
 } from "./component";
 import { getIcon } from "../../assets/icons";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 // import { education, experience, skills as skillsIcon } from "../../assets";
 
 import "./style.scss";
 
 const About = () => {
-	const educationDetails =
-		window.bootstrap.sections.about.educationDetails || [];
-
-	const skills = window.bootstrap.sections.about.skills || [];
-
-	const experienceDetails =
-		window.bootstrap.sections.about.experienceDetails || [];
+	const {
+		educationDetails = [],
+		skills = [],
+		experienceDetails = [],
+	} = useBootstrap("about") || {};
 
 	return (
 		<Section classes={["section", "about"]} columnLayout>

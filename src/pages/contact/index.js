@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import { Container, Section, Typography, Button } from "../../components";
 import { isMobile } from "../../utils";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
+
 import "./style.scss";
 
 const Contact = () => {
-	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
+	const socialAccounts = useBootstrap("home.socialAccounts") || [];
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",

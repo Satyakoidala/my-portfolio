@@ -1,10 +1,11 @@
 import React from "react";
 import { FootNotes } from "../../components";
+import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./footer.scss";
 
 export default () => {
-	const socialAccounts = window.bootstrap.sections.home.socialAccounts || [];
+	const socialAccounts = useBootstrap("home.socialAccounts") || [];
 
 	return (
 		<footer className="footer">

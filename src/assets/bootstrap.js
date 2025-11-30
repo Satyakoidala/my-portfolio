@@ -32,11 +32,9 @@ window.bootstrap.navBarLinks = [
 	},
 ];
 
-window.bootstrap.sections = {};
+window.bootstrap.home = {};
 
-window.bootstrap.sections.home = {};
-
-window.bootstrap.sections.home.socialAccounts = [
+window.bootstrap.home.socialAccounts = [
 	{
 		name: "LinkedIn",
 		key: "linkedin",
@@ -63,7 +61,7 @@ window.bootstrap.sections.home.socialAccounts = [
 	// },
 ];
 
-window.bootstrap.sections.home.profile = {
+window.bootstrap.home.profile = {
 	introText: {
 		greeting: "Hello, I'm a",
 		expertise: "Frontend Developer",
@@ -76,9 +74,9 @@ window.bootstrap.sections.home.profile = {
 	},
 };
 
-window.bootstrap.sections.about = {};
+window.bootstrap.about = {};
 
-window.bootstrap.sections.about.educationDetails = [
+window.bootstrap.about.educationDetails = [
 	{
 		timeStamp: "Jul, 2021",
 		cardDetails: {
@@ -107,7 +105,7 @@ window.bootstrap.sections.about.educationDetails = [
 	},
 ];
 
-window.bootstrap.sections.about.skills = [
+window.bootstrap.about.skills = [
 	{
 		title: "Frontend",
 		list: [
@@ -154,7 +152,7 @@ window.bootstrap.sections.about.skills = [
 	},
 ];
 
-window.bootstrap.sections.about.experienceDetails = [
+window.bootstrap.about.experienceDetails = [
 	{
 		timeStamp: "Jul, 2024",
 		cardDetails: {
@@ -182,7 +180,7 @@ window.bootstrap.sections.about.experienceDetails = [
 	// },
 ];
 
-window.bootstrap.sections.about.summary = {
+window.bootstrap.about.summary = {
 	header: "About Me",
 	legendHeader:
 		"Frontend Engineer with 4 years’ experience delivering modern web applications using React, Node.js, and TypeScript. Skilled in scalable component design, accessibility-first development, automated testing, and CI/CD practices. Adept at collaborating with cross-functional teams to ship reliable, user-focused products.",
@@ -206,7 +204,7 @@ window.bootstrap.sections.about.summary = {
 	],
 };
 
-window.bootstrap.sections.work = {
+window.bootstrap.work = {
 	tabs: [
 		{ key: "web-apps", displayName: "Web Apps" },
 		// { key: "ui-comps", displayName: "UI Comps" },

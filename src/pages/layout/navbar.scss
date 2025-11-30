@@ -46,7 +46,7 @@
 
 		.chevron-button {
 			color: $color-text-primary;
-			padding: $space-2;
+			padding: $space-2 0 $space-2 $space-2;
 			border-radius: $space-1;
 			transition: all $motion-medium $ease-standard;
 

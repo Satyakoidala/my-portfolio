@@ -11,7 +11,7 @@ import {
 	Carousel,
 	Card,
 } from "../../components";
-import Footer from "../layout/footer";
+// import Footer from "../layout/footer";
 import ProfileSummary from "./profile-summary";
 import {
 	ExperienceCardsHtml,
@@ -134,7 +134,7 @@ const About = () => {
 				</SectionTile>
 			</Container>
 
-			<Footer />
+			{/* <Footer /> */}
 		</Section>
 	);
 };

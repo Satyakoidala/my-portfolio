@@ -2,7 +2,7 @@ import React from "react";
 
 import { TabSwitcher } from "../../components";
 import LazyContent from "./lazy-content";
-import Footer from "../layout/footer";
+// import Footer from "../layout/footer";
 import { useBootstrap } from "../../hooks/context/bootstrap-context";
 
 import "./style.scss";
@@ -48,7 +48,7 @@ const Works = () => {
 	return (
 		<div className="works section">
 			<TabSwitcher data={menu} getCurrentContent={getCurrentContent} />
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 };

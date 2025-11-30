@@ -63,6 +63,7 @@
 
 		@include viewport(small) {
 			flex-direction: column-reverse;
+			height: 50vh;
 		}
 
 		.side-left {
@@ -88,7 +89,7 @@
 			font-size: 4rem;
 
 			@include viewport(small) {
-				font-size: 1.3rem;
+				font-size: 2rem;
 			}
 		}
 
@@ -96,7 +97,7 @@
 			font-size: 5rem;
 
 			@include viewport(small) {
-				font-size: 1.5rem;
+				font-size: 2rem;
 			}
 		}
 
@@ -108,7 +109,7 @@
 			}
 
 			@include viewport(small) {
-				font-size: 1.4rem;
+				font-size: 2rem;
 			}
 		}
 	}
@@ -167,6 +168,10 @@
 			color: color-swatch(lively-green);
 			display: block;
 			font-size: 6rem;
+
+			@include viewport(small) {
+				font-size: 3rem;
+			}
 		}
 
 		&.typing-animation {
